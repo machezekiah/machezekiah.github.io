@@ -7,15 +7,13 @@
   body {
     font-family: Arial, sans-serif;
     background: 
-      linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
-      url("profil.jpg");
-    background-size: cover;
-    background-position: center;
+      linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
     color: white;
     text-align: center;
     margin: 0;
     min-height: 100vh;
-    scroll-behavior: smooth; /* biar scroll halus */
+    scroll-behavior: smooth; /* scroll halus */
+    padding-top: 70px; /* beri ruang untuk navbar */
   }
 
   /* === NAVBAR === */
@@ -46,7 +44,6 @@
 
   h1 {
     font-size: 3em;
-    margin-top: 100px; /* biar ga ketutup navbar */
     margin-bottom: 20px;
     animation: fadeIn 2s ease-in-out;
   }
@@ -85,25 +82,14 @@
 
   <!-- NAVIGATION -->
   <nav>
-    <a href="#home">🏠 Home</a>
     <a href="#game">🎮 Game</a>
-    <a href="#teologi">📖 Teologi</a>
+    <a href="#pelayanan">📖 Pelayanan</a>
     <a href="#sosmed">🌐 Sosial Media</a>
   </nav>
 
-  <!-- HOME SECTION -->
+  <!-- HALAMAN UTAMA -->
   <section id="home">
     <h1>Halo, selamat datang di website saya 🎉</h1>
-
-    <img
-    src="profil.jpg"
-    alt="Foto profil machezekiah"
-    style="width:250px; height:auto; border-radius:20px; display:block; margin:20px auto;"
-    >
-
-    <p style="font-size:1.1em; margin-top:10px;">
-      Halo, saya <strong>machezekiah</strong>. Senang belajar bikin website 🚀
-    </p>
   </section>
 
   <!-- GAME SECTION -->
@@ -130,8 +116,8 @@
   </section>
 
   <!-- TEOLOGI SECTION -->
-  <section id="teologi">
-    <h2>Teologi 📖</h2>
+  <section id="pelayanan">
+    <h2>Pelayanan 📖</h2>
     <p>Saya tertarik belajar tentang iman, Alkitab, dan hubungan dengan Tuhan ✝️</p>
   </section>
 
