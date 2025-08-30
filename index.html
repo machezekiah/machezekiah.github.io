@@ -15,6 +15,7 @@
     text-align: center;
     margin: 0;
     min-height: 100vh;
+    scroll-behavior: smooth; /* biar scroll halus */
   }
 
   /* === NAVBAR === */
@@ -50,6 +51,11 @@
     animation: fadeIn 2s ease-in-out;
   }
 
+  h2 {
+    margin-top: 60px;
+    font-size: 2em;
+  }
+
   p {
     font-size: 1.2em;
   }
@@ -80,7 +86,9 @@
   <!-- NAVIGATION -->
   <nav>
     <a href="#home">🏠 Home</a>
-    <a href="#hobi">🎮 Hobi</a>
+    <a href="#game">🎮 Game</a>
+    <a href="#teologi">📖 Teologi</a>
+    <a href="#sosmed">🌐 Sosial Media</a>
   </nav>
 
   <!-- HOME SECTION -->
@@ -98,9 +106,9 @@
     </p>
   </section>
 
-  <!-- HOBI SECTION -->
-  <section id="hobi">
-    <h2>Hobi Saya 🎮</h2>
+  <!-- GAME SECTION -->
+  <section id="game">
+    <h2>Game Favorit Saya 🎮</h2>
 
     <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:30px;">
       
@@ -119,6 +127,22 @@
       </div>
 
     </div>
+  </section>
+
+  <!-- TEOLOGI SECTION -->
+  <section id="teologi">
+    <h2>Teologi 📖</h2>
+    <p>Saya tertarik belajar tentang iman, Alkitab, dan hubungan dengan Tuhan ✝️</p>
+  </section>
+
+  <!-- SOSIAL MEDIA SECTION -->
+  <section id="sosmed">
+    <h2>Sosial Media 🌐</h2>
+    <p>Ikuti saya di sosial media untuk terhubung lebih dekat 😊</p>
+    <p>
+      <a href="https://www.instagram.com/" target="_blank" style="color:#ffd700; text-decoration:none;">📸 Instagram</a> |
+      <a href="https://www.youtube.com/" target="_blank" style="color:#ff4444; text-decoration:none;">▶️ YouTube</a>
+    </p>
   </section>
 
 </body>
