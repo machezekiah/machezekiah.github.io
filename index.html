@@ -32,12 +32,28 @@
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+  /* Card styling */
+  .card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 15px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  }
 </style>
 </head>
 <body>
   <h1>Halo, selamat datang di website saya 🎉</h1>
 
-  <!-- FOTO PROFIL (placeholder) -->
+  <!-- FOTO PROFIL -->
   <img
   src="profil.jpg"
   alt="Foto profil machezekiah"
@@ -48,25 +64,26 @@
   <p style="font-size:1.1em; margin-top:10px;">
     Halo, saya <strong>machezekiah</strong>. Senang belajar bikin website 🚀
   </p>
+
   <h2>Hobi Saya 🎮</h2>
 
-<div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:30px;">
-  
-  <!-- Card Minecraft -->
-  <div style="background:rgba(255,255,255,0.1); padding:20px; border-radius:15px; width:250px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
-    <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft" style="width:100%; border-radius:10px;">
-    <h3 style="margin:15px 0 10px;">Minecraft</h3>
-    <p>Saya suka membangun dunia kreatif di Minecraft 🏰</p>
-  </div>
+  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:30px;">
+    
+    <!-- Card Minecraft -->
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft" style="width:100%; border-radius:10px;">
+      <h3 style="margin:15px 0 10px;">Minecraft</h3>
+      <p>Saya suka membangun dunia kreatif di Minecraft 🏰</p>
+    </div>
 
-  <!-- Card Roblox -->
-  <div style="background:rgba(255,255,255,0.1); padding:20px; border-radius:15px; width:250px; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.3);">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg" alt="Roblox" style="width:100%; background:white; border-radius:10px; padding:20px;">
-    <h3 style="margin:15px 0 10px;">Roblox</h3>
-    <p>Saya suka bermain game seru dan bertemu teman di Roblox 🤝</p>
-  </div>
+    <!-- Card Roblox -->
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg" alt="Roblox" style="width:100%; background:white; border-radius:10px; padding:20px;">
+      <h3 style="margin:15px 0 10px;">Roblox</h3>
+      <p>Saya suka bermain game seru dan bertemu teman di Roblox 🤝</p>
+    </div>
 
-</div>
+  </div>
 
 </body>
 </html>
