@@ -10,7 +10,7 @@ body, html {
   padding: 0;
   font-family: 'Press Start 2P', monospace;
   scroll-behavior: smooth;
-  background: linear-gradient(180deg, #87CEEB 0%, #7CFC00 100%); /* biru langit → hijau rumput */
+  background: linear-gradient(180deg, #87CEEB 0%, #7CFC00 100%);
   overflow-x: hidden;
 }
 
@@ -19,7 +19,7 @@ body, html {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('https://i.ibb.co/3Cyf3c3/pixel-pattern.png'); /* transparan pixel */
+  background-image: url('https://i.ibb.co/3Cyf3c3/pixel-pattern.png');
   opacity: 0.05;
   top: 0;
   left: 0;
@@ -75,13 +75,67 @@ nav a:hover {
 
 .hero p {
   font-size: 0.7em;
-  margin: 20px 0 40px;
+  margin: 20px 0 20px;
   color: #fff;
   text-shadow: 1px 1px #000;
   animation: blockUp 1.5s ease forwards;
   animation-delay: 0.3s;
 }
 
+/* Hero extra content */
+.hero-extra {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.hero-announcement {
+  font-size: 0.65em;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  padding: 10px 15px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px #000;
+  border-radius: 5px;
+  text-align: center;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.hero-service p {
+  font-size: 0.65em;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+}
+
+.upk-button {
+  display: inline-block;
+  background: #8B4513;
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid #000;
+  box-shadow: 2px 2px #000;
+  text-decoration: none;
+  font-size: 0.65em;
+  transition: all 0.3s;
+}
+
+.upk-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 4px #FFD700;
+}
+
+/* CTA Buttons */
 .cta-buttons {
   display: flex;
   gap: 20px;
@@ -105,9 +159,14 @@ nav a:hover {
   box-shadow: 5px 5px #FFD700;
 }
 
-/* Animasi blok muncul */
+/* Animasi */
 @keyframes blockUp {
   0% {opacity:0; transform: translateY(50px);}
+  100% {opacity:1; transform: translateY(0);}
+}
+
+@keyframes fadeUp {
+  0% {opacity:0; transform: translateY(30px);}
   100% {opacity:1; transform: translateY(0);}
 }
 
@@ -137,6 +196,22 @@ section {
 <section class="hero">
   <h1>Selamat datang di dunia machezekiah!</h1>
   <p>Belajar, bermain, dan berbagi inspirasi</p>
+
+  <!-- Konten tambahan hero -->
+  <div class="hero-extra">
+    <!-- Projek TA announcement -->
+    <p class="hero-announcement">
+      Projek TA tentang game 🎮 – coming soon! Mohon dukungan & bantuannya 🙌
+    </p>
+
+    <!-- Pelayanan aktif -->
+    <div class="hero-service">
+      <p>Saya aktif melayani di <strong>UPK-Kr. FT Unsrat</strong>. Yuk join & ikut terlibat!</p>
+      <a href="https://www.instagram.com/upkkrftunsrat/" target="_blank" class="upk-button">🌐 Instagram UPK</a>
+    </div>
+  </div>
+
+  <!-- CTA Buttons -->
   <div class="cta-buttons">
     <a href="#game">Game 🎮</a>
     <a href="#pelayanan">Pelayanan 🛐</a>
