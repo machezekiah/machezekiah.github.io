@@ -4,27 +4,35 @@
   <meta charset="UTF-8">
   <title>Website machezekiah</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: white;
-      text-align: center;
-      padding: 50px;
-      min-height: 100vh;
-    }
-    h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-      animation: fadeIn 2s ease-in-out;
-    }
-    p {
-      font-size: 1.2em;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  body {
+    font-family: Arial, sans-serif;
+    /* Background = foto + gradasi overlay */
+    background: 
+      linear-gradient(135deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
+      url("profil.jpg");
+    background-size: cover;      /* biar foto penuh layar */
+    background-position: center; /* fokus tengah */
+    color: white;
+    text-align: center;
+    padding: 50px;
+    min-height: 100vh;           /* penuh 1 layar */
+  }
+
+  h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 </head>
 <body>
   <h1>Halo, selamat datang di website saya 🎉</h1>
