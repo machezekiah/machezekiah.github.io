@@ -2,43 +2,55 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Website machezekiah</title>
+<title>Minecraft-style Home - machezekiah</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Press Start 2P', monospace;
   scroll-behavior: smooth;
-  background: #111;
-  color: white;
+  background: linear-gradient(180deg, #87CEEB 0%, #7CFC00 100%); /* biru langit → hijau rumput */
+  overflow-x: hidden;
+}
+
+/* Pixel overlay */
+.pixel-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.ibb.co/3Cyf3c3/pixel-pattern.png'); /* transparan pixel */
+  opacity: 0.05;
+  top: 0;
+  left: 0;
+  pointer-events: none;
 }
 
 /* Navbar */
 nav {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
-  background: rgba(0,0,0,0.75);
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 15px;
   padding: 15px 0;
+  background: rgba(0,0,0,0.6);
   z-index: 1000;
 }
 
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  padding: 5px 10px;
-  transition: 0.3s;
+  padding: 10px 20px;
+  background: #8B4513;
+  transition: all 0.3s;
+  text-align: center;
 }
 
 nav a:hover {
-  color: #ffd700;
-  text-shadow: 0 0 10px #ffd700;
+  background: #A0522D;
+  box-shadow: 0 0 10px #FFD700;
 }
 
 /* Hero Section */
@@ -50,71 +62,67 @@ nav a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
-  overflow: hidden;
-  background: linear-gradient(-45deg, #667eea, #764ba2, #ff7eb3, #ff758c);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  padding-top: 50px;
 }
 
-.hero h1 { font-size: 4em; margin:0; animation: fadeUp 1.5s ease forwards; }
-.hero p { font-size: 1.5em; margin:20px 0 40px; animation: fadeUp 1.5s ease forwards; animation-delay:0.3s; }
-
-.cta-buttons { display: flex; gap: 20px; flex-wrap: wrap; }
-.cta-buttons a {
-  background: rgba(255,255,255,0.2);
-  color: white;
-  padding: 15px 35px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.1em;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 5px rgba(255,255,255,0.3);
+.hero h1 {
+  font-size: 2em;
+  color: #FFFFFF;
+  text-shadow: 2px 2px #000;
+  margin: 0 20px;
+  animation: blockUp 1.5s ease forwards;
 }
-.cta-buttons a:hover { background: white; color: #764ba2; transform: scale(1.1); box-shadow: 0 0 15px #ffd700; }
 
-@keyframes fadeUp { 0% {opacity:0; transform: translateY(50px);} 100% {opacity:1; transform: translateY(0);} }
-@keyframes gradientBG {0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.hero p {
+  font-size: 0.7em;
+  margin: 20px 0 40px;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  animation: blockUp 1.5s ease forwards;
+  animation-delay: 0.3s;
+}
 
-/* Sections */
-section { padding:100px 20px; min-height:100vh; text-align:center; }
-section h2 { font-size:2.5em; margin-bottom:50px; }
-
-/* Card Container */
-.card-container {
+.cta-buttons {
   display: flex;
+  gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
 }
 
-/* Card */
-.card {
-  background: rgba(255,255,255,0.1);
-  border-radius: 15px;
-  width: 250px;
-  padding: 20px;
+.cta-buttons a {
+  display: block;
+  background: #8B4513;
+  color: #fff;
+  padding: 15px 25px;
+  text-decoration: none;
+  font-size: 0.7em;
+  border: 2px solid #000;
+  box-shadow: 3px 3px #000;
+  transition: all 0.3s;
+}
+
+.cta-buttons a:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px #FFD700;
+}
+
+/* Animasi blok muncul */
+@keyframes blockUp {
+  0% {opacity:0; transform: translateY(50px);}
+  100% {opacity:1; transform: translateY(0);}
+}
+
+/* Sections kosong */
+section {
+  min-height: 100vh;
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s, box-shadow 0.3s, opacity 0.8s;
-  opacity: 0;
-  transform: translateY(50px);
+  padding: 100px 20px;
 }
-
-.card img { width:100%; border-radius:10px; }
-.card h3 { margin:15px 0 10px; }
-.card p { font-size:1em; }
-
-/* Hover effect */
-.card:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.5); }
-
-/* Animasi masuk saat scroll */
-.card.show { opacity:1; transform: translateY(0); transition: transform 0.5s, opacity 0.5s; }
-
 </style>
 </head>
 <body>
+
+<!-- Pixel overlay -->
+<div class="pixel-overlay"></div>
 
 <!-- Navbar -->
 <nav>
@@ -136,85 +144,11 @@ section h2 { font-size:2.5em; margin-bottom:50px; }
   </div>
 </section>
 
-<!-- Game Section -->
-<section id="game">
-  <h2>Game 🎮</h2>
-  <div class="card-container">
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft">
-      <h3>Minecraft</h3>
-      <p>Membangun dunia kreatif dan seru 🏰</p>
-    </div>
-    <div class="card">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg" alt="Roblox">
-      <h3>Roblox</h3>
-      <p>Bermain game seru dan bertemu teman 🤝</p>
-    </div>
-  </div>
-</section>
-
-<!-- Pelayanan Section -->
-<section id="pelayanan">
-  <h2>Pelayanan 🛐</h2>
-  <div class="card-container">
-    <div class="card">
-      <h3>Pelayanan Komunitas</h3>
-      <p>Membantu sesama dan berbagi kasih ❤️</p>
-    </div>
-    <div class="card">
-      <h3>Pelayanan Gereja</h3>
-      <p>Berperan aktif dalam kegiatan rohani ✝️</p>
-    </div>
-  </div>
-</section>
-
-<!-- Sosial Media Section -->
-<section id="sosmed">
-  <h2>Sosial Media 🌐</h2>
-  <div class="card-container">
-    <div class="card">
-      <h3>Instagram</h3>
-      <p>Ikuti untuk update terbaru 📸</p>
-    </div>
-    <div class="card">
-      <h3>YouTube</h3>
-      <p>Tonton konten menarik 🎥</p>
-    </div>
-  </div>
-</section>
-
-<!-- Musik Section -->
-<section id="musik">
-  <h2>Musik 🎵</h2>
-  <div class="card-container">
-    <div class="card">
-      <h3>Playlist Favorit</h3>
-      <p>Musik santai dan inspiratif 🎶</p>
-    </div>
-    <div class="card">
-      <h3>Rekomendasi Lagu</h3>
-      <p>Hits terbaru dan lagu motivasi 🎧</p>
-    </div>
-  </div>
-</section>
-
-<script>
-// Animasi card saat scroll
-const cards = document.querySelectorAll('.card');
-
-function showCards() {
-  const triggerBottom = window.innerHeight / 5 * 4;
-  cards.forEach(card => {
-    const cardTop = card.getBoundingClientRect().top;
-    if(cardTop < triggerBottom) {
-      card.classList.add('show');
-    }
-  });
-}
-
-window.addEventListener('scroll', showCards);
-window.addEventListener('load', showCards);
-</script>
+<!-- Sections kosong -->
+<section id="game"></section>
+<section id="pelayanan"></section>
+<section id="sosmed"></section>
+<section id="musik"></section>
 
 </body>
 </html>
