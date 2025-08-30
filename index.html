@@ -12,7 +12,7 @@
     text-align: center;
     margin: 0;
     min-height: 100vh;
-    scroll-behavior: smooth; /* scroll halus */
+    scroll-behavior: smooth;
     padding-top: 70px; /* beri ruang untuk navbar */
   }
 
@@ -42,14 +42,11 @@
     color: #ffd700;
   }
 
-  h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
+  h1, h2 {
+    margin-top: 60px;
   }
 
   h2 {
-    margin-top: 60px;
     font-size: 2em;
   }
 
@@ -71,11 +68,6 @@
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0,0,0,0.5);
   }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
   </style>
 </head>
 <body>
@@ -83,52 +75,31 @@
   <!-- NAVIGATION -->
   <nav>
     <a href="#game">🎮 Game</a>
-    <a href="#pelayanan">📖 Pelayanan</a>
+    <a href="#pelayanan">🛐 Pelayanan</a>
     <a href="#sosmed">🌐 Sosial Media</a>
   </nav>
 
-  <!-- HALAMAN UTAMA -->
+  <!-- HALAMAN UTAMA KOSONG -->
   <section id="home">
-    <h1>Halo, selamat datang di website saya 🎉</h1>
+    <!-- Kosong, halaman utama hanya sebagai landing page -->
   </section>
 
   <!-- GAME SECTION -->
   <section id="game">
-    <h2>Game Favorit Saya 🎮</h2>
-
-    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:30px;">
-      
-      <!-- Card Minecraft -->
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft" style="width:100%; border-radius:10px;">
-        <h3 style="margin:15px 0 10px;">Minecraft</h3>
-        <p>Saya suka membangun dunia kreatif di Minecraft 🏰</p>
-      </div>
-
-      <!-- Card Roblox -->
-      <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg" alt="Roblox" style="width:100%; background:white; border-radius:10px; padding:20px;">
-        <h3 style="margin:15px 0 10px;">Roblox</h3>
-        <p>Saya suka bermain game seru dan bertemu teman di Roblox 🤝</p>
-      </div>
-
-    </div>
+    <h2>Game 🎮</h2>
+    <!-- Konten Game bisa ditambahkan di sini -->
   </section>
 
-  <!-- TEOLOGI SECTION -->
+  <!-- PELAYANAN SECTION -->
   <section id="pelayanan">
-    <h2>Pelayanan 📖</h2>
-    <p>Saya tertarik belajar tentang iman, Alkitab, dan hubungan dengan Tuhan ✝️</p>
+    <h2>Pelayanan 🛐</h2>
+    <!-- Konten Pelayanan bisa ditambahkan di sini -->
   </section>
 
   <!-- SOSIAL MEDIA SECTION -->
   <section id="sosmed">
     <h2>Sosial Media 🌐</h2>
-    <p>Ikuti saya di sosial media untuk terhubung lebih dekat 😊</p>
-    <p>
-      <a href="https://www.instagram.com/" target="_blank" style="color:#ffd700; text-decoration:none;">📸 Instagram</a> |
-      <a href="https://www.youtube.com/" target="_blank" style="color:#ff4444; text-decoration:none;">▶️ YouTube</a>
-    </p>
+    <!-- Konten Sosial Media bisa ditambahkan di sini -->
   </section>
 
 </body>
