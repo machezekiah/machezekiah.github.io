@@ -56,13 +56,13 @@ nav a:hover {
 /* Hero Section */
 .hero {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* geser dari center ke atas */
+  justify-content: flex-start;
   align-items: center;
   text-align: center;
-  padding-top: 120px; /* cukup untuk tidak tertutup menu */
+  padding-top: 120px;
 }
 
 .hero h1 {
@@ -119,7 +119,7 @@ nav a:hover {
   box-shadow: 2px 2px #000;
   text-decoration: none;
   font-size: 0.7em;
-  margin-top: 10px; /* tambahkan jarak atas */
+  margin-top: 10px;
   transition: all 0.3s;
 }
 
@@ -151,6 +151,52 @@ nav a:hover {
 .cta-buttons a:hover {
   transform: translateY(-5px);
   box-shadow: 5px 5px #FFD700;
+}
+
+/* Mini Showcase Cards */
+.showcase {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.card {
+  background: rgba(0,0,0,0.6);
+  border: 3px solid #000;
+  border-radius: 10px;
+  width: 200px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 0.65em;
+  color: #fff;
+  text-shadow: 1px 1px #000;
+  margin: 0;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 5px 5px #FFD700;
+}
+
+/* Quote / Inspirasi */
+.quote {
+  margin-top: 40px;
+  font-size: 0.75em;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+  animation: fadeUp 1s ease forwards;
 }
 
 /* Animasi */
@@ -205,6 +251,27 @@ section {
       <p>Saya aktif melayani di <strong>UPK-Kr. FT Unsrat</strong>. Yuk join & ikut terlibat!</p>
       <a href="https://www.instagram.com/upkkrftunsrat/" target="_blank" class="upk-button">🌐 Instagram UPK</a>
     </div>
+  </div>
+
+  <!-- Mini Showcase -->
+  <div class="showcase">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft">
+      <p>Minecraft – membangun dunia kreatif</p>
+    </div>
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg" alt="Roblox">
+      <p>Roblox – bermain & bertemu teman</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/ios-filled/96/000000/books.png" alt="Books">
+      <p>Rekomendasi buku & film</p>
+    </div>
+  </div>
+
+  <!-- Quote Inspirasi -->
+  <div class="quote">
+    <p>"Belajar dan bermain adalah cara terbaik untuk berkembang!"</p>
   </div>
 
   <!-- CTA Buttons -->
