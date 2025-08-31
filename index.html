@@ -2,63 +2,72 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Dunia Mchelien - Minecraft Retro</title>
+<title>Dunia Mchelien - Minecraft Pixel Art</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 /* Reset & font */
 body, html { margin:0; padding:0; font-family:'Press Start 2P', monospace; scroll-behavior:smooth; background:#87CEEB; overflow-x:hidden; }
-a { text-decoration:none; color:inherit; }
 
 /* Pixel overlay */
 .pixel-overlay { position:absolute; width:100%; height:100%; background-image:url('https://i.ibb.co/3Cyf3c3/pixel-pattern.png'); opacity:0.05; top:0; left:0; pointer-events:none; }
 
 /* Navbar */
-nav { position:fixed; top:0; width:100%; display:flex; justify-content:center; gap:10px; padding:15px 0; background:rgba(0,0,0,0.6); z-index:1000; flex-wrap:wrap; }
-nav a { color:#fff; padding:10px 20px; background:#8B4513; border:2px solid #000; box-shadow:3px 3px #000; transition:all 0.3s; }
-nav a:hover { background:#A0522D; box-shadow:5px 5px #FFD700; transform:translateY(-3px); }
+nav { position:fixed; top:0; width:100%; display:flex; justify-content:center; gap:10px; padding:12px 0; background:rgba(0,0,0,0.6); z-index:1000; flex-wrap:wrap; }
+nav a { color:#fff; padding:8px 16px; background:#8B4513; border:2px solid #000; box-shadow:2px 2px #000; transition:all 0.3s; }
+nav a:hover { background:#A0522D; box-shadow:4px 4px #FFD700; transform:translateY(-2px); }
 
 /* Hero Section */
-.hero { position:relative; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding-top:50px; }
-.hero h1 { font-size:2em; color:#fff; text-shadow:2px 2px #000; margin:0 20px; animation:blockUp 1.5s ease forwards; }
-.hero-extra { display:flex; flex-direction:column; align-items:center; gap:20px; margin-bottom:30px; width:90%; max-width:900px; }
+.hero { position:relative; min-height:80vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding-top:50px; }
+.hero h1 { font-size:2em; color:#fff; text-shadow:2px 2px #000; margin:0 10px; animation:blockUp 1s ease forwards; }
+
+/* Pixel Decorations */
+.pixel-deco { position:absolute; pointer-events:none; }
+.pixel-sun { top:20px; left:80%; width:60px; height:60px; background:url('https://i.ibb.co/2sfnD5S/sun-pixel.png') no-repeat center/contain; }
+.pixel-cloud { width:80px; height:40px; background:url('https://i.ibb.co/4mZyfjh/cloud-pixel.png') no-repeat center/contain; }
+.pixel-cloud1 { top:50px; left:10%; }
+.pixel-cloud2 { top:100px; left:70%; }
 
 /* Highlight cards */
-.highlight-card { display:flex; align-items:center; gap:15px; background:rgba(0,0,0,0.5); padding:15px 20px; border:2px solid #000; box-shadow:3px 3px #000; border-radius:8px; max-width:800px; text-align:left; animation:fadeUp 1s ease forwards; transition:transform 0.3s, box-shadow 0.3s; }
-.highlight-card img { width:50px; height:50px; }
-.highlight-card p { margin:0; font-size:0.65em; color:#fff; text-shadow:1px 1px #000; }
-.highlight-card:hover { transform:translateY(-5px) scale(1.03); box-shadow:5px 5px #FFD700; }
-
-/* CTA Buttons */
-.cta-buttons { display:flex; gap:15px; flex-wrap:wrap; justify-content:center; margin-top:20px; }
-.cta-buttons a { display:block; background:#8B4513; color:#fff; padding:15px 25px; font-size:0.7em; border:2px solid #000; box-shadow:3px 3px #000; transition:all 0.3s; }
-.cta-buttons a:hover { transform:translateY(-5px); box-shadow:5px 5px #FFD700; }
+.hero-extra { display:flex; flex-direction:column; align-items:center; gap:15px; width:95%; max-width:600px; margin-top:20px; }
+.highlight-card { display:flex; align-items:center; gap:10px; background:rgba(0,0,0,0.5); padding:12px 15px; border:2px solid #000; box-shadow:2px 2px #000; border-radius:6px; width:100%; text-align:left; animation:fadeUp 0.6s ease forwards; transition:transform 0.3s, box-shadow 0.3s; }
+.highlight-card img { width:40px; height:40px; }
+.highlight-card p { margin:0; font-size:0.6em; color:#fff; text-shadow:1px 1px #000; }
+.highlight-card:hover { transform:translateY(-3px) scale(1.02); box-shadow:4px 4px #FFD700; }
 
 /* Sections */
-section { min-height:100vh; text-align:center; padding:120px 20px 60px 20px; position:relative; }
-section h2 { font-size:1em; color:#fff; margin-bottom:20px; text-shadow:2px 2px #000; }
+section { min-height:70vh; text-align:center; padding:80px 10px; position:relative; }
+section h2 { font-size:0.9em; color:#fff; margin-bottom:15px; text-shadow:2px 2px #000; }
 
-/* Cards grid */
-.showcase { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px; }
-.showcase .card { background:rgba(0,0,0,0.5); padding:15px; border:2px solid #000; border-radius:8px; width:250px; box-shadow:3px 3px #000; transition:transform 0.3s, box-shadow 0.3s; }
-.showcase .card:hover { transform:translateY(-5px) scale(1.05); box-shadow:5px 5px #FFD700; }
-.showcase .card img { width:80px; margin-bottom:10px; }
-.showcase .card p { font-size:0.65em; color:#fff; text-shadow:1px 1px #000; }
+/* Card grid */
+.showcase { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:15px; margin-top:15px; justify-items:center; }
+.showcase .card { background:rgba(0,0,0,0.5); padding:10px; border:2px solid #000; border-radius:6px; width:100%; box-shadow:2px 2px #000; transition:transform 0.3s, box-shadow 0.3s; }
+.showcase .card:hover { transform:translateY(-3px) scale(1.03); box-shadow:4px 4px #FFD700; }
+.showcase .card img { width:60px; margin-bottom:5px; }
+.showcase .card p { font-size:0.55em; color:#fff; text-shadow:1px 1px #000; margin:0; }
 
 /* Footer */
-footer { background:rgba(0,0,0,0.6); color:#fff; text-align:center; padding:20px; }
-footer a { color:#FFD700; margin:0 10px; }
+footer { background:rgba(0,0,0,0.6); color:#fff; text-align:center; padding:15px; font-size:0.55em; }
+footer a { color:#FFD700; margin:0 6px; }
 
 /* Animations */
-@keyframes blockUp { 0%{opacity:0; transform:translateY(50px);} 100%{opacity:1; transform:translateY(0);} }
-@keyframes fadeUp { 0%{opacity:0; transform:translateY(30px);} 100%{opacity:1; transform:translateY(0);} }
+@keyframes blockUp { 0%{opacity:0; transform:translateY(40px);} 100%{opacity:1; transform:translateY(0);} }
+@keyframes fadeUp { 0%{opacity:0; transform:translateY(20px);} 100%{opacity:1; transform:translateY(0);} }
+
+/* Scroll reveal hidden by default */
+.reveal { opacity:0; transform:translateY(20px); transition:all 0.6s ease; }
 
 /* Responsive */
-@media(max-width:768px){ .highlight-card, .showcase .card { width:90%; } }
+@media(max-width:768px){ .highlight-card, .showcase .card { width:90%; } .hero h1 { font-size:1.5em; } }
 </style>
 </head>
 <body>
 
 <div class="pixel-overlay"></div>
+
+<!-- Pixel Decorations -->
+<div class="pixel-deco pixel-sun"></div>
+<div class="pixel-deco pixel-cloud pixel-cloud1"></div>
+<div class="pixel-deco pixel-cloud pixel-cloud2"></div>
 
 <!-- Navbar -->
 <nav>
@@ -72,43 +81,44 @@ footer a { color:#FFD700; margin:0 10px; }
 <!-- Hero -->
 <section class="hero">
 <h1>Selamat datang di dunia Mchelien!</h1>
-
-<div class="hero-extra">
+<div class="hero-extra reveal">
 <!-- Projek TA -->
 <div class="highlight-card">
 <img src="https://img.icons8.com/emoji/64/000000/video-game-emoji.png" alt="Game Icon">
 <p>🎮 Projek TA tentang game – coming soon! Mohon dukungan & bantuannya 🙌</p>
 </div>
-
 <!-- Pelayanan -->
 <div class="highlight-card">
 <img src="https://img.icons8.com/ios-filled/64/000000/church.png" alt="Church Icon">
 <p>Aktif melayani di <strong>UPK-Kr. FT Unsrat</strong></p>
-<a href="https://www.instagram.com/upkkrftunsrat/" target="_blank" class="cta-buttons">🌐 Instagram UPK</a>
-<a href="https://www.instagram.com/reformindo/" target="_blank" class="cta-buttons">🌐 Instagram Reformindo</a>
+<a href="https://www.instagram.com/upkkrftunsrat/" target="_blank" class="highlight-card">🌐 Instagram UPK</a>
+<a href="https://www.instagram.com/reformindo/" target="_blank" class="highlight-card">🌐 Instagram Reformindo</a>
 </div>
-</div>
-
-<div class="cta-buttons">
-<a href="#game">Game 🎮</a>
-<a href="#pelayanan">Pelayanan 🛐</a>
-<a href="#sosmed">Sosial Media 🌐</a>
-<a href="#musik">Musik 🎵</a>
-<a href="#hobi">Hobi 📚</a>
 </div>
 </section>
 
-<!-- Game Section -->
-<section id="game">
+<!-- Tentang Saya -->
+<section id="tentang" class="reveal">
+<h2>Tentang Saya</h2>
+<div class="showcase">
+<div class="card">
+<img src="https://i.ibb.co/0VqH5qY/avatar-pixel.png" alt="Avatar Pixel">
+<p>Halo, saya Mchelien. Senang membuat konten, bermain game, dan belajar hal baru!</p>
+</div>
+</div>
+</section>
+
+<!-- Game -->
+<section id="game" class="reveal">
 <h2>Game Favorit</h2>
 <div class="showcase">
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft"><p>Minecraft – Kreatif membangun dunia</p></div>
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg" alt="Roblox"><p>Roblox – Bermain & bertemu teman</p></div>
+<div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"><p>Minecraft – Kreatif membangun dunia</p></div>
+<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg"><p>Roblox – Bermain & bertemu teman</p></div>
 </div>
 </section>
 
-<!-- Pelayanan Section -->
-<section id="pelayanan">
+<!-- Pelayanan -->
+<section id="pelayanan" class="reveal">
 <h2>Pelayanan Aktif</h2>
 <div class="showcase">
 <div class="card"><p>Bulan 1: Orientasi & Planning</p></div>
@@ -118,50 +128,46 @@ footer a { color:#FFD700; margin:0 10px; }
 </section>
 
 <!-- Sosial Media -->
-<section id="sosmed">
+<section id="sosmed" class="reveal">
 <h2>Sosial Media</h2>
 <div class="showcase">
 <div class="card"><p>Instagram: <a href="https://www.instagram.com/mchelien/" target="_blank">@mchelien</a></p></div>
 <div class="card"><p>Facebook: Mchelien Palit</p></div>
-<div class="card"><p>Discord: Join server</p></div>
+<div class="card"><p>Discord Server – Join & connect!</p></div>
 </div>
 </section>
 
 <!-- Musik -->
-<section id="musik">
+<section id="musik" class="reveal">
 <h2>Musik Favorit</h2>
 <div class="showcase">
-<div class="card"><img src="https://img.icons8.com/color/96/000000/spotify.png"><p><a href="https://open.spotify.com/playlist/yourplaylist" target="_blank">Spotify Playlist</a></p></div>
+<div class="card"><p>Spotify Playlist – klik untuk dengar</p></div>
 </div>
 </section>
 
 <!-- Hobi -->
-<section id="hobi">
+<section id="hobi" class="reveal">
 <h2>Hobi & Rekomendasi</h2>
 <div class="showcase">
-<div class="card"><p>Buku & Film Favorit</p></div>
+<div class="card"><p>Buku favorit</p></div>
+<div class="card"><p>Film rekomendasi</p></div>
 </div>
 </section>
 
-<!-- Footer -->
 <footer>
-<p>&copy; 2025 Mchelien. All rights reserved.</p>
-<p>
-<a href="https://www.facebook.com">Facebook</a> | 
-<a href="https://www.twitter.com">Twitter</a> | 
-<a href="https://www.instagram.com/mchelien/">Instagram</a>
-</p>
+<p>Copyright © 2025 Mchelien. All rights reserved. 
+<a href="#">Facebook</a> | <a href="#">Instagram</a></p>
 </footer>
 
-<!-- Scroll reveal -->
 <script>
-function revealOnScroll(){
-  const reveals = document.querySelectorAll('.hero-extra, section, .showcase');
+// Scroll reveal simple
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
   for(let i=0;i<reveals.length;i++){
-    let windowHeight = window.innerHeight;
-    let elementTop = reveals[i].getBoundingClientRect().top;
-    let elementVisible = 100;
-    if(elementTop < windowHeight - elementVisible){
+    const windowHeight=window.innerHeight;
+    const elementTop=reveals[i].getBoundingClientRect().top;
+    const elementVisible=windowHeight/1.2;
+    if(elementTop<elementVisible){
       reveals[i].classList.add('visible');
     }
   }
@@ -169,10 +175,7 @@ function revealOnScroll(){
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 </script>
-<style>
-.visible { opacity:1; transform:translateY(0); transition:all 0.8s ease; }
-.hero-extra, section, .showcase { opacity:0; transform:translateY(30px); }
-</style>
+<style>.visible{opacity:1;transform:translateY(0);}</style>
 
 </body>
 </html>
