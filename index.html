@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Minecraft-style Home - machezekiah</title>
+<title>Minecraft-style Home - Mchelien</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 body, html {
@@ -59,27 +59,18 @@ nav a:hover {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* geser dari center ke atas */
   align-items: center;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 120px; /* cukup untuk tidak tertutup menu */
 }
 
 .hero h1 {
   font-size: 2em;
   color: #FFFFFF;
   text-shadow: 2px 2px #000;
-  margin: 0 20px;
+  margin: 0 20px 25px 20px;
   animation: blockUp 1.5s ease forwards;
-}
-
-.hero p {
-  font-size: 0.7em;
-  margin: 20px 0 20px;
-  color: #fff;
-  text-shadow: 1px 1px #000;
-  animation: blockUp 1.5s ease forwards;
-  animation-delay: 0.3s;
 }
 
 /* Hero Highlight Headline */
@@ -142,6 +133,7 @@ nav a:hover {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+  margin-top: 15px;
 }
 
 .cta-buttons a {
@@ -196,8 +188,7 @@ section {
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Selamat datang di dunia machezekiah!</h1>
-  <p>Belajar, bermain, dan berbagi inspirasi</p>
+  <h1>Selamat datang di dunia Mchelien!</h1>
 
   <!-- Hero Highlight Projek TA -->
   <div class="hero-highlight">
