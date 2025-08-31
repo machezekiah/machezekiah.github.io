@@ -7,13 +7,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 <style>
-/* Header */
+/* Base */
 body {
   margin:0;
   font-family:'Roboto', sans-serif;
   background-color:#e0e8f0;
   color:#1c1c1c;
 }
+
+/* Header */
 header {
   height:100vh;
   display:flex;
@@ -27,7 +29,7 @@ header {
 }
 .pixel-header {
   font-family:'Press Start 2P', cursive;
-  font-size:3rem;
+  font-size:2.8rem;
   color:#0b1f3b;
   text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff;
   margin-bottom:30px;
@@ -55,7 +57,7 @@ header {
   border:3px solid #0b1f3b;
   border-radius:12px;
   margin:40px auto;
-  padding:25px;
+  padding:25px 25px 25px 60px;
   max-width:800px;
   text-decoration:none;
   color:#0b1f3b;
@@ -65,22 +67,33 @@ header {
 .vertical-button:hover {
   background: linear-gradient(145deg,#a3bcd9,#82a1c3);
   transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 .vertical-button h2 {
   font-family:'Press Start 2P', cursive;
   font-size:1.4rem;
-  margin-bottom:15px;
+  margin-bottom:12px;
 }
 .vertical-button p {
   font-size:1rem;
   line-height:1.8;
+  margin:0;
+}
+/* Pixel icon */
+.vertical-button .icon {
+  position:absolute;
+  left:15px;
+  top:50%;
+  transform: translateY(-50%);
+  font-size:1.5rem;
 }
 
 /* Responsive */
 @media(max-width:600px){
-  .vertical-button{padding:20px;}
+  .vertical-button{padding:20px 20px 20px 50px;}
   .vertical-button h2{font-size:1.2rem;}
   .vertical-button p{font-size:0.95rem;}
+  .vertical-button .icon{font-size:1.2rem;}
 }
 
 footer {
@@ -103,45 +116,53 @@ footer {
   <div class="pixel-cloud"></div>
 </header>
 
-<!-- Vertical large buttons with detailed review -->
+<!-- Vertical large buttons with Gen Z casual language & pixel icons -->
 <a href="about.html" class="vertical-button">
+  <span class="icon">👋</span>
   <h2>About Me</h2>
-  <p>On this page, you can get to know who I am, my educational background, experiences, and various interests I pursue. I share my journey of learning and growing in the fields of technology and creativity.</p>
+  <p>Hey! Wanna know who I am, my background & what I geek out on? This is my corner to share my journey in tech and creativity.</p>
 </a>
 
 <a href="service.html" class="vertical-button">
+  <span class="icon">⛪</span>
   <h2>Service / Ministry</h2>
-  <p>My Christian ministry activities at the campus UPK-Kr. FT UNSRAT, social media, and church. I am also interested in Protestant Reformed apologetics and share my experiences in mentoring, organizing events, and supporting the development of Christian content.</p>
+  <p>Here’s the scoop on my chill but meaningful campus ministry vibes at UPK-Kr. FT UNSRAT and beyond. Mentoring, organizing, and sharing Christian content.</p>
 </a>
 
 <a href="gamedev.html" class="vertical-button">
+  <span class="icon">🎮</span>
   <h2>Game Dev</h2>
-  <p>Planning and prototyping my personal game called "Apostle." This page contains details about the game idea, mechanics, and development progress as part of my final project in the field of Informatics.</p>
+  <p>Working on my personal game "Apostle"! Peek at my ideas, mechanics, and dev progress as part of my final year project in Informatics.</p>
 </a>
 
 <a href="games.html" class="vertical-button">
+  <span class="icon">🕹️</span>
   <h2>Favorite Games</h2>
-  <p>A list of my favorite games, including Minecraft and Roblox. Besides playing, I discuss the creative and learning aspects gained from these games and my personal experiences in developing creativity through gaming.</p>
+  <p>Minecraft & Roblox are my jam. I also share creative stuff and lessons learned while playing and leveling up my creativity.</p>
 </a>
 
 <a href="minahasa.html" class="vertical-button">
+  <span class="icon">🎨</span>
   <h2>Minahasa Culture</h2>
-  <p>My interest in Minahasa culture, including traditional arts, kolintang playing skills, and the desire to learn the Minahasa language. This page also covers local history and my efforts to preserve culture through personal experiences.</p>
+  <p>Super into Minahasa culture: traditional arts, kolintang, and learning the language. Plus, local history and how I try to keep the culture alive.</p>
 </a>
 
 <a href="music.html" class="vertical-button">
+  <span class="icon">🎵</span>
   <h2>Music</h2>
-  <p>Various interests in the world of music, from listening to playing instruments. I share experiences, favorite playlists, and inspirations from various music genres that I enjoy.</p>
+  <p>Music vibes! Listening, jamming, and sharing my playlists plus inspirations from genres I love.</p>
 </a>
 
 <a href="recommendations.html" class="vertical-button">
+  <span class="icon">📺</span>
   <h2>Recommendations</h2>
-  <p>Recommendations for movies and series, focusing on the fantasy genre. I write brief reviews of my favorite films such as Lord of The Rings, along with insights and reasons why these films or series are worth watching.</p>
+  <p>Fantasy films & series recs! Quick thoughts on my faves like Lord of The Rings and why they’re worth the watch.</p>
 </a>
 
 <a href="contact.html" class="vertical-button">
+  <span class="icon">📬</span>
   <h2>Contact</h2>
-  <p>If you want to collaborate, ask questions, or just share experiences, this page provides ways to contact me easily through various media.</p>
+  <p>Wanna collab, ask stuff, or just say hi? Hit me up through the links here!</p>
 </a>
 
 <footer>&copy; 2023 mchelien's world!</footer>
