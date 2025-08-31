@@ -4,70 +4,112 @@
 <meta charset="UTF-8">
 <title>Dunia Mchelien - Minecraft Pixel Art</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <style>
-/* Reset & font */
-body, html { margin:0; padding:0; font-family:'Press Start 2P', monospace; scroll-behavior:smooth; background:#87CEEB; overflow-x:hidden; }
+:root{
+  --nav-h:64px;
+  --space-1:6px; --space-2:10px; --space-3:14px; --space-4:18px;
+  --space-5:24px; --space-6:32px; --space-7:40px;
+}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:var(--nav-h);
+}
+body{
+  margin:0; padding:var(--nav-h) 0 0 0;
+  font-family:'VT323', monospace;
+  background: linear-gradient(180deg, #87CEEB 0%, #7CFC00 100%);
+  overflow-x:hidden;
+}
 
 /* Pixel overlay */
-.pixel-overlay { position:absolute; width:100%; height:100%; background-image:url('https://i.ibb.co/3Cyf3c3/pixel-pattern.png'); opacity:0.05; top:0; left:0; pointer-events:none; }
+.pixel-overlay{
+  position:absolute; width:100%; height:100%;
+  background-image:url('https://i.ibb.co/3Cyf3c3/pixel-pattern.png');
+  opacity:0.04; top:0; left:0; pointer-events:none;
+}
 
 /* Navbar */
-nav { position:fixed; top:0; width:100%; display:flex; justify-content:center; gap:10px; padding:12px 0; background:rgba(0,0,0,0.6); z-index:1000; flex-wrap:wrap; }
-nav a { color:#fff; padding:8px 16px; background:#8B4513; border:2px solid #000; box-shadow:2px 2px #000; transition:all 0.3s; }
-nav a:hover { background:#A0522D; box-shadow:4px 4px #FFD700; transform:translateY(-2px); }
-
-/* Hero Section */
-.hero { position:relative; min-height:80vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding-top:50px; }
-.hero h1 { font-size:2em; color:#fff; text-shadow:2px 2px #000; margin:0 10px; animation:blockUp 1s ease forwards; }
-
-/* Pixel Decorations */
-.pixel-deco { position:absolute; pointer-events:none; }
-.pixel-sun { top:20px; left:80%; width:60px; height:60px; background:url('https://i.ibb.co/2sfnD5S/sun-pixel.png') no-repeat center/contain; }
-.pixel-cloud { width:80px; height:40px; background:url('https://i.ibb.co/4mZyfjh/cloud-pixel.png') no-repeat center/contain; }
-.pixel-cloud1 { top:50px; left:10%; }
-.pixel-cloud2 { top:100px; left:70%; }
-
-/* Highlight cards */
-.hero-extra { display:flex; flex-direction:column; align-items:center; gap:15px; width:95%; max-width:600px; margin-top:20px; }
-.highlight-card { display:flex; align-items:center; gap:10px; background:rgba(0,0,0,0.5); padding:12px 15px; border:2px solid #000; box-shadow:2px 2px #000; border-radius:6px; width:100%; text-align:left; animation:fadeUp 0.6s ease forwards; transition:transform 0.3s, box-shadow 0.3s; }
-.highlight-card img { width:40px; height:40px; }
-.highlight-card p { margin:0; font-size:0.6em; color:#fff; text-shadow:1px 1px #000; }
-.highlight-card:hover { transform:translateY(-3px) scale(1.02); box-shadow:4px 4px #FFD700; }
+nav{
+  position:sticky; top:0; height:var(--nav-h);
+  display:flex; gap:10px; justify-content:center; align-items:center;
+  padding:0 var(--space-3);
+  background:rgba(0,0,0,.6);
+  border-bottom:2px solid #000;
+  z-index:1000;
+}
+nav a{
+  color:#fff; padding:8px 16px; background:#8B4513;
+  border:2px solid #000; box-shadow:3px 3px 0 #000;
+  text-decoration:none; font-size:0.65em; transition:all 0.2s;
+}
+nav a:hover{
+  transform:translateY(-2px); box-shadow:5px 5px 0 #FFD700;
+}
 
 /* Sections */
-section { min-height:70vh; text-align:center; padding:80px 10px; position:relative; }
-section h2 { font-size:0.9em; color:#fff; margin-bottom:15px; text-shadow:2px 2px #000; }
+section{padding:var(--space-7) 0;}
+section>.container{display:grid; gap:var(--space-5);}
 
-/* Card grid */
-.showcase { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:15px; margin-top:15px; justify-items:center; }
-.showcase .card { background:rgba(0,0,0,0.5); padding:10px; border:2px solid #000; border-radius:6px; width:100%; box-shadow:2px 2px #000; transition:transform 0.3s, box-shadow 0.3s; }
-.showcase .card:hover { transform:translateY(-3px) scale(1.03); box-shadow:4px 4px #FFD700; }
-.showcase .card img { width:60px; margin-bottom:5px; }
-.showcase .card p { font-size:0.55em; color:#fff; text-shadow:1px 1px #000; margin:0; }
+/* Hero */
+.hero{
+  min-height:60vh; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+}
+.hero h1{
+  font-family:'Press Start 2P', monospace; font-size:clamp(28px,6vw,56px);
+  color:#fff; text-shadow:2px 2px #000; margin:0;
+}
+.hero-extra{
+  width:100%; max-width:720px; margin-top:var(--space-3); display:grid; gap:var(--space-3);
+}
+
+/* Highlight cards */
+.highlight-card{
+  display:flex; align-items:center; gap:var(--space-2);
+  background:rgba(0,0,0,.5); border:2px solid #000; box-shadow:3px 3px 0 #000;
+  border-radius:4px; padding:var(--space-3);
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+.highlight-card:hover{
+  transform:translateY(-3px); box-shadow:5px 5px 0 #FFD700;
+}
+.highlight-card img{width:40px;height:40px;}
+.highlight-card p{margin:0;font-size:clamp(13px,1.6vw,16px);color:#fff;text-shadow:1px 1px #000;}
+
+/* Showcase grid & cards */
+.showcase{
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:var(--space-4); justify-items:center;
+}
+.card{
+  background:rgba(0,0,0,.5); border:2px solid #000; box-shadow:3px 3px 0 #000;
+  border-radius:4px; padding:var(--space-3); text-align:center;
+  transition:transform 0.2s, box-shadow 0.2s;
+}
+.card:hover{ transform:translateY(-3px); box-shadow:5px 5px 0 #FFD700; }
+.card img{width:48px; height:48px; margin-bottom:var(--space-2);}
+.card p{margin:0; font-size:clamp(13px,1.6vw,16px); color:#fff; text-shadow:1px 1px #000;}
+
+/* Reveal animation */
+.reveal{opacity:0; transform:translateY(12px); transition:opacity 0.3s ease, transform 0.3s ease;}
+.reveal.visible{opacity:1; transform:translateY(0);}
 
 /* Footer */
-footer { background:rgba(0,0,0,0.6); color:#fff; text-align:center; padding:15px; font-size:0.55em; }
-footer a { color:#FFD700; margin:0 6px; }
-
-/* Animations */
-@keyframes blockUp { 0%{opacity:0; transform:translateY(40px);} 100%{opacity:1; transform:translateY(0);} }
-@keyframes fadeUp { 0%{opacity:0; transform:translateY(20px);} 100%{opacity:1; transform:translateY(0);} }
-
-/* Scroll reveal hidden by default */
-.reveal { opacity:0; transform:translateY(20px); transition:all 0.6s ease; }
+footer{background:rgba(0,0,0,.6); color:#fff; text-align:center; padding:var(--space-3); font-size:0.55em;}
+footer a{color:#FFD700; margin:0 6px; text-decoration:none;}
 
 /* Responsive */
-@media(max-width:768px){ .highlight-card, .showcase .card { width:90%; } .hero h1 { font-size:1.5em; } }
+@media(max-width:768px){
+  .highlight-card, .card{width:90%;}
+  .hero h1{font-size:clamp(24px,8vw,40px);}
+  section>.container{gap:var(--space-4);}
+}
 </style>
 </head>
 <body>
 
 <div class="pixel-overlay"></div>
-
-<!-- Pixel Decorations -->
-<div class="pixel-deco pixel-sun"></div>
-<div class="pixel-deco pixel-cloud pixel-cloud1"></div>
-<div class="pixel-deco pixel-cloud pixel-cloud2"></div>
 
 <!-- Navbar -->
 <nav>
@@ -82,100 +124,103 @@ footer a { color:#FFD700; margin:0 6px; }
 <section class="hero">
 <h1>Selamat datang di dunia Mchelien!</h1>
 <div class="hero-extra reveal">
-<!-- Projek TA -->
-<div class="highlight-card">
-<img src="https://img.icons8.com/emoji/64/000000/video-game-emoji.png" alt="Game Icon">
-<p>🎮 Projek TA tentang game – coming soon! Mohon dukungan & bantuannya 🙌</p>
-</div>
-<!-- Pelayanan -->
-<div class="highlight-card">
-<img src="https://img.icons8.com/ios-filled/64/000000/church.png" alt="Church Icon">
-<p>Aktif melayani di <strong>UPK-Kr. FT Unsrat</strong></p>
-<a href="https://www.instagram.com/upkkrftunsrat/" target="_blank" class="highlight-card">🌐 Instagram UPK</a>
-<a href="https://www.instagram.com/reformindo/" target="_blank" class="highlight-card">🌐 Instagram Reformindo</a>
-</div>
+  <div class="highlight-card">
+    <img src="https://img.icons8.com/emoji/48/000000/video-game-emoji.png" alt="Game Icon">
+    <p>🎮 Projek TA tentang game – coming soon! Mohon dukungan & bantuannya 🙌</p>
+  </div>
+  <div class="highlight-card">
+    <img src="https://img.icons8.com/ios-filled/48/000000/church.png" alt="Church Icon">
+    <p>Aktif melayani di <strong>UPK-Kr. FT Unsrat</strong></p>
+    <a href="https://www.instagram.com/upkkrftunsrat/" target="_blank">🌐 Instagram UPK</a>
+    <a href="https://www.instagram.com/reformindo/" target="_blank">🌐 Instagram Reformindo</a>
+  </div>
 </div>
 </section>
 
 <!-- Tentang Saya -->
 <section id="tentang" class="reveal">
-<h2>Tentang Saya</h2>
-<div class="showcase">
-<div class="card">
-<img src="https://i.ibb.co/0VqH5qY/avatar-pixel.png" alt="Avatar Pixel">
-<p>Halo, saya Mchelien. Senang membuat konten, bermain game, dan belajar hal baru!</p>
-</div>
+<div class="container">
+  <h2>Tentang Saya</h2>
+  <div class="showcase">
+    <div class="card">
+      <img src="https://i.ibb.co/0VqH5qY/avatar-pixel.png" alt="Avatar Pixel">
+      <p>Halo, saya Mchelien. Senang membuat konten, bermain game, dan belajar hal baru!</p>
+    </div>
+  </div>
 </div>
 </section>
 
 <!-- Game -->
 <section id="game" class="reveal">
-<h2>Game Favorit</h2>
-<div class="showcase">
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"><p>Minecraft – Kreatif membangun dunia</p></div>
-<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg"><p>Roblox – Bermain & bertemu teman</p></div>
+<div class="container">
+  <h2>Game Favorit</h2>
+  <div class="showcase">
+    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"><p>Minecraft – Kreatif membangun dunia</p></div>
+    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg"><p>Roblox – Bermain & bertemu teman</p></div>
+  </div>
 </div>
 </section>
 
 <!-- Pelayanan -->
 <section id="pelayanan" class="reveal">
+<div class="container">
 <h2>Pelayanan Aktif</h2>
 <div class="showcase">
 <div class="card"><p>Bulan 1: Orientasi & Planning</p></div>
 <div class="card"><p>Bulan 2: Event awal & Community</p></div>
 <div class="card"><p>Bulan 3: Program berkelanjutan</p></div>
 </div>
+</div>
 </section>
 
 <!-- Sosial Media -->
 <section id="sosmed" class="reveal">
+<div class="container">
 <h2>Sosial Media</h2>
 <div class="showcase">
 <div class="card"><p>Instagram: <a href="https://www.instagram.com/mchelien/" target="_blank">@mchelien</a></p></div>
 <div class="card"><p>Facebook: Mchelien Palit</p></div>
 <div class="card"><p>Discord Server – Join & connect!</p></div>
 </div>
+</div>
 </section>
 
 <!-- Musik -->
 <section id="musik" class="reveal">
+<div class="container">
 <h2>Musik Favorit</h2>
 <div class="showcase">
 <div class="card"><p>Spotify Playlist – klik untuk dengar</p></div>
+</div>
 </div>
 </section>
 
 <!-- Hobi -->
 <section id="hobi" class="reveal">
+<div class="container">
 <h2>Hobi & Rekomendasi</h2>
 <div class="showcase">
 <div class="card"><p>Buku favorit</p></div>
 <div class="card"><p>Film rekomendasi</p></div>
 </div>
+</div>
 </section>
 
+<!-- Footer -->
 <footer>
 <p>Copyright © 2025 Mchelien. All rights reserved. 
 <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
 </footer>
 
 <script>
-// Scroll reveal simple
-function revealOnScroll() {
-  const reveals = document.querySelectorAll('.reveal');
-  for(let i=0;i<reveals.length;i++){
-    const windowHeight=window.innerHeight;
-    const elementTop=reveals[i].getBoundingClientRect().top;
-    const elementVisible=windowHeight/1.2;
-    if(elementTop<elementVisible){
-      reveals[i].classList.add('visible');
-    }
-  }
-}
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
+// IntersectionObserver untuk scroll reveal
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting) e.target.classList.add('visible');
+  });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
-<style>.visible{opacity:1;transform:translateY(0);}</style>
 
 </body>
 </html>
