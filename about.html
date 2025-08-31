@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 <style>
-/* Tambahan khusus halaman about */
+/* Konten About */
 section.about-content {
   max-width:900px;
   margin:50px auto;
@@ -27,28 +27,90 @@ section.about-content p {
   line-height:1.6;
   margin-bottom:15px;
 }
+section.about-content img {
+  display:block;
+  max-width:200px;
+  width:100%;
+  margin:20px auto;
+  border-radius:12px;
+  border:2px solid #1c1c1c;
+}
+
+/* Skill / Hobby Boxes */
+.skills, .hobbies {
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:20px;
+}
+.skills div, .hobbies div {
+  flex:1 1 120px;
+  background-color:#c9d6e3;
+  padding:15px;
+  border-radius:12px;
+  text-align:center;
+  font-family:'Press Start 2P', cursive;
+  color:#0b1f3b;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.skills div:hover, .hobbies div:hover {
+  background-color:#a3bcd9;
+  transform: translateY(-5px);
+}
+
+/* Motivational Quote */
+blockquote {
+  font-style:italic;
+  font-family:'Roboto', sans-serif;
+  color:#1c1c1c;
+  background-color:#e2ebf2;
+  border-left:4px solid #0b1f3b;
+  padding:15px 20px;
+  margin:30px auto;
+  max-width:700px;
+  border-radius:8px;
+  line-height:1.6;
+}
 </style>
 </head>
 <body>
 
-<header>
-  <span class="pixel-header">mchelien's world!</span>
-  <!-- Pixel Clouds -->
-  <div class="pixel-cloud"></div>
-  <div class="pixel-cloud"></div>
-  <div class="pixel-cloud"></div>
-</header>
-
 <section class="about-content">
   <h2>Tentang Saya</h2>
-  <p>Halo! Saya mahasiswa Informatika yang sedang mengerjakan Tugas Akhir dengan proyek game bernama "Apostle". Saat ini, saya fokus mempelajari game development, programming, dan desain kreatif.</p>
-  <p>Saya juga aktif dalam pelayanan Kristen, khususnya di kampus melalui UPK-Kr. FT UNSRAT. Ketertarikan saya mencakup apologetika Protestan Reformed, mentoring, dan pengembangan komunitas untuk membantu sesama.</p>
-  <p>Selain itu, saya memiliki ketertarikan besar pada budaya Minahasa, termasuk kesenian tradisional, kolintang, belajar bahasa Minahasa, dan sejarah lokal. Hobi saya juga meliputi musik, game favorit seperti Minecraft dan Roblox, serta menonton film/series fantasi seperti Lord of The Rings.</p>
-  <p>Halaman ini bertujuan untuk membagikan perjalanan saya, minat, dan karya yang saya kerjakan. Semoga kamu bisa mendapatkan inspirasi atau informasi yang bermanfaat dari mchelien's world!</p>
+  
+  <img src="profil.jpg" alt="Foto Profil Saya">
+
+  <p>Halo! Saya mahasiswa Informatika yang sedang mengerjakan Tugas Akhir dengan proyek game bernama "Apostle". Fokus saya meliputi game development, programming, dan desain kreatif.</p>
+
+  <p>Saya aktif dalam pelayanan Kristen di kampus melalui UPK-Kr. FT UNSRAT, tertarik pada apologetika Protestan Reformed, mentoring, dan pengembangan komunitas untuk membantu sesama.</p>
+
+  <p>Selain itu, saya memiliki ketertarikan pada budaya Minahasa: kesenian tradisional, kolintang, belajar bahasa Minahasa, serta sejarah lokal. Hobi saya juga mencakup musik dan menonton film/series fantasi favorit seperti Lord of The Rings.</p>
+
+  <h2>Skill & Kemampuan</h2>
+  <div class="skills">
+    <div>Programming</div>
+    <div>Game Dev</div>
+    <div>Design</div>
+    <div>Kolintang</div>
+    <div>Apologetika</div>
+  </div>
+
+  <h2>Hobi & Minat</h2>
+  <div class="hobbies">
+    <div>Minecraft</div>
+    <div>Roblox</div>
+    <div>Musik</div>
+    <div>Budaya Minahasa</div>
+    <div>Film Fantasi</div>
+  </div>
+
+  <blockquote>
+    "Kreativitas adalah cara kita mengekspresikan diri dan membagikan pengalaman kepada dunia. Terus belajar, terus berkarya."
+  </blockquote>
+
 </section>
 
 <footer>&copy; 2025 mchelien's world!</footer>
 
 </body>
 </html>
-
