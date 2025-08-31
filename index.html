@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Minecraft-style Home - Mchelien</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
 body, html {
@@ -34,23 +35,25 @@ nav {
   display: flex;
   justify-content: center;
   gap: 15px;
-  padding: 15px 0;
+  padding: 10px 0;
   background: rgba(0,0,0,0.6);
+  flex-wrap: wrap;
   z-index: 1000;
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  padding: 10px 20px;
+  padding: 8px 15px;
   background: #8B4513;
   transition: all 0.3s;
   text-align: center;
+  font-size: 0.65em;
 }
 
 nav a:hover {
   background: #A0522D;
-  box-shadow: 0 0 10px #FFD700;
+  box-shadow: 0 0 8px #FFD700;
 }
 
 /* Hero Section */
@@ -66,10 +69,10 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size: 2em;
+  font-size: 1.8em;
   color: #FFFFFF;
   text-shadow: 2px 2px #000;
-  margin: 0 20px 25px 20px;
+  margin: 0 15px 20px 15px;
   animation: blockUp 1.5s ease forwards;
 }
 
@@ -78,32 +81,32 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 20px;
   width: 90%;
-  max-width: 1200px;
+  max-width: 600px;
   background: rgba(0,0,0,0.6);
-  padding: 25px 40px;
+  padding: 20px;
   border: 3px solid #000;
   box-shadow: 5px 5px #000;
   border-radius: 10px;
-  margin: 25px 0;
+  margin: 15px 0;
   animation: fadeUp 1s ease forwards;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .hero-highlight:hover {
-  transform: translateY(-5px) scale(1.05);
+  transform: translateY(-5px) scale(1.03);
   box-shadow: 6px 6px #FFD700;
 }
 
 .highlight-img {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
 }
 
 .highlight-text p {
   margin: 0;
-  font-size: 1em;
+  font-size: 0.65em;
   color: #fff;
   text-shadow: 2px 2px #000;
   font-weight: bold;
@@ -114,43 +117,44 @@ nav a:hover {
   display: inline-block;
   background: #8B4513;
   color: white;
-  padding: 10px 20px;
+  padding: 8px 15px;
   border: 2px solid #000;
   box-shadow: 2px 2px #000;
   text-decoration: none;
-  font-size: 0.7em;
+  font-size: 0.65em;
   margin-top: 10px;
   transition: all 0.3s;
 }
 
 .upk-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 4px 4px #FFD700;
+  transform: translateY(-2px);
+  box-shadow: 3px 3px #FFD700;
 }
 
 /* CTA Buttons */
 .cta-buttons {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   flex-wrap: wrap;
   margin-top: 15px;
+  justify-content: center;
 }
 
 .cta-buttons a {
   display: block;
   background: #8B4513;
   color: #fff;
-  padding: 15px 25px;
+  padding: 10px 20px;
   text-decoration: none;
-  font-size: 0.7em;
+  font-size: 0.65em;
   border: 2px solid #000;
-  box-shadow: 3px 3px #000;
+  box-shadow: 2px 2px #000;
   transition: all 0.3s;
 }
 
 .cta-buttons a:hover {
-  transform: translateY(-5px);
-  box-shadow: 5px 5px #FFD700;
+  transform: translateY(-3px);
+  box-shadow: 4px 4px #FFD700;
 }
 
 /* Mini Showcase Cards */
@@ -158,42 +162,42 @@ nav a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
-  margin-top: 50px;
+  gap: 15px;
+  margin-top: 30px;
 }
 
 .card {
   background: rgba(0,0,0,0.6);
-  border: 3px solid #000;
+  border: 2px solid #000;
   border-radius: 10px;
-  width: 200px;
+  width: 150px;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card img {
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 10px;
 }
 
 .card p {
-  font-size: 0.65em;
+  font-size: 0.6em;
   color: #fff;
   text-shadow: 1px 1px #000;
   margin: 0;
 }
 
 .card:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 5px 5px #FFD700;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 4px 4px #FFD700;
 }
 
 /* Quote / Inspirasi */
 .quote {
-  margin-top: 40px;
-  font-size: 0.75em;
+  margin-top: 25px;
+  font-size: 0.65em;
   color: #fff;
   text-shadow: 2px 2px #000;
   animation: fadeUp 1s ease forwards;
@@ -206,15 +210,43 @@ nav a:hover {
 }
 
 @keyframes fadeUp {
-  0% {opacity:0; transform: translateY(30px);}
+  0% {opacity:0; transform: translateY(20px);}
   100% {opacity:1; transform: translateY(0);}
 }
 
 /* Sections kosong */
 section {
-  min-height: 100vh;
+  min-height: 80vh;
   text-align: center;
-  padding: 100px 20px;
+  padding: 80px 15px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .hero-highlight {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  .highlight-img {
+    width: 40px;
+    height: 40px;
+  }
+  .showcase {
+    gap: 10px;
+  }
+  .card {
+    width: 120px;
+    padding: 10px;
+  }
+  .card img {
+    width: 50px;
+    height: 50px;
+  }
+  nav a {
+    font-size: 0.6em;
+    padding: 6px 12px;
+  }
 }
 </style>
 </head>
