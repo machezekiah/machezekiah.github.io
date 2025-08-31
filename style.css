@@ -10,25 +10,47 @@ body {
   text-align:center;
 }
 
-/* Fullscreen Header */
+/* Header full screen */
 header {
-  height:100vh; /* full screen */
+  height:100vh;
   display:flex;
   justify-content:center;
   align-items:center;
   background: linear-gradient(135deg, #3a5f9e, #b0c4de);
+  position:relative;
+  overflow:hidden;
 }
+
+/* Pixel-style Header Text */
 .pixel-header {
   font-family:'Press Start 2P', cursive;
-  font-size:6vw; /* responsif besar */
+  font-size:5vw; /* lebih kecil dari sebelumnya, responsif */
   color:#0b1f3b;
   text-shadow:2px 2px #d4d4d4, -2px -2px #d4d4d4;
+  z-index:1;
+}
+
+/* Pixel Clouds */
+.pixel-cloud {
+  position:absolute;
+  width:30px;
+  height:30px;
+  background-color:#f0e68c; /* aksen kuning hangat */
+  border-radius:4px;
+  animation: cloudMove 25s linear infinite;
+}
+.pixel-cloud:nth-child(1){top:50px; left:-50px;}
+.pixel-cloud:nth-child(2){top:120px; left:-150px; animation-duration:30s;}
+.pixel-cloud:nth-child(3){top:200px; left:-250px; animation-duration:35s;}
+@keyframes cloudMove {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(120vw);}
 }
 
 /* Tombol Vertikal Besar */
 .vertical-button {
   display:block;
-  width:90%; /* hampir full-width */
+  width:90%;
   max-width:900px;
   margin:25px auto;
   padding:35px 25px;
@@ -72,5 +94,5 @@ footer {
   .vertical-button h2{font-size:1.5rem;}
   .vertical-button p{font-size:0.9rem;}
   header{height:80vh;}
-  .pixel-header{font-size:10vw;}
+  .pixel-header{font-size:12vw;}
 }
