@@ -16,6 +16,8 @@ body {
     background-size: 40px 40px;
     color: #fff;
 }
+
+/* Header */
 header {
     font-family: 'Press Start 2P', cursive;
     font-size: 2rem;
@@ -24,7 +26,17 @@ header {
     background-color: #3c6e3c;
     color: #fff;
     border-bottom: 6px solid #5c4033;
+    position: relative;
 }
+header::after {
+    content:"👾";
+    position:absolute;
+    right:20px;
+    top:10px;
+    font-size:1.5rem;
+}
+
+/* Navigation */
 nav {
     display:flex;
     justify-content:center;
@@ -54,6 +66,8 @@ nav a::after {
 }
 nav a:hover::after {width:100%;}
 nav a:hover {color:#000;}
+
+/* Section umum */
 section {
     max-width:1000px;
     margin:30px auto;
@@ -62,6 +76,7 @@ section {
     border:4px solid #5c4033;
     border-radius:8px;
     position:relative;
+    overflow:hidden;
 }
 section h2 {
     font-family:'Press Start 2P', cursive;
@@ -69,6 +84,26 @@ section h2 {
     margin-bottom:15px;
     color:#00ff99;
 }
+
+/* Pixel Decoration */
+.pixel-deco-section {
+    position:absolute;
+    width:16px;
+    height:16px;
+    background-color:#ff3d00;
+    animation: pixelBlink 2s infinite;
+}
+.pixel-deco-section:nth-child(1){top:10px; left:10px;}
+.pixel-deco-section:nth-child(2){top:10px; right:10px;}
+.pixel-deco-section:nth-child(3){bottom:10px; left:10px;}
+.pixel-deco-section:nth-child(4){bottom:10px; right:10px;}
+
+@keyframes pixelBlink {
+    0%,100%{opacity:1;}
+    50%{opacity:0.3;}
+}
+
+/* Card Grid (Games, Recommendations) */
 .card-grid {
     display:flex;
     flex-wrap:wrap;
@@ -82,12 +117,13 @@ section h2 {
     border:3px solid #00ff99;
     padding:15px;
     border-radius:6px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.3s, box-shadow 0.3s;
     text-align:center;
+    cursor:pointer;
 }
 .card:hover {
-    transform: translate(-4px,-4px);
-    box-shadow:4px 4px 0 #ff3d00, -4px -4px 0 #ffeb3b;
+    transform: translate(-6px,-6px) rotate(-1deg);
+    box-shadow:6px 6px 0 #ff3d00, -6px -6px 0 #ffeb3b;
 }
 .card h3 {
     font-family:'Press Start 2P', cursive;
@@ -99,6 +135,8 @@ section h2 {
     font-family:'Roboto', sans-serif;
     font-size:0.9rem;
 }
+
+/* Pelayanan Section */
 .service-list {
     display:flex;
     flex-wrap:wrap;
@@ -112,11 +150,12 @@ section h2 {
     border:3px solid #00ff99;
     padding:20px;
     border-radius:6px;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor:pointer;
 }
 .service-box:hover {
-    transform: translate(-4px,-4px);
-    box-shadow:4px 4px 0 #ff3d00, -4px -4px 0 #ffeb3b;
+    transform: translate(-6px,-6px) rotate(1deg);
+    box-shadow:6px 6px 0 #ff3d00, -6px -6px 0 #ffeb3b;
 }
 .service-box h3 {
     font-family:'Press Start 2P', cursive;
@@ -128,6 +167,8 @@ section h2 {
     font-family:'Roboto', sans-serif;
     font-size:0.9rem;
 }
+
+/* Footer */
 footer {
     text-align:center;
     padding:15px;
@@ -135,6 +176,8 @@ footer {
     color:#fff;
     border-top:6px solid #5c4033;
 }
+
+/* Responsive */
 @media(max-width:600px){
     header{font-size:1.5rem;}
     section h2{font-size:1.2rem;}
@@ -160,35 +203,39 @@ footer {
 
 <section id="about">
     <h2>Tentang Saya</h2>
-    <p>Saya mahasiswa Informatika yang aktif dalam pelayanan Kristen di kampus (UPK-Kr. FT UNSRAT). Saya tertarik pada apologetika Protestan Reformed, pengembangan game, budaya Minahasa, musik, dan hiburan fantasi. Website ini menampilkan minat, aktivitas, dan proyek saya.</p>
+    <p>Saya mahasiswa Informatika yang aktif dalam pelayanan Kristen di kampus (UPK-Kr. FT UNSRAT). Saya tertarik pada apologetika Protestan Reformed, pengembangan game, budaya Minahasa, musik, dan hiburan fantasi.</p>
+    <div class="pixel-deco-section"></div>
+    <div class="pixel-deco-section"></div>
+    <div class="pixel-deco-section"></div>
+    <div class="pixel-deco-section"></div>
 </section>
 
 <section id="service">
-    <h2>Pelayanan Kristen</h2>
-    <p>Saya aktif dalam pelayanan Kristen yang bertujuan membantu sesama dan mengembangkan komunitas kampus.</p>
+    <h2>Pelayanan Kristen ✝️</h2>
+    <p>Aktif dalam pelayanan kampus dan mendukung komunitas rohani mahasiswa.</p>
     <div class="service-list">
         <div class="service-box">
             <h3>UPK-Kr. FT UNSRAT</h3>
-            <p>Aktif dalam berbagai kegiatan pelayanan kampus untuk mendukung komunitas mahasiswa.</p>
+            <p>Berpartisipasi dalam kegiatan pelayanan dan pendampingan mahasiswa.</p>
         </div>
         <div class="service-box">
             <h3>Apologetika Reformed</h3>
-            <p>Minat mendalam pada apologetika Protestan Reformed, berbagi wawasan dan diskusi rohani.</p>
+            <p>Diskusi dan pembelajaran apologetika Protestan Reformed.</p>
         </div>
     </div>
 </section>
 
 <section id="gamedev">
-    <h2>Game Development</h2>
-    <p>Saat ini saya dalam tahap perencanaan game bernama <strong>Apostle</strong> sebagai proyek pribadi dan eksplorasi kreatif.</p>
+    <h2>Game Development 🎮</h2>
+    <p>Saat ini saya dalam tahap perencanaan game bernama <strong>Apostle</strong> sebagai proyek pribadi.</p>
 </section>
 
 <section id="games">
-    <h2>Game Favorit</h2>
+    <h2>Game Favorit 🎮</h2>
     <div class="card-grid">
         <div class="card">
             <h3>Minecraft</h3>
-            <p>Eksplorasi dan kreativitas</p>
+            <p>Eksplorasi & kreativitas</p>
         </div>
         <div class="card">
             <h3>Roblox</h3>
@@ -198,21 +245,21 @@ footer {
 </section>
 
 <section id="minahasa">
-    <h2>Budaya Minahasa</h2>
-    <p>Saya tertarik pada kesenian tradisional Minahasa, dapat bermain kolintang, ingin belajar bahasa Minahasa, dan memiliki minat tinggi pada sejarah lokal.</p>
+    <h2>Budaya Minahasa 🏛️</h2>
+    <p>Tertarik pada kesenian tradisional, bermain kolintang, belajar bahasa Minahasa, dan sejarah lokal.</p>
 </section>
 
 <section id="music">
-    <h2>Musik</h2>
-    <p>Genre favorit: Jazz, Lo-fi, Indie. Saya belajar bermain gitar dan keyboard. Musik memberi inspirasi dalam aktivitas kreatif dan rohani saya.</p>
+    <h2>Musik 🎵</h2>
+    <p>Genre favorit: Jazz, Lo-fi, Indie. Saya belajar gitar dan keyboard. Musik menjadi inspirasi kreatif dan rohani saya.</p>
 </section>
 
 <section id="recommendations">
-    <h2>Rekomendasi Film & Series</h2>
+    <h2>Rekomendasi Film & Series 🍿</h2>
     <div class="card-grid">
         <div class="card">
             <h3>Lord of The Rings</h3>
-            <p>Fantasi epik favorit saya</p>
+            <p>Fantasi epik favorit</p>
         </div>
         <div class="card">
             <h3>Series Fantasi Lain</h3>
@@ -222,7 +269,7 @@ footer {
 </section>
 
 <section id="contact">
-    <h2>Kontak</h2>
+    <h2>Kontak ✉️</h2>
     <p>Email: student@example.com</p>
     <p>Instagram: @pixel_student</p>
     <p>Twitter: @pixel_student</p>
