@@ -29,19 +29,19 @@ nav a:hover{background:#A0522D; box-shadow:0 0 8px #FFD700;}
 .hero{
   position:relative; min-height:100vh;
   display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
-  text-align:center; padding-top:120px;
+  text-align:center; padding-top:140px;
   background-image:url('https://i.ibb.co/0jqHpnp/minecraft-bg.jpg');
   background-size:cover; background-attachment:fixed; background-position:center; z-index:1;
 }
-.hero h1{font-size:2em;color:#fff;text-shadow:2px 2px #000;margin:0 15px 20px 15px;}
+.hero h1{font-size:2.2em;color:#fff;text-shadow:2px 2px #000;margin:0 15px 30px 15px;}
 .hero-highlight{
-  display:flex; align-items:center; justify-content:center; gap:20px; width:90%; max-width:700px;
-  background:rgba(0,0,0,0.6); padding:20px; border:3px solid #000; box-shadow:5px 5px #000; border-radius:10px;
-  margin:15px 0; cursor:pointer; position:relative; overflow:hidden; opacity:0; transform:translateY(50px); transition:all 0.6s ease;
+  display:flex; align-items:center; justify-content:flex-start; gap:20px; width:90%; max-width:700px;
+  background:rgba(0,0,0,0.6); padding:25px; border:3px solid #000; box-shadow:5px 5px #000; border-radius:10px;
+  margin:20px 0; cursor:pointer; position:relative; overflow:hidden; opacity:0; transform:translateY(50px); transition:all 0.6s ease;
 }
 .hero-highlight.visible{opacity:1; transform:translateY(0);}
-.highlight-img{width:50px;height:50px;}
-.highlight-text p{margin:0;font-size:0.65em;color:#fff;text-shadow:2px 2px #000;font-weight:bold;}
+.highlight-img{width:60px;height:60px;}
+.highlight-text p{margin:0;font-size:0.7em;color:#fff;text-shadow:2px 2px #000;font-weight:bold;line-height:1.4;}
 .hero-highlight:hover::after{
   content:''; position:absolute; width:4px; height:4px; background:#FFD700; top:-10px; left:-10px;
   box-shadow:20px 20px #FFD700,40px 40px #FFD700,60px 10px #FFD700; animation:sparkle 0.5s infinite alternate;
@@ -49,21 +49,21 @@ nav a:hover{background:#A0522D; box-shadow:0 0 8px #FFD700;}
 @keyframes sparkle{0%{transform:translate(0,0);}50%{transform:translate(2px,-2px);}100%{transform:translate(-2px,2px);}}
 section{min-height:80vh;text-align:center;padding:80px 15px;opacity:0; transform:translateY(50px); transition:all 0.6s ease;}
 section.visible{opacity:1; transform:translateY(0);}
-.showcase{display:flex; flex-wrap:wrap; justify-content:center; gap:15px; margin-top:30px; opacity:0; transform:translateY(50px); transition:all 0.6s ease;}
+.showcase{display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px; opacity:0; transform:translateY(50px); transition:all 0.6s ease;}
 .showcase.visible{opacity:1; transform:translateY(0);}
 .card{
   background:rgba(0,0,0,0.6); border:2px solid #000; border-radius:10px; width:150px; text-align:center;
   padding:15px; transition:transform 0.3s, box-shadow 0.3s; position:relative; overflow:hidden; cursor:pointer;
 }
 .card img{width:60px;height:60px;margin-bottom:10px;}
-.card p{font-size:0.6em;color:#fff;text-shadow:1px 1px #000;margin:0;}
+.card p{font-size:0.65em;color:#fff;text-shadow:1px 1px #000;margin:0;line-height:1.2;}
 .card:hover .pixel-fall{display:block; animation:fall 0.6s ease-out forwards;}
 .pixel-fall{width:6px;height:6px;background:#FFD700;position:absolute;top:0;left:50%;display:none;}
 @keyframes fall{0%{transform:translateY(0) rotate(0deg);}100%{transform:translateY(80px) rotate(360deg);opacity:0;}}
-.upk-button{display:inline-block;background:#8B4513;color:white;padding:8px 15px;border:2px solid #000;box-shadow:2px 2px #000;text-decoration:none;font-size:0.6em;margin-left:auto;transition:all 0.3s;}
+.upk-button{display:inline-block;background:#8B4513;color:white;padding:8px 15px;border:2px solid #000;box-shadow:2px 2px #000;text-decoration:none;font-size:0.65em;margin-top:10px; transition:all 0.3s;}
 .upk-button:hover{transform:translateY(-3px);box-shadow:4px 4px #FFD700;}
 @media screen and (max-width:768px){
-  .hero-highlight{flex-direction:column; gap:10px;} .highlight-img{width:40px;height:40px;}
+  .hero-highlight{flex-direction:column; gap:10px;} .highlight-img{width:50px;height:50px;}
   .showcase{gap:10px;} .card{width:120px;padding:10px;} .card img{width:50px;height:50px;}
   nav a{font-size:0.6em;}
 }
@@ -84,7 +84,7 @@ section.visible{opacity:1; transform:translateY(0);}
 
 <div class="hero-highlight" onclick="alert('Mini-game coming soon!')">
 <img src="https://img.icons8.com/emoji/96/000000/video-game-emoji.png" class="highlight-img">
-<div class="highlight-text"><p>🎮 Projek TA game – coming soon!</p></div>
+<div class="highlight-text"><p>🎮 Projek TA game – coming soon! Mohon dukungan & bantuannya 🙌</p></div>
 <div class="pixel-fall"></div>
 </div>
 
@@ -92,7 +92,8 @@ section.visible{opacity:1; transform:translateY(0);}
 <img src="https://img.icons8.com/ios-filled/96/000000/church.png" class="highlight-img">
 <div class="highlight-text">
 <p>Aktif melayani di <strong>UPK-Kr. FT Unsrat</strong></p>
-<a href="https://www.instagram.com/upkkrftunsrat/" target="_blank" class="upk-button">🌐 Instagram UPK</a>
+<a href="https://www.instagram.com/upkkrftunsrat/" target="_blank" class="upk-button">Instagram UPK</a>
+<a href="https://www.instagram.com/reformindo/" target="_blank" class="upk-button">Instagram Reformindo</a>
 <div class="pixel-fall"></div>
 </div>
 </div>
@@ -118,41 +119,40 @@ section.visible{opacity:1; transform:translateY(0);}
 <section id="sosmed">
 <h2>Sosial Media</h2>
 <div class="showcase">
-<div class="card"><img src="https://img.icons8.com/color/96/000000/instagram-new.png"><p>Instagram</p><div class="pixel-fall"></div></div>
-<div class="card"><img src="https://img.icons8.com/color/96/000000/youtube-play.png"><p>YouTube</p><div class="pixel-fall"></div></div>
+<div class="card"><img src="https://img.icons8.com/color/96/000000/instagram-new.png"><p>@mchelien</p><div class="pixel-fall"></div></div>
+<div class="card"><img src="https://img.icons8.com/color/96/000000/facebook-new.png"><p>Mchelien Palit</p><div class="pixel-fall"></div></div>
+<div class="card"><img src="https://img.icons8.com/color/96/000000/discord-logo.png"><p>Join Discord</p><div class="pixel-fall"></div></div>
 </div>
 </section>
 
 <section id="musik">
 <h2>Musik Favorit</h2>
 <div class="showcase">
-<div class="card"><img src="https://img.icons8.com/color/96/000000/spotify.png"><p>Spotify Playlist</p><div class="pixel-fall"></div></div>
+<div class="card"><img src="https://img.icons8.com/color/96/000000/spotify.png"><p><a href="https://open.spotify.com/playlist/yourplaylist" target="_blank" style="color:white;text-decoration:none;">Spotify Playlist</a></p><div class="pixel-fall"></div></div>
 </div>
 </section>
 
 <section id="hobi">
 <h2>Hobi & Rekomendasi</h2>
 <div class="showcase">
-<div class="card"><img src="https://img.icons8.com/color/96/000000/book.png"><p>Buku</p><div class="pixel-fall"></div></div>
-<div class="card"><img src="https://img.icons8.com/color/96/000000/clapperboard.png"><p>Film</p><div class="pixel-fall"></div></div>
+<div class="card"><p>Buku & Film Favorit</p><div class="pixel-fall"></div></div>
 </div>
 </section>
 
-<audio id="minecraft-sound" src="https://www.myinstants.com/media/sounds/minecraft-hit.mp3"></audio>
-
 <script>
-// Scroll reveal
-const revealElements = document.querySelectorAll('section, .hero-highlight, .showcase');
-const sound = document.getElementById('minecraft-sound');
-window.addEventListener('scroll', () => {
-  const trigger = window.innerHeight * 0.85;
-  revealElements.forEach(el => {
-    const rect = el.getBoundingClientRect();
-    if(rect.top < trigger){el.classList.add('visible'); if(!sound.played) sound.play();}
-  });
-});
-window.addEventListener('load',()=>{revealElements.forEach(el=>el.classList.add('visible'));});
+function revealOnScroll(){
+  const reveals = document.querySelectorAll('.hero-highlight, section, .showcase');
+  for(let i=0;i<reveals.length;i++){
+    let windowHeight=window.innerHeight;
+    let elementTop=reveals[i].getBoundingClientRect().top;
+    let elementVisible=100;
+    if(elementTop<windowHeight-elementVisible){
+      reveals[i].classList.add('visible');
+    }
+  }
+}
+window.addEventListener('scroll',revealOnScroll);
+window.addEventListener('load',revealOnScroll);
 </script>
-
 </body>
 </html>
