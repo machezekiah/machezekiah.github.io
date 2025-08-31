@@ -6,13 +6,10 @@
 <title>mchelien's world!</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
-/* Base */
 body {
   margin:0;
   font-family:'Roboto', sans-serif;
   color:#1c1c1c;
-
-  /* Background pixel grid */
   background-color: #e0e8f0;
   background-image: 
     linear-gradient(#c9d6e3 1px, transparent 1px),
@@ -39,17 +36,22 @@ header {
   text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff;
   margin-bottom:30px;
 }
-/* Pixel clouds */
+
+/* Pixel clouds lebih ramai */
 .pixel-cloud {
   position:absolute;
   width:50px;
   height:30px;
   background-color:#ffffff70;
-  animation: moveCloud 20s linear infinite;
   border:2px solid #c9d6e3;
+  animation: moveCloud linear infinite;
 }
-.pixel-cloud:nth-child(2){top:50px; left:150px; animation-duration:25s;}
-.pixel-cloud:nth-child(3){top:120px; left:300px; animation-duration:18s;}
+.pixel-cloud:nth-child(2){top:40px; left:100px; animation-duration:20s;}
+.pixel-cloud:nth-child(3){top:70px; left:250px; animation-duration:25s;}
+.pixel-cloud:nth-child(4){top:110px; left:400px; animation-duration:22s;}
+.pixel-cloud:nth-child(5){top:160px; left:50px; animation-duration:28s;}
+.pixel-cloud:nth-child(6){top:200px; left:300px; animation-duration:18s;}
+.pixel-cloud:nth-child(7){top:250px; left:150px; animation-duration:24s;}
 @keyframes moveCloud{
   0%{transform: translateX(-100px);}
   100%{transform: translateX(100vw);}
@@ -84,7 +86,6 @@ header {
   line-height:1.8;
   margin:0;
 }
-/* Pixel accent for buttons */
 .vertical-button::before {
   content:"";
   position:absolute;
@@ -117,13 +118,188 @@ footer {
 
 <header>
   <span class="pixel-header">mchelien's world!</span>
-  <!-- Pixel Clouds -->
+  <div class="pixel-cloud"></div>
+  <div class="pixel-cloud"></div>
+  <div class="pixel-cloud"></div>
+  <div class="pixel-cloud"></div>
   <div class="pixel-cloud"></div>
   <div class="pixel-cloud"></div>
   <div class="pixel-cloud"></div>
 </header>
 
-<!-- Vertical large buttons with casual language -->
+<a href="about.html" class="vertical-button">
+  <h2>About Me</h2>
+  <p>Hey! Wanna know who I am, my background & what I geek out on? This is my corner to share my journey in tech and creativity.</p>
+</a>
+
+<a href="service.html" class="vertical-button">
+  <h2>Service / Ministry</h2>
+  <p>Here’s the scoop on my chill but meaningful campus ministry vibes at UPK-Kr. FT UNSRAT and beyond. Mentoring, organizing, and sharing Christian content.</p>
+</a>
+
+<a href="gamedev.html" class="vertical-button">
+  <h2>Game Dev</h2>
+  <p>Working on my personal game "Apostle"! Peek at my ideas, mechanics, and dev progress as part of my final year project in Informatics.</p>
+</a>
+
+<a href="games.html" class="vertical-button">
+  <h2>Favorite Games</h2>
+  <p>Minecraft & Roblox are my jam. I also share creative stuff and lessons learned while playing and leveling up my creativity.</p>
+</a>
+
+<a href="minahasa.html" class="vertical-button">
+  <h2>Minahasa Culture</h2>
+  <p>Super into Minahasa culture: traditional arts, kolintang, and learning the language. Plus, local history and how I try to keep the culture alive.</p>
+</a>
+
+<a href="music.html" class="vertical-button">
+  <h2>Music</h2>
+  <p>Music vibes! Listening, jamming, and sharing my playlists plus inspirations from genres I love.</p>
+</a>
+
+<a href="recommendations.html" class="vertical-button">
+  <h2>Recommendations</h2>
+  <p>Fantasy films & series recs! Quick thoughts on my faves like Lord of The Rings and why they’re worth the watch.</p>
+</a>
+
+<a href="contact.html" class="vertical-button">
+  <h2>Contact</h2>
+  <p>Wanna collab, ask stuff, or just say hi? Hit me up through the links here!</p>
+</a>
+
+<footer>&copy; 2023 mchelien's world!</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mchelien's world!</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+body {
+  margin:0;
+  font-family:'Roboto', sans-serif;
+  color:#1c1c1c;
+  background-color: #e0e8f0;
+  background-image: 
+    linear-gradient(#c9d6e3 1px, transparent 1px),
+    linear-gradient(90deg, #c9d6e3 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Header */
+header {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: linear-gradient(135deg,#a3bcd9,#c9d6e3);
+  position:relative;
+  overflow:hidden;
+}
+.pixel-header {
+  font-family:'Press Start 2P', cursive;
+  font-size:2.8rem;
+  color:#0b1f3b;
+  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff;
+  margin-bottom:30px;
+}
+
+/* Pixel clouds lebih ramai */
+.pixel-cloud {
+  position:absolute;
+  width:50px;
+  height:30px;
+  background-color:#ffffff70;
+  border:2px solid #c9d6e3;
+  animation: moveCloud linear infinite;
+}
+.pixel-cloud:nth-child(2){top:40px; left:100px; animation-duration:20s;}
+.pixel-cloud:nth-child(3){top:70px; left:250px; animation-duration:25s;}
+.pixel-cloud:nth-child(4){top:110px; left:400px; animation-duration:22s;}
+.pixel-cloud:nth-child(5){top:160px; left:50px; animation-duration:28s;}
+.pixel-cloud:nth-child(6){top:200px; left:300px; animation-duration:18s;}
+.pixel-cloud:nth-child(7){top:250px; left:150px; animation-duration:24s;}
+@keyframes moveCloud{
+  0%{transform: translateX(-100px);}
+  100%{transform: translateX(100vw);}
+}
+
+/* Vertical buttons */
+.vertical-button {
+  display:block;
+  background: linear-gradient(145deg,#c9d6e3,#a3bcd9);
+  border:3px solid #0b1f3b;
+  border-radius:12px;
+  margin:40px auto;
+  padding:25px;
+  max-width:800px;
+  text-decoration:none;
+  color:#0b1f3b;
+  transition: all 0.3s ease;
+  position:relative;
+}
+.vertical-button:hover {
+  background: linear-gradient(145deg,#a3bcd9,#82a1c3);
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.vertical-button h2 {
+  font-family:'Press Start 2P', cursive;
+  font-size:1.4rem;
+  margin-bottom:12px;
+}
+.vertical-button p {
+  font-size:1rem;
+  line-height:1.8;
+  margin:0;
+}
+.vertical-button::before {
+  content:"";
+  position:absolute;
+  top:10px;
+  left:10px;
+  width:10px;
+  height:10px;
+  background-color:#0b1f3b;
+  border:1px solid #fff;
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .vertical-button{padding:20px;}
+  .vertical-button h2{font-size:1.2rem;}
+  .vertical-button p{font-size:0.95rem;}
+}
+
+footer {
+  text-align:center;
+  padding:20px;
+  font-size:0.8rem;
+  background-color:#d3dce5;
+  font-family:'Roboto', sans-serif;
+  color:#1c1c1c;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <span class="pixel-header">mchelien's world!</span>
+  <div class="pixel-cloud"></div>
+  <div class="pixel-cloud"></div>
+  <div class="pixel-cloud"></div>
+  <div class="pixel-cloud"></div>
+  <div class="pixel-cloud"></div>
+  <div class="pixel-cloud"></div>
+  <div class="pixel-cloud"></div>
+</header>
+
 <a href="about.html" class="vertical-button">
   <h2>About Me</h2>
   <p>Hey! Wanna know who I am, my background & what I geek out on? This is my corner to share my journey in tech and creativity.</p>
