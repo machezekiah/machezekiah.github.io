@@ -7,17 +7,16 @@ body {
   background: linear-gradient(180deg, #a3c4f3 0%, #dbe6f0 100%);
   color:#1c1c1c;
   overflow-x:hidden;
+  text-align:center; /* rata tengah semua konten */
 }
 
 /* Header */
 header {
-  position: relative;
-  height: 60vh;
+  height:60vh;
   display:flex;
   justify-content:center;
   align-items:center;
   background: linear-gradient(135deg, #3a5f9e, #b0c4de);
-  overflow:hidden;
 }
 .pixel-header {
   font-family:'Press Start 2P', cursive;
@@ -27,53 +26,27 @@ header {
   margin-bottom:30px;
 }
 
-/* Pixel Cloud */
-.pixel-cloud {
-  position:absolute;
-  width:30px;
-  height:30px;
-  background-color:#f0e68ccc; /* aksen kuning hangat */
-  animation: cloudMove 20s linear infinite;
-  border-radius:4px;
-}
-.pixel-cloud:nth-child(1){top:50px; left:-50px;}
-.pixel-cloud:nth-child(2){top:150px; left:-120px; animation-duration:25s;}
-.pixel-cloud:nth-child(3){top:250px; left:-200px; animation-duration:30s;}
-@keyframes cloudMove {0% {transform: translateX(0);}100% {transform: translateX(120vw);}}
-
-/* Tombol Headline Besar */
-.nav-headline {
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap:25px;
-  max-width:1200px;
-  margin:50px auto;
-}
-.nav-card {
+/* Headline News Style */
+.headline-link {
   display:block;
-  background-color:#c9d6e3;
-  border:2px solid #1c1c1c;
-  padding:25px;
-  border-radius:12px;
-  text-align:center;
-  cursor:pointer;
-  transition: transform 0.3s, background-color 0.3s;
-  text-decoration:none;
+  text-decoration:none; /* hilangkan garis bawah */
+  margin:30px auto;
+  max-width:600px;
 }
-.nav-card:hover {
-  transform: translateY(-8px);
-  background-color:#a3bcd9;
-}
-.nav-card h3 {
+.headline-link h2 {
   font-family:'Press Start 2P', cursive;
-  font-size:1.4rem;
-  margin-bottom:10px;
+  font-size:2rem;
   color:#0b1f3b;
+  transition: color 0.3s;
 }
-.nav-card p {
+.headline-link h2:hover {
+  color:#f0e68c; /* highlight saat hover */
+}
+.headline-link p {
   font-family:'Roboto', sans-serif;
-  font-size:0.95rem;
+  font-size:1rem;
   color:#1c1c1c;
+  margin-top:10px;
 }
 
 /* Footer */
@@ -89,7 +62,6 @@ footer {
 
 /* Responsive */
 @media(max-width:600px){
-  .nav-card h3{font-size:1.1rem;}
-  .nav-card p{font-size:0.85rem;}
-  header{height:40vh;}
+  .headline-link h2{font-size:1.4rem;}
+  .headline-link p{font-size:0.85rem;}
 }
