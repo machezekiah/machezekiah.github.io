@@ -10,9 +10,9 @@ body {
   text-align:center;
 }
 
-/* Header */
+/* Fullscreen Header */
 header {
-  height:100vh; /* supaya tidak kepotong */
+  height:100vh; /* full screen */
   display:flex;
   justify-content:center;
   align-items:center;
@@ -20,7 +20,7 @@ header {
 }
 .pixel-header {
   font-family:'Press Start 2P', cursive;
-  font-size:4rem;
+  font-size:6vw; /* responsif besar */
   color:#0b1f3b;
   text-shadow:2px 2px #d4d4d4, -2px -2px #d4d4d4;
 }
@@ -28,10 +28,10 @@ header {
 /* Tombol Vertikal Besar */
 .vertical-button {
   display:block;
-  width:80%; /* hampir full-width */
-  max-width:800px;
+  width:90%; /* hampir full-width */
+  max-width:900px;
   margin:25px auto;
-  padding:30px 20px;
+  padding:35px 25px;
   background-color:#c9d6e3;
   border:2px solid #1c1c1c;
   border-radius:12px;
@@ -48,7 +48,7 @@ header {
   font-family:'Press Start 2P', cursive;
   font-size:2rem;
   color:#0b1f3b;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 .vertical-button p {
   font-family:'Roboto', sans-serif;
@@ -72,5 +72,5 @@ footer {
   .vertical-button h2{font-size:1.5rem;}
   .vertical-button p{font-size:0.9rem;}
   header{height:80vh;}
-  .pixel-header{font-size:3rem;}
+  .pixel-header{font-size:10vw;}
 }
