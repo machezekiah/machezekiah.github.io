@@ -2,75 +2,65 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Mchelien - Minecraft Style</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dunia Mchelien - Minecraft Style</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
-body, html {
-  margin:0; padding:0;
-  font-family:'Press Start 2P',monospace;
-  scroll-behavior:smooth;
-  overflow-x:hidden;
-  background: linear-gradient(180deg,#87CEEB 0%,#7CFC00 100%);
-}
-.pixel-overlay{
-  position:fixed;width:100%;height:100%;
-  background-image:url('https://i.ibb.co/3Cyf3c3/pixel-pattern.png');
-  opacity:0.08; top:0; left:0; pointer-events:none; z-index:0;
-}
-nav{
-  position:fixed; top:0; width:100%;
-  display:flex; justify-content:center; gap:10px; padding:10px 0; background:rgba(0,0,0,0.6); flex-wrap:wrap; z-index:1000;
-}
-nav a{
-  color:#fff;text-decoration:none; padding:8px 12px; background:#8B4513; transition:all 0.3s; font-size:0.65em;
-}
-nav a:hover{background:#A0522D; box-shadow:0 0 8px #FFD700;}
-.hero{
-  position:relative; min-height:100vh;
-  display:flex; flex-direction:column; justify-content:flex-start; align-items:center;
-  text-align:center; padding-top:140px;
-  background-image:url('https://i.ibb.co/0jqHpnp/minecraft-bg.jpg');
-  background-size:cover; background-attachment:fixed; background-position:center; z-index:1;
-}
-.hero h1{font-size:2.2em;color:#fff;text-shadow:2px 2px #000;margin:0 15px 30px 15px;}
-.hero-highlight{
-  display:flex; align-items:center; justify-content:flex-start; gap:20px; width:90%; max-width:700px;
-  background:rgba(0,0,0,0.6); padding:25px; border:3px solid #000; box-shadow:5px 5px #000; border-radius:10px;
-  margin:20px 0; cursor:pointer; position:relative; overflow:hidden; opacity:0; transform:translateY(50px); transition:all 0.6s ease;
-}
-.hero-highlight.visible{opacity:1; transform:translateY(0);}
-.highlight-img{width:60px;height:60px;}
-.highlight-text p{margin:0;font-size:0.7em;color:#fff;text-shadow:2px 2px #000;font-weight:bold;line-height:1.4;}
-.hero-highlight:hover::after{
-  content:''; position:absolute; width:4px; height:4px; background:#FFD700; top:-10px; left:-10px;
-  box-shadow:20px 20px #FFD700,40px 40px #FFD700,60px 10px #FFD700; animation:sparkle 0.5s infinite alternate;
-}
-@keyframes sparkle{0%{transform:translate(0,0);}50%{transform:translate(2px,-2px);}100%{transform:translate(-2px,2px);}}
-section{min-height:80vh;text-align:center;padding:80px 15px;opacity:0; transform:translateY(50px); transition:all 0.6s ease;}
-section.visible{opacity:1; transform:translateY(0);}
-.showcase{display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px; opacity:0; transform:translateY(50px); transition:all 0.6s ease;}
-.showcase.visible{opacity:1; transform:translateY(0);}
-.card{
-  background:rgba(0,0,0,0.6); border:2px solid #000; border-radius:10px; width:150px; text-align:center;
-  padding:15px; transition:transform 0.3s, box-shadow 0.3s; position:relative; overflow:hidden; cursor:pointer;
-}
-.card img{width:60px;height:60px;margin-bottom:10px;}
-.card p{font-size:0.65em;color:#fff;text-shadow:1px 1px #000;margin:0;line-height:1.2;}
-.card:hover .pixel-fall{display:block; animation:fall 0.6s ease-out forwards;}
-.pixel-fall{width:6px;height:6px;background:#FFD700;position:absolute;top:0;left:50%;display:none;}
-@keyframes fall{0%{transform:translateY(0) rotate(0deg);}100%{transform:translateY(80px) rotate(360deg);opacity:0;}}
-.upk-button{display:inline-block;background:#8B4513;color:white;padding:8px 15px;border:2px solid #000;box-shadow:2px 2px #000;text-decoration:none;font-size:0.65em;margin-top:10px; transition:all 0.3s;}
-.upk-button:hover{transform:translateY(-3px);box-shadow:4px 4px #FFD700;}
-@media screen and (max-width:768px){
-  .hero-highlight{flex-direction:column; gap:10px;} .highlight-img{width:50px;height:50px;}
-  .showcase{gap:10px;} .card{width:120px;padding:10px;} .card img{width:50px;height:50px;}
-  nav a{font-size:0.6em;}
-}
+/* Reset & font */
+body, html { margin:0; padding:0; font-family:'Press Start 2P', monospace; scroll-behavior:smooth; background:#87CEEB; overflow-x:hidden; }
+a { text-decoration:none; color:inherit; }
+
+/* Pixel overlay */
+.pixel-overlay { position:absolute; width:100%; height:100%; background-image:url('https://i.ibb.co/3Cyf3c3/pixel-pattern.png'); opacity:0.05; top:0; left:0; pointer-events:none; }
+
+/* Navbar */
+nav { position:fixed; top:0; width:100%; display:flex; justify-content:center; gap:15px; padding:15px 0; background:rgba(0,0,0,0.6); z-index:1000; flex-wrap:wrap; }
+nav a { color:#fff; padding:10px 20px; background:#8B4513; transition:all 0.3s; }
+nav a:hover { background:#A0522D; box-shadow:0 0 10px #FFD700; }
+
+/* Hero Section */
+.hero { position:relative; height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding-top:50px; }
+.hero h1 { font-size:2em; color:#fff; text-shadow:2px 2px #000; margin:0 20px; animation:blockUp 1.5s ease forwards; }
+.hero-extra { display:flex; flex-direction:column; align-items:center; gap:20px; margin-bottom:30px; width:90%; max-width:900px; }
+
+/* Highlight cards */
+.highlight-card { display:flex; align-items:center; gap:15px; background:rgba(0,0,0,0.5); padding:15px 20px; border:2px solid #000; box-shadow:3px 3px #000; border-radius:8px; max-width:800px; text-align:left; animation:fadeUp 1s ease forwards; transition:transform 0.3s, box-shadow 0.3s; }
+.highlight-card img { width:50px; height:50px; }
+.highlight-card p { margin:0; font-size:0.65em; color:#fff; text-shadow:1px 1px #000; }
+.highlight-card:hover { transform:translateY(-5px) scale(1.03); box-shadow:5px 5px #FFD700; }
+
+/* CTA Buttons */
+.cta-buttons { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; margin-top:20px; }
+.cta-buttons a { display:block; background:#8B4513; color:#fff; padding:15px 25px; font-size:0.7em; border:2px solid #000; box-shadow:3px 3px #000; transition:all 0.3s; }
+.cta-buttons a:hover { transform:translateY(-5px); box-shadow:5px 5px #FFD700; }
+
+/* Sections */
+section { min-height:100vh; text-align:center; padding:120px 20px 60px 20px; position:relative; }
+section h2 { font-size:1em; color:#fff; margin-bottom:20px; text-shadow:2px 2px #000; }
+
+/* Cards grid */
+.showcase { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:30px; }
+.showcase .card { background:rgba(0,0,0,0.5); padding:15px; border:2px solid #000; border-radius:8px; width:250px; box-shadow:3px 3px #000; transition:transform 0.3s, box-shadow 0.3s; }
+.showcase .card:hover { transform:translateY(-5px) scale(1.05); box-shadow:5px 5px #FFD700; }
+.showcase .card img { width:80px; margin-bottom:10px; }
+.showcase .card p { font-size:0.65em; color:#fff; text-shadow:1px 1px #000; }
+
+/* Footer */
+footer { background:rgba(0,0,0,0.6); color:#fff; text-align:center; padding:20px; }
+footer a { color:#FFD700; margin:0 10px; }
+
+/* Animations */
+@keyframes blockUp { 0%{opacity:0; transform:translateY(50px);} 100%{opacity:1; transform:translateY(0);} }
+@keyframes fadeUp { 0%{opacity:0; transform:translateY(30px);} 100%{opacity:1; transform:translateY(0);} }
+
+/* Responsive */
+@media(max-width:768px){ .highlight-card, .showcase .card { width:90%; } }
 </style>
 </head>
 <body>
+
 <div class="pixel-overlay"></div>
+
+<!-- Navbar -->
 <nav>
 <a href="#game">🎮 Game</a>
 <a href="#pelayanan">🛐 Pelayanan</a>
@@ -79,80 +69,110 @@ section.visible{opacity:1; transform:translateY(0);}
 <a href="#hobi">📚 Hobi</a>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
 <h1>Selamat datang di dunia Mchelien!</h1>
 
-<div class="hero-highlight" onclick="alert('Mini-game coming soon!')">
-<img src="https://img.icons8.com/emoji/96/000000/video-game-emoji.png" class="highlight-img">
-<div class="highlight-text"><p>🎮 Projek TA game – coming soon! Mohon dukungan & bantuannya 🙌</p></div>
-<div class="pixel-fall"></div>
+<div class="hero-extra">
+<!-- Projek TA -->
+<div class="highlight-card">
+<img src="https://img.icons8.com/emoji/64/000000/video-game-emoji.png" alt="Game Icon">
+<p>🎮 Projek TA tentang game – coming soon! Mohon dukungan & bantuannya 🙌</p>
 </div>
 
-<div class="hero-highlight">
-<img src="https://img.icons8.com/ios-filled/96/000000/church.png" class="highlight-img">
-<div class="highlight-text">
+<!-- Pelayanan -->
+<div class="highlight-card">
+<img src="https://img.icons8.com/ios-filled/64/000000/church.png" alt="Church Icon">
 <p>Aktif melayani di <strong>UPK-Kr. FT Unsrat</strong></p>
-<a href="https://www.instagram.com/upkkrftunsrat/" target="_blank" class="upk-button">Instagram UPK</a>
-<a href="https://www.instagram.com/reformindo/" target="_blank" class="upk-button">Instagram Reformindo</a>
-<div class="pixel-fall"></div>
+<a href="https://www.instagram.com/upkkrftunsrat/" target="_blank" class="cta-buttons">🌐 Instagram UPK</a>
+<a href="https://www.instagram.com/reformindo/" target="_blank" class="cta-buttons">🌐 Instagram Reformindo</a>
 </div>
+</div>
+
+<div class="cta-buttons">
+<a href="#game">Game 🎮</a>
+<a href="#pelayanan">Pelayanan 🛐</a>
+<a href="#sosmed">Sosial Media 🌐</a>
+<a href="#musik">Musik 🎵</a>
+<a href="#hobi">Hobi 📚</a>
 </div>
 </section>
 
+<!-- Game Section -->
 <section id="game">
 <h2>Game Favorit</h2>
 <div class="showcase">
-<div class="card" onclick="alert('Minecraft mini-game coming soon!')"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"><p>Minecraft</p><div class="pixel-fall"></div></div>
-<div class="card" onclick="alert('Roblox mini-game coming soon!')"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg"><p>Roblox</p><div class="pixel-fall"></div></div>
+<div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft"><p>Minecraft – Kreatif membangun dunia</p></div>
+<div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg" alt="Roblox"><p>Roblox – Bermain & bertemu teman</p></div>
 </div>
 </section>
 
+<!-- Pelayanan Section -->
 <section id="pelayanan">
 <h2>Pelayanan Aktif</h2>
 <div class="showcase">
-<div class="card"><p>Bulan 1: Orientasi & Planning</p><div class="pixel-fall"></div></div>
-<div class="card"><p>Bulan 2: Event awal & Community</p><div class="pixel-fall"></div></div>
-<div class="card"><p>Bulan 3: Program berkelanjutan</p><div class="pixel-fall"></div></div>
+<div class="card"><p>Bulan 1: Orientasi & Planning</p></div>
+<div class="card"><p>Bulan 2: Event awal & Community</p></div>
+<div class="card"><p>Bulan 3: Program berkelanjutan</p></div>
 </div>
 </section>
 
+<!-- Sosial Media -->
 <section id="sosmed">
 <h2>Sosial Media</h2>
 <div class="showcase">
-<div class="card"><img src="https://img.icons8.com/color/96/000000/instagram-new.png"><p>@mchelien</p><div class="pixel-fall"></div></div>
-<div class="card"><img src="https://img.icons8.com/color/96/000000/facebook-new.png"><p>Mchelien Palit</p><div class="pixel-fall"></div></div>
-<div class="card"><img src="https://img.icons8.com/color/96/000000/discord-logo.png"><p>Join Discord</p><div class="pixel-fall"></div></div>
+<div class="card"><p>Instagram: <a href="https://www.instagram.com/mchelien/" target="_blank">@mchelien</a></p></div>
+<div class="card"><p>Facebook: Mchelien Palit</p></div>
+<div class="card"><p>Discord: Join server</p></div>
 </div>
 </section>
 
+<!-- Musik -->
 <section id="musik">
 <h2>Musik Favorit</h2>
 <div class="showcase">
-<div class="card"><img src="https://img.icons8.com/color/96/000000/spotify.png"><p><a href="https://open.spotify.com/playlist/yourplaylist" target="_blank" style="color:white;text-decoration:none;">Spotify Playlist</a></p><div class="pixel-fall"></div></div>
+<div class="card"><img src="https://img.icons8.com/color/96/000000/spotify.png"><p><a href="https://open.spotify.com/playlist/yourplaylist" target="_blank">Spotify Playlist</a></p></div>
 </div>
 </section>
 
+<!-- Hobi -->
 <section id="hobi">
 <h2>Hobi & Rekomendasi</h2>
 <div class="showcase">
-<div class="card"><p>Buku & Film Favorit</p><div class="pixel-fall"></div></div>
+<div class="card"><p>Buku & Film Favorit</p></div>
 </div>
 </section>
 
+<!-- Footer -->
+<footer>
+<p>&copy; 2025 Mchelien. All rights reserved.</p>
+<p>
+<a href="https://www.facebook.com">Facebook</a> | 
+<a href="https://www.twitter.com">Twitter</a> | 
+<a href="https://www.instagram.com/mchelien/">Instagram</a>
+</p>
+</footer>
+
+<!-- Scroll reveal -->
 <script>
 function revealOnScroll(){
-  const reveals = document.querySelectorAll('.hero-highlight, section, .showcase');
+  const reveals = document.querySelectorAll('.hero-extra, section, .showcase');
   for(let i=0;i<reveals.length;i++){
-    let windowHeight=window.innerHeight;
-    let elementTop=reveals[i].getBoundingClientRect().top;
-    let elementVisible=100;
-    if(elementTop<windowHeight-elementVisible){
+    let windowHeight = window.innerHeight;
+    let elementTop = reveals[i].getBoundingClientRect().top;
+    let elementVisible = 100;
+    if(elementTop < windowHeight - elementVisible){
       reveals[i].classList.add('visible');
     }
   }
 }
-window.addEventListener('scroll',revealOnScroll);
-window.addEventListener('load',revealOnScroll);
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 </script>
+<style>
+.visible { opacity:1; transform:translateY(0); transition:all 0.8s ease; }
+.hero-extra, section, .showcase { opacity:0; transform:translateY(30px); }
+</style>
+
 </body>
 </html>
