@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pelayanan - mchelien's world!</title>
+<title>Pelayanan - UPK-Kr. FT Unsrat</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
 <style>
-/* Konten Pelayanan */
+/* Konten Service Komunitas */
 section.service-content {
   max-width:800px;
   margin:50px auto;
@@ -27,23 +27,25 @@ section.service-content p {
   line-height:1.8;
   margin-bottom:25px;
 }
-section.service-content ul {
-  text-align:left;
-  max-width:700px;
-  margin:0 auto 25px auto;
-  line-height:1.6;
+section.service-content img.logo {
+  display:block;
+  max-width:180px;
+  width:100%;
+  margin:20px auto 25px auto;
+  border-radius:12px;
+  border:2px solid #1c1c1c;
 }
 
-/* Box Kegiatan / Divisi */
-.service-boxes {
+/* Box Kegiatan Rutin */
+.activities {
   display:flex;
   flex-wrap:wrap;
   gap:20px;
   justify-content:center;
   margin-top:20px;
 }
-.service-boxes div {
-  flex:1 1 180px;
+.activities div {
+  flex:1 1 150px;
   background-color:#c9d6e3;
   padding:15px;
   border-radius:12px;
@@ -53,7 +55,24 @@ section.service-content ul {
   font-size:0.9rem;
   transition: transform 0.3s, background-color 0.3s;
 }
-.service-boxes div:hover {
+.activities div:hover {
+  background-color:#a3bcd9;
+  transform: translateY(-5px);
+}
+
+/* Link eksternal */
+.external-links a {
+  display:inline-block;
+  margin:15px;
+  padding:12px 20px;
+  background-color:#c9d6e3;
+  color:#0b1f3b;
+  text-decoration:none;
+  border-radius:12px;
+  font-family:'Press Start 2P', cursive;
+  transition: transform 0.3s, background-color 0.3s;
+}
+.external-links a:hover {
   background-color:#a3bcd9;
   transform: translateY(-5px);
 }
@@ -76,29 +95,29 @@ blockquote {
 <body>
 
 <section class="service-content">
-  <h2>Pelayanan Kristen</h2>
+  <h2>UPK-Kr. FT Unsrat</h2>
+  <p><strong>Ini tentang UPK-Kr. FT UNSRAT, tempat saya bertumbuh dan melayani.</strong></p>
   
-  <p>Saya aktif dalam pelayanan Kristen di kampus melalui UPK-Kr. FT UNSRAT dan komunitas sekitar. Fokus pelayanan saya meliputi mentoring, pengembangan komunitas, dan kegiatan sosial untuk membantu sesama.</p>
+  <img src="logo.png" alt="Logo UPK-Kr. FT Unsrat" class="logo">
 
-  <p>Berikut beberapa kegiatan pelayanan yang pernah saya ikuti atau kelola:</p>
-  <ul>
-    <li>Membimbing adik-adik dan teman sebaya dalam belajar programming dan teknologi.</li>
-    <li>Mengorganisasi workshop dan event komunitas teknologi dan kreatif.</li>
-    <li>Menyediakan dukungan serta bantuan bagi yang membutuhkan melalui kegiatan sosial nyata.</li>
-    <li>Terlibat aktif dalam kegiatan rohani kampus dan pengembangan karakter mahasiswa.</li>
-  </ul>
+  <p>UPK-Kr. FT UNSRAT adalah komunitas mahasiswa yang bertujuan mengembangkan iman, kepemimpinan, dan pelayanan melalui kegiatan rohani dan sosial. Visi kami adalah mencetak mahasiswa yang berdedikasi, berintegritas, dan peduli. Misi kami meliputi pelayanan, mentoring, dan pengembangan karakter.</p>
 
-  <h2 style="font-size:1.5rem; margin-top:40px;">Kategori Pelayanan</h2>
-  <div class="service-boxes">
+  <h2 style="font-size:1.5rem; margin-top:40px;">Kegiatan Rutin</h2>
+  <div class="activities">
+    <div>Ibadah</div>
+    <div>Persekutuan</div>
     <div>Mentoring</div>
-    <div>Komunitas</div>
-    <div>Pelayanan Sosial</div>
-    <div>Kegiatan Rohani</div>
-    <div>Event & Workshop</div>
+    <div>Seminar</div>
+  </div>
+
+  <h2 style="font-size:1.5rem; margin-top:40px;">Media Komunitas</h2>
+  <div class="external-links">
+    <a href="https://instagram.com" target="_blank">Instagram</a>
+    <a href="https://youtube.com" target="_blank">YouTube</a>
   </div>
 
   <blockquote>
-    "Melayani adalah wujud nyata dari iman, kreativitas, dan kepedulian kita terhadap sesama."
+    "Bertumbuh dan melayani bersama komunitas adalah cara terbaik untuk mengembangkan iman, karakter, dan kreativitas."
   </blockquote>
 
 </section>
@@ -107,4 +126,3 @@ blockquote {
 
 </body>
 </html>
-
