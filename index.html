@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Minecraft-style Home - Mchelien</title>
+<title>Minecraft-style Pixelated - Mchelien</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
@@ -11,20 +11,37 @@ body, html {
   padding: 0;
   font-family: 'Press Start 2P', monospace;
   scroll-behavior: smooth;
-  background: linear-gradient(180deg, #87CEEB 0%, #7CFC00 100%);
   overflow-x: hidden;
+  background: linear-gradient(180deg, #87CEEB 0%, #7CFC00 100%);
 }
 
 /* Pixel overlay */
 .pixel-overlay {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   background-image: url('https://i.ibb.co/3Cyf3c3/pixel-pattern.png');
-  opacity: 0.05;
+  opacity: 0.08;
   top: 0;
   left: 0;
   pointer-events: none;
+  z-index: 0;
+}
+
+/* Flying pixels (animated pixel blocks) */
+.pixel-block {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #FFD700;
+  opacity: 0.7;
+  animation: fly 8s linear infinite;
+  z-index: 0;
+}
+
+@keyframes fly {
+  0% {transform: translateY(100vh) translateX(0) rotate(0deg);}
+  100% {transform: translateY(-10vh) translateX(50px) rotate(360deg);}
 }
 
 /* Navbar */
@@ -66,16 +83,21 @@ nav a:hover {
   align-items: center;
   text-align: center;
   padding-top: 120px;
+  background-image: url('https://i.ibb.co/0jqHpnp/minecraft-bg.jpg'); /* contoh bg */
+  background-size: cover;
+  background-attachment: fixed; /* parallax effect */
+  background-position: center;
+  z-index: 1;
 }
 
 .hero h1 {
-  font-size: 1.8em;
+  font-size: 2em;
   color: #FFFFFF;
   text-shadow: 2px 2px #000;
   margin: 0 15px 20px 15px;
 }
 
-/* Hero Highlight Headline */
+/* Hero Highlights */
 .hero-highlight {
   display: flex;
   align-items: center;
@@ -112,52 +134,7 @@ nav a:hover {
   font-weight: bold;
 }
 
-/* Pelayanan button */
-.upk-button {
-  display: inline-block;
-  background: #8B4513;
-  color: white;
-  padding: 8px 15px;
-  border: 2px solid #000;
-  box-shadow: 2px 2px #000;
-  text-decoration: none;
-  font-size: 0.65em;
-  margin-top: 10px;
-  transition: all 0.3s;
-}
-
-.upk-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 3px 3px #FFD700;
-}
-
-/* CTA Buttons */
-.cta-buttons {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 15px;
-  justify-content: center;
-}
-
-.cta-buttons a {
-  display: block;
-  background: #8B4513;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 0.65em;
-  border: 2px solid #000;
-  box-shadow: 2px 2px #000;
-  transition: all 0.3s;
-}
-
-.cta-buttons a:hover {
-  transform: translateY(-3px);
-  box-shadow: 4px 4px #FFD700;
-}
-
-/* Mini Showcase Cards */
+/* Card showcase with pixel sparkle hover */
 .showcase {
   display: flex;
   flex-wrap: wrap;
@@ -182,6 +159,8 @@ nav a:hover {
   text-align: center;
   padding: 15px;
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
 }
 
 .card img {
@@ -197,60 +176,37 @@ nav a:hover {
   margin: 0;
 }
 
+/* Pixel sparkle on hover */
+.card::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #FFD700;
+  top: -10px;
+  left: -10px;
+  opacity: 0;
+  transition: all 0.3s;
+  box-shadow: 20px 20px #FFD700, 40px 40px #FFD700, 60px 10px #FFD700;
+}
+
+.card:hover::after {
+  opacity: 1;
+  animation: sparkle 0.5s infinite alternate;
+}
+
+@keyframes sparkle {
+  0% {transform: translate(0,0);}
+  50% {transform: translate(2px,-2px);}
+  100% {transform: translate(-2px,2px);}
+}
+
 .card:hover {
   transform: translateY(-4px) scale(1.05);
   box-shadow: 4px 4px #FFD700;
 }
 
-/* Quote / Tips */
-.quote {
-  margin-top: 25px;
-  font-size: 0.65em;
-  color: #fff;
-  text-shadow: 2px 2px #000;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease;
-}
-
-.quote.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Timeline Projek TA */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 700px;
-  margin: 40px auto;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease;
-}
-
-.timeline.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.timeline-item {
-  background: rgba(0,0,0,0.5);
-  border: 2px solid #000;
-  padding: 10px 15px;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 0.6em;
-  box-shadow: 2px 2px #000;
-}
-
-.timeline-item:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 4px 4px #FFD700;
-}
-
-/* Sections kosong */
+/* Sections & timeline */
 section {
   min-height: 80vh;
   text-align: center;
@@ -267,23 +223,25 @@ section.visible {
 
 /* Responsive */
 @media screen and (max-width: 768px) {
-  .hero-highlight {
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px;
-  }
-  .highlight-img { width: 40px; height: 40px; }
-  .showcase { gap: 10px; }
-  .card { width: 120px; padding: 10px; }
-  .card img { width: 50px; height: 50px; }
-  nav a { font-size: 0.6em; padding: 6px 12px; }
+  .hero-highlight {flex-direction: column; gap: 10px;}
+  .highlight-img {width: 40px; height: 40px;}
+  .showcase {gap: 10px;}
+  .card {width: 120px; padding: 10px;}
+  .card img {width: 50px; height: 50px;}
+  nav a {font-size: 0.6em; padding: 6px 12px;}
 }
 </style>
 </head>
 <body>
 
-<!-- Pixel overlay -->
 <div class="pixel-overlay"></div>
+
+<!-- Flying pixel blocks -->
+<div class="pixel-block" style="left:10%; animation-delay:0s;"></div>
+<div class="pixel-block" style="left:30%; animation-delay:2s;"></div>
+<div class="pixel-block" style="left:50%; animation-delay:4s;"></div>
+<div class="pixel-block" style="left:70%; animation-delay:1s;"></div>
+<div class="pixel-block" style="left:85%; animation-delay:3s;"></div>
 
 <!-- Navbar -->
 <nav>
@@ -298,12 +256,9 @@ section.visible {
 <section class="hero">
   <h1>Selamat datang di dunia Mchelien!</h1>
 
-  <!-- Hero Highlights -->
   <div class="hero-highlight">
     <img src="https://img.icons8.com/emoji/96/000000/video-game-emoji.png" alt="Game Icon" class="highlight-img">
-    <div class="highlight-text">
-      <p>🎮 Projek TA tentang game – coming soon! Mohon dukungan & bantuannya 🙌</p>
-    </div>
+    <div class="highlight-text"><p>🎮 Projek TA tentang game – coming soon! Mohon dukungan & bantuannya 🙌</p></div>
   </div>
 
   <div class="hero-highlight">
@@ -314,68 +269,57 @@ section.visible {
     </div>
   </div>
 
-  <!-- CTA Buttons -->
-  <div class="cta-buttons">
-    <a href="#game">Game 🎮</a>
-    <a href="#pelayanan">Pelayanan 🛐</a>
-    <a href="#sosmed">Sosial Media 🌐</a>
-    <a href="#musik">Musik 🎵</a>
-    <a href="#hobi">📚 Hobi</a>
-  </div>
 </section>
 
 <!-- Sections -->
 <section id="game">
   <h2>Game Favorit</h2>
   <div class="showcase">
-    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt=""><p>Minecraft</p></div>
-    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg" alt=""><p>Roblox</p></div>
+    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"><p>Minecraft</p></div>
+    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg"><p>Roblox</p></div>
   </div>
 </section>
 
 <section id="pelayanan">
   <h2>Pelayanan Aktif</h2>
-  <div class="timeline">
-    <div class="timeline-item">Bulan 1: Orientasi & planning kegiatan</div>
-    <div class="timeline-item">Bulan 2: Event awal & community building</div>
-    <div class="timeline-item">Bulan 3: Program berkelanjutan</div>
+  <div class="showcase">
+    <div class="card"><p>Bulan 1: Orientasi & planning kegiatan</p></div>
+    <div class="card"><p>Bulan 2: Event awal & community building</p></div>
+    <div class="card"><p>Bulan 3: Program berkelanjutan</p></div>
   </div>
 </section>
 
 <section id="sosmed">
   <h2>Sosial Media</h2>
   <div class="showcase">
-    <div class="card"><img src="https://img.icons8.com/color/96/000000/instagram-new.png" alt=""><p>Instagram</p></div>
-    <div class="card"><img src="https://img.icons8.com/color/96/000000/youtube-play.png" alt=""><p>YouTube</p></div>
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/instagram-new.png"><p>Instagram</p></div>
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/youtube-play.png"><p>YouTube</p></div>
   </div>
 </section>
 
 <section id="musik">
   <h2>Musik Favorit</h2>
   <div class="showcase">
-    <div class="card"><img src="https://img.icons8.com/color/96/000000/spotify.png" alt=""><p>Spotify Playlist</p></div>
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/spotify.png"><p>Spotify Playlist</p></div>
   </div>
 </section>
 
 <section id="hobi">
   <h2>Hobi & Rekomendasi</h2>
   <div class="showcase">
-    <div class="card"><img src="https://img.icons8.com/color/96/000000/book.png" alt=""><p>Buku</p></div>
-    <div class="card"><img src="https://img.icons8.com/color/96/000000/clapperboard.png" alt=""><p>Film</p></div>
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/book.png"><p>Buku</p></div>
+    <div class="card"><img src="https://img.icons8.com/color/96/000000/clapperboard.png"><p>Film</p></div>
   </div>
-  <p class="quote">💡 "Selalu belajar, bermain, dan berbagi inspirasi setiap hari!"</p>
 </section>
 
 <script>
-// Scroll reveal sederhana
-const revealElements = document.querySelectorAll('.hero-highlight, .showcase, .timeline, .quote, section');
+// Scroll reveal for hero highlights
+const reveals = document.querySelectorAll('.hero-highlight, .showcase, section');
 window.addEventListener('scroll', () => {
   const triggerBottom = window.innerHeight / 5 * 4;
-  revealElements.forEach(el => {
+  reveals.forEach(el => {
     const elTop = el.getBoundingClientRect().top;
-    if(elTop < triggerBottom) {
-      el.classList.add('visible');
-    }
+    if(elTop < triggerBottom) el.classList.add('visible');
   });
 });
 </script>
