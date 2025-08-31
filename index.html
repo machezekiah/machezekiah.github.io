@@ -2,14 +2,14 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<title>Dunia Mchelien - Minecraft Pixel Art</title>
+<title>Dunia Mchelien - Pixel Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <style>
 :root{
   --nav-h:64px;
-  --space-1:6px; --space-2:10px; --space-3:14px; --space-4:18px;
-  --space-5:24px; --space-6:32px; --space-7:40px;
+  --space-1:6px; --space-2:10px; --space-3:12px; --space-4:16px;
+  --space-5:20px; --space-6:28px; --space-7:36px;
 }
 html{
   scroll-behavior:smooth;
@@ -32,14 +32,14 @@ body{
 /* Navbar */
 nav{
   position:sticky; top:0; height:var(--nav-h);
-  display:flex; gap:10px; justify-content:center; align-items:center;
+  display:flex; gap:8px; justify-content:center; align-items:center;
   padding:0 var(--space-3);
   background:rgba(0,0,0,.6);
   border-bottom:2px solid #000;
   z-index:1000;
 }
 nav a{
-  color:#fff; padding:8px 16px; background:#8B4513;
+  color:#fff; padding:6px 12px; background:#8B4513;
   border:2px solid #000; box-shadow:3px 3px 0 #000;
   text-decoration:none; font-size:0.65em; transition:all 0.2s;
 }
@@ -47,17 +47,23 @@ nav a:hover{
   transform:translateY(-2px); box-shadow:5px 5px 0 #FFD700;
 }
 
-/* Sections */
-section{padding:var(--space-7) 0;}
-section>.container{display:grid; gap:var(--space-5);}
+/* Section general */
+section{
+  padding:var(--space-5) 0;
+  display:flex; justify-content:center;
+}
+section>.container{
+  display:grid; gap:var(--space-4);
+  max-width:1000px; width:90%;
+}
 
 /* Hero */
 .hero{
-  min-height:60vh; display:flex; flex-direction:column;
+  min-height:50vh; display:flex; flex-direction:column;
   align-items:center; justify-content:center; text-align:center;
 }
 .hero h1{
-  font-family:'Press Start 2P', monospace; font-size:clamp(28px,6vw,56px);
+  font-family:'Press Start 2P', monospace; font-size:clamp(28px,6vw,48px);
   color:#fff; text-shadow:2px 2px #000; margin:0;
 }
 .hero-extra{
@@ -68,31 +74,31 @@ section>.container{display:grid; gap:var(--space-5);}
 .highlight-card{
   display:flex; align-items:center; gap:var(--space-2);
   background:rgba(0,0,0,.5); border:2px solid #000; box-shadow:3px 3px 0 #000;
-  border-radius:4px; padding:var(--space-3);
+  border-radius:4px; padding:var(--space-2);
   transition:transform 0.2s, box-shadow 0.2s;
 }
 .highlight-card:hover{
-  transform:translateY(-3px); box-shadow:5px 5px 0 #FFD700;
+  transform:translateY(-2px); box-shadow:5px 5px 0 #FFD700;
 }
 .highlight-card img{width:40px;height:40px;}
-.highlight-card p{margin:0;font-size:clamp(13px,1.6vw,16px);color:#fff;text-shadow:1px 1px #000;}
+.highlight-card p{margin:0;font-size:clamp(13px,1.5vw,16px);color:#fff;text-shadow:1px 1px #000;}
 
-/* Showcase grid & cards */
+/* Card general */
 .showcase{
   display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
-  gap:var(--space-4); justify-items:center;
+  gap:var(--space-3); justify-items:center;
 }
 .card{
   background:rgba(0,0,0,.5); border:2px solid #000; box-shadow:3px 3px 0 #000;
-  border-radius:4px; padding:var(--space-3); text-align:center;
-  transition:transform 0.2s, box-shadow 0.2s;
+  border-radius:4px; padding:var(--space-2); text-align:center;
+  transition:transform 0.2s, box-shadow 0.2s; width:100%;
 }
-.card:hover{ transform:translateY(-3px); box-shadow:5px 5px 0 #FFD700; }
-.card img{width:48px; height:48px; margin-bottom:var(--space-2);}
-.card p{margin:0; font-size:clamp(13px,1.6vw,16px); color:#fff; text-shadow:1px 1px #000;}
+.card:hover{ transform:translateY(-2px); box-shadow:5px 5px 0 #FFD700; }
+.card img{width:48px; height:48px; margin-bottom:var(--space-1);}
+.card p{margin:0; font-size:clamp(13px,1.5vw,16px); color:#fff; text-shadow:1px 1px #000;}
 
 /* Reveal animation */
-.reveal{opacity:0; transform:translateY(12px); transition:opacity 0.3s ease, transform 0.3s ease;}
+.reveal{opacity:0; transform:translateY(12px); transition:opacity 0.25s ease, transform 0.25s ease;}
 .reveal.visible{opacity:1; transform:translateY(0);}
 
 /* Footer */
@@ -103,7 +109,7 @@ footer a{color:#FFD700; margin:0 6px; text-decoration:none;}
 @media(max-width:768px){
   .highlight-card, .card{width:90%;}
   .hero h1{font-size:clamp(24px,8vw,40px);}
-  section>.container{gap:var(--space-4);}
+  section>.container{gap:var(--space-3);}
 }
 </style>
 </head>
@@ -113,28 +119,28 @@ footer a{color:#FFD700; margin:0 6px; text-decoration:none;}
 
 <!-- Navbar -->
 <nav>
-<a href="#game">🎮 Game</a>
-<a href="#pelayanan">🛐 Pelayanan</a>
-<a href="#sosmed">🌐 Sosial Media</a>
-<a href="#musik">🎵 Musik</a>
-<a href="#hobi">📚 Hobi</a>
+  <a href="#game">🎮 Game</a>
+  <a href="#pelayanan">🛐 Pelayanan</a>
+  <a href="#sosmed">🌐 Sosial Media</a>
+  <a href="#musik">🎵 Musik</a>
+  <a href="#hobi">📚 Hobi</a>
 </nav>
 
 <!-- Hero -->
-<section class="hero">
-<h1>Selamat datang di dunia Mchelien!</h1>
-<div class="hero-extra reveal">
-  <div class="highlight-card">
-    <img src="https://img.icons8.com/emoji/48/000000/video-game-emoji.png" alt="Game Icon">
-    <p>🎮 Projek TA tentang game – coming soon! Mohon dukungan & bantuannya 🙌</p>
+<section class="hero reveal">
+  <h1>Selamat datang di dunia Mchelien!</h1>
+  <div class="hero-extra">
+    <div class="highlight-card">
+      <img src="https://img.icons8.com/emoji/48/000000/video-game-emoji.png" alt="Game Icon">
+      <p>🎮 Projek TA tentang game – coming soon!</p>
+    </div>
+    <div class="highlight-card">
+      <img src="https://img.icons8.com/ios-filled/48/000000/church.png" alt="Church Icon">
+      <p>Aktif melayani di <strong>UPK-Kr. FT Unsrat</strong></p>
+      <a href="https://www.instagram.com/upkkrftunsrat/" target="_blank">🌐 Instagram UPK</a>
+      <a href="https://www.instagram.com/reformindo/" target="_blank">🌐 Instagram Reformindo</a>
+    </div>
   </div>
-  <div class="highlight-card">
-    <img src="https://img.icons8.com/ios-filled/48/000000/church.png" alt="Church Icon">
-    <p>Aktif melayani di <strong>UPK-Kr. FT Unsrat</strong></p>
-    <a href="https://www.instagram.com/upkkrftunsrat/" target="_blank">🌐 Instagram UPK</a>
-    <a href="https://www.instagram.com/reformindo/" target="_blank">🌐 Instagram Reformindo</a>
-  </div>
-</div>
 </section>
 
 <!-- Tentang Saya -->
@@ -150,70 +156,19 @@ footer a{color:#FFD700; margin:0 6px; text-decoration:none;}
 </div>
 </section>
 
-<!-- Game -->
+<!-- Game Favorit -->
 <section id="game" class="reveal">
 <div class="container">
-  <h2>Game Favorit</h2>
-  <div class="showcase">
-    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png"><p>Minecraft – Kreatif membangun dunia</p></div>
-    <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg"><p>Roblox – Bermain & bertemu teman</p></div>
-  </div>
-</div>
-</section>
-
-<!-- Pelayanan -->
-<section id="pelayanan" class="reveal">
-<div class="container">
-<h2>Pelayanan Aktif</h2>
+<h2>Game Favorit</h2>
 <div class="showcase">
-<div class="card"><p>Bulan 1: Orientasi & Planning</p></div>
-<div class="card"><p>Bulan 2: Event awal & Community</p></div>
-<div class="card"><p>Bulan 3: Program berkelanjutan</p></div>
+  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft"><p>Minecraft – Kreatif membangun dunia</p></div>
+  <div class="card"><img src="https://upload.wikimedia.org/wikipedia/commons/1/16/Roblox_Logo_2022.svg" alt="Roblox"><p>Roblox – Bermain & bertemu teman</p></div>
 </div>
 </div>
 </section>
 
-<!-- Sosial Media -->
-<section id="sosmed" class="reveal">
-<div class="container">
-<h2>Sosial Media</h2>
-<div class="showcase">
-<div class="card"><p>Instagram: <a href="https://www.instagram.com/mchelien/" target="_blank">@mchelien</a></p></div>
-<div class="card"><p>Facebook: Mchelien Palit</p></div>
-<div class="card"><p>Discord Server – Join & connect!</p></div>
-</div>
-</div>
-</section>
-
-<!-- Musik -->
-<section id="musik" class="reveal">
-<div class="container">
-<h2>Musik Favorit</h2>
-<div class="showcase">
-<div class="card"><p>Spotify Playlist – klik untuk dengar</p></div>
-</div>
-</div>
-</section>
-
-<!-- Hobi -->
-<section id="hobi" class="reveal">
-<div class="container">
-<h2>Hobi & Rekomendasi</h2>
-<div class="showcase">
-<div class="card"><p>Buku favorit</p></div>
-<div class="card"><p>Film rekomendasi</p></div>
-</div>
-</div>
-</section>
-
-<!-- Footer -->
-<footer>
-<p>Copyright © 2025 Mchelien. All rights reserved. 
-<a href="#">Facebook</a> | <a href="#">Instagram</a></p>
-</footer>
-
+<!-- Intersection Observer Reveal -->
 <script>
-// IntersectionObserver untuk scroll reveal
 const io = new IntersectionObserver(entries=>{
   entries.forEach(e=>{
     if(e.isIntersecting) e.target.classList.add('visible');
