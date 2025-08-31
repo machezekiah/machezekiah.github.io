@@ -82,47 +82,40 @@ nav a:hover {
   animation-delay: 0.3s;
 }
 
-/* Hero extra content */
-.hero-extra {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 30px;
-}
-
-/* Highlight cards */
-.highlight-card {
+/* Hero Highlight Headline */
+.hero-highlight {
   display: flex;
   align-items: center;
-  gap: 15px;
-  background: rgba(0,0,0,0.5);
-  padding: 15px 20px;
-  border: 2px solid #000;
-  box-shadow: 3px 3px #000;
-  border-radius: 8px;
-  max-width: 400px;
-  text-align: left;
+  justify-content: center;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(0,0,0,0.6);
+  padding: 25px 40px;
+  border: 3px solid #000;
+  box-shadow: 5px 5px #000;
+  border-radius: 10px;
+  margin: 25px 0;
   animation: fadeUp 1s ease forwards;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.highlight-card p {
+.hero-highlight:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 6px 6px #FFD700;
+}
+
+.highlight-img {
+  width: 80px;
+  height: 80px;
+}
+
+.highlight-text p {
   margin: 0;
-  font-size: 0.65em;
+  font-size: 1em;
   color: #fff;
-  text-shadow: 1px 1px #000;
-}
-
-.card-icon {
-  width: 40px;
-  height: 40px;
-}
-
-/* Hover effect Minecraft-style */
-.highlight-card:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 5px 5px #FFD700;
+  text-shadow: 2px 2px #000;
+  font-weight: bold;
 }
 
 /* Pelayanan button */
@@ -130,11 +123,11 @@ nav a:hover {
   display: inline-block;
   background: #8B4513;
   color: white;
-  padding: 8px 15px;
+  padding: 10px 20px;
   border: 2px solid #000;
   box-shadow: 2px 2px #000;
   text-decoration: none;
-  font-size: 0.6em;
+  font-size: 0.7em;
   margin-left: auto;
   transition: all 0.3s;
 }
@@ -206,17 +199,18 @@ section {
   <h1>Selamat datang di dunia machezekiah!</h1>
   <p>Belajar, bermain, dan berbagi inspirasi</p>
 
-  <!-- MASUKKAN HERO EXTRA / HIGHLIGHT CARD DI SINI -->
-  <div class="hero-extra">
-    <!-- Projek TA Card -->
-    <div class="highlight-card">
-      <img src="https://img.icons8.com/emoji/64/000000/video-game-emoji.png" alt="Game Icon" class="card-icon">
-      <p>Projek TA tentang game 🎮 – coming soon! Mohon dukungan & bantuannya 🙌</p>
+  <!-- Hero Highlight Projek TA -->
+  <div class="hero-highlight">
+    <img src="https://img.icons8.com/emoji/96/000000/video-game-emoji.png" alt="Game Icon" class="highlight-img">
+    <div class="highlight-text">
+      <p>🎮 Projek TA tentang game – coming soon! Mohon dukungan & bantuannya 🙌</p>
     </div>
+  </div>
 
-    <!-- Pelayanan Card -->
-    <div class="highlight-card">
-      <img src="https://img.icons8.com/ios-filled/64/000000/church.png" alt="Church Icon" class="card-icon">
+  <!-- Hero Highlight Pelayanan -->
+  <div class="hero-highlight">
+    <img src="https://img.icons8.com/ios-filled/96/000000/church.png" alt="Church Icon" class="highlight-img">
+    <div class="highlight-text">
       <p>Saya aktif melayani di <strong>UPK-Kr. FT Unsrat</strong>. Yuk join & ikut terlibat!</p>
       <a href="https://www.instagram.com/upkkrftunsrat/" target="_blank" class="upk-button">🌐 Instagram UPK</a>
     </div>
