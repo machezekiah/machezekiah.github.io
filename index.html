@@ -6,6 +6,92 @@
 <title>mchelien's world!</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link href="style.css" rel="stylesheet">
+<style>
+/* Header */
+body {
+  margin:0;
+  font-family:'Roboto', sans-serif;
+  background-color:#e0e8f0;
+  color:#1c1c1c;
+}
+header {
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: linear-gradient(135deg,#a3bcd9,#c9d6e3);
+  position:relative;
+  overflow:hidden;
+}
+.pixel-header {
+  font-family:'Press Start 2P', cursive;
+  font-size:3rem;
+  color:#0b1f3b;
+  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff;
+  margin-bottom:30px;
+}
+/* Pixel clouds */
+.pixel-cloud {
+  position:absolute;
+  width:50px;
+  height:30px;
+  background-color:#ffffff70;
+  animation: moveCloud 20s linear infinite;
+  border:2px solid #c9d6e3;
+}
+.pixel-cloud:nth-child(2){top:50px; left:150px; animation-duration:25s;}
+.pixel-cloud:nth-child(3){top:120px; left:300px; animation-duration:18s;}
+@keyframes moveCloud{
+  0%{transform: translateX(-100px);}
+  100%{transform: translateX(100vw);}
+}
+
+/* Vertical buttons */
+.vertical-button {
+  display:block;
+  background: linear-gradient(145deg,#c9d6e3,#a3bcd9);
+  border:3px solid #0b1f3b;
+  border-radius:12px;
+  margin:40px auto;
+  padding:25px;
+  max-width:800px;
+  text-decoration:none;
+  color:#0b1f3b;
+  transition: all 0.3s ease;
+  position:relative;
+}
+.vertical-button:hover {
+  background: linear-gradient(145deg,#a3bcd9,#82a1c3);
+  transform: translateY(-5px);
+}
+.vertical-button h2 {
+  font-family:'Press Start 2P', cursive;
+  font-size:1.4rem;
+  margin-bottom:15px;
+}
+.vertical-button p {
+  font-size:1rem;
+  line-height:1.8;
+}
+
+/* Responsive */
+@media(max-width:600px){
+  .vertical-button{padding:20px;}
+  .vertical-button h2{font-size:1.2rem;}
+  .vertical-button p{font-size:0.95rem;}
+}
+
+footer {
+  text-align:center;
+  padding:20px;
+  font-size:0.8rem;
+  background-color:#d3dce5;
+  font-family:'Roboto', sans-serif;
+  color:#1c1c1c;
+}
+</style>
 </head>
 <body>
 
