@@ -7,12 +7,12 @@ body {
   background: linear-gradient(180deg, #a3c4f3 0%, #dbe6f0 100%);
   color:#1c1c1c;
   overflow-x:hidden;
-  text-align:center; /* rata tengah semua konten */
+  text-align:center;
 }
 
 /* Header */
 header {
-  height:60vh;
+  height:100vh; /* supaya tidak kepotong */
   display:flex;
   justify-content:center;
   align-items:center;
@@ -20,33 +20,40 @@ header {
 }
 .pixel-header {
   font-family:'Press Start 2P', cursive;
-  font-size:3rem;
+  font-size:4rem;
   color:#0b1f3b;
   text-shadow:2px 2px #d4d4d4, -2px -2px #d4d4d4;
-  margin-bottom:30px;
 }
 
-/* Headline News Style */
-.headline-link {
+/* Tombol Vertikal Besar */
+.vertical-button {
   display:block;
-  text-decoration:none; /* hilangkan garis bawah */
-  margin:30px auto;
-  max-width:600px;
+  width:80%; /* hampir full-width */
+  max-width:800px;
+  margin:25px auto;
+  padding:30px 20px;
+  background-color:#c9d6e3;
+  border:2px solid #1c1c1c;
+  border-radius:12px;
+  text-decoration:none;
+  cursor:pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  text-align:left;
 }
-.headline-link h2 {
+.vertical-button:hover {
+  background-color:#a3bcd9;
+  transform: translateY(-6px);
+}
+.vertical-button h2 {
   font-family:'Press Start 2P', cursive;
   font-size:2rem;
   color:#0b1f3b;
-  transition: color 0.3s;
+  margin-bottom:10px;
 }
-.headline-link h2:hover {
-  color:#f0e68c; /* highlight saat hover */
-}
-.headline-link p {
+.vertical-button p {
   font-family:'Roboto', sans-serif;
   font-size:1rem;
   color:#1c1c1c;
-  margin-top:10px;
 }
 
 /* Footer */
@@ -62,6 +69,8 @@ footer {
 
 /* Responsive */
 @media(max-width:600px){
-  .headline-link h2{font-size:1.4rem;}
-  .headline-link p{font-size:0.85rem;}
+  .vertical-button h2{font-size:1.5rem;}
+  .vertical-button p{font-size:0.9rem;}
+  header{height:80vh;}
+  .pixel-header{font-size:3rem;}
 }
