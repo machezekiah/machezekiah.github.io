@@ -5,14 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>mchelien's world!</title>
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
 <style>
 /* Base */
 body {
   margin:0;
   font-family:'Roboto', sans-serif;
-  background-color:#e0e8f0;
   color:#1c1c1c;
+
+  /* Background pixel grid */
+  background-color: #e0e8f0;
+  background-image: 
+    linear-gradient(#c9d6e3 1px, transparent 1px),
+    linear-gradient(90deg, #c9d6e3 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 /* Header */
@@ -57,7 +62,7 @@ header {
   border:3px solid #0b1f3b;
   border-radius:12px;
   margin:40px auto;
-  padding:25px 25px 25px 60px;
+  padding:25px;
   max-width:800px;
   text-decoration:none;
   color:#0b1f3b;
@@ -79,21 +84,23 @@ header {
   line-height:1.8;
   margin:0;
 }
-/* Pixel icon */
-.vertical-button .icon {
+/* Pixel accent for buttons */
+.vertical-button::before {
+  content:"";
   position:absolute;
-  left:15px;
-  top:50%;
-  transform: translateY(-50%);
-  font-size:1.5rem;
+  top:10px;
+  left:10px;
+  width:10px;
+  height:10px;
+  background-color:#0b1f3b;
+  border:1px solid #fff;
 }
 
 /* Responsive */
 @media(max-width:600px){
-  .vertical-button{padding:20px 20px 20px 50px;}
+  .vertical-button{padding:20px;}
   .vertical-button h2{font-size:1.2rem;}
   .vertical-button p{font-size:0.95rem;}
-  .vertical-button .icon{font-size:1.2rem;}
 }
 
 footer {
@@ -116,51 +123,43 @@ footer {
   <div class="pixel-cloud"></div>
 </header>
 
-<!-- Vertical large buttons with Gen Z casual language & pixel icons -->
+<!-- Vertical large buttons with casual language -->
 <a href="about.html" class="vertical-button">
-  <span class="icon">👋</span>
   <h2>About Me</h2>
   <p>Hey! Wanna know who I am, my background & what I geek out on? This is my corner to share my journey in tech and creativity.</p>
 </a>
 
 <a href="service.html" class="vertical-button">
-  <span class="icon">⛪</span>
   <h2>Service / Ministry</h2>
   <p>Here’s the scoop on my chill but meaningful campus ministry vibes at UPK-Kr. FT UNSRAT and beyond. Mentoring, organizing, and sharing Christian content.</p>
 </a>
 
 <a href="gamedev.html" class="vertical-button">
-  <span class="icon">🎮</span>
   <h2>Game Dev</h2>
   <p>Working on my personal game "Apostle"! Peek at my ideas, mechanics, and dev progress as part of my final year project in Informatics.</p>
 </a>
 
 <a href="games.html" class="vertical-button">
-  <span class="icon">🕹️</span>
   <h2>Favorite Games</h2>
   <p>Minecraft & Roblox are my jam. I also share creative stuff and lessons learned while playing and leveling up my creativity.</p>
 </a>
 
 <a href="minahasa.html" class="vertical-button">
-  <span class="icon">🎨</span>
   <h2>Minahasa Culture</h2>
   <p>Super into Minahasa culture: traditional arts, kolintang, and learning the language. Plus, local history and how I try to keep the culture alive.</p>
 </a>
 
 <a href="music.html" class="vertical-button">
-  <span class="icon">🎵</span>
   <h2>Music</h2>
   <p>Music vibes! Listening, jamming, and sharing my playlists plus inspirations from genres I love.</p>
 </a>
 
 <a href="recommendations.html" class="vertical-button">
-  <span class="icon">📺</span>
   <h2>Recommendations</h2>
   <p>Fantasy films & series recs! Quick thoughts on my faves like Lord of The Rings and why they’re worth the watch.</p>
 </a>
 
 <a href="contact.html" class="vertical-button">
-  <span class="icon">📬</span>
   <h2>Contact</h2>
   <p>Wanna collab, ask stuff, or just say hi? Hit me up through the links here!</p>
 </a>
