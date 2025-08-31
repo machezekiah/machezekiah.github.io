@@ -9,14 +9,14 @@
 <style>
 /* Konten About */
 section.about-content {
-  max-width:900px;
+  max-width:800px;
   margin:50px auto;
-  text-align:left;
+  text-align:center;
   padding:0 20px;
 }
 section.about-content h2 {
   font-family:'Press Start 2P', cursive;
-  font-size:2rem;
+  font-size:1.8rem;
   color:#0b1f3b;
   margin-bottom:20px;
 }
@@ -24,14 +24,14 @@ section.about-content p {
   font-family:'Roboto', sans-serif;
   font-size:1rem;
   color:#1c1c1c;
-  line-height:1.6;
-  margin-bottom:15px;
+  line-height:1.8;
+  margin-bottom:25px;
 }
 section.about-content img {
   display:block;
-  max-width:200px;
+  max-width:180px;
   width:100%;
-  margin:20px auto;
+  margin:20px auto 35px auto;
   border-radius:12px;
   border:2px solid #1c1c1c;
 }
@@ -40,17 +40,19 @@ section.about-content img {
 .skills, .hobbies {
   display:flex;
   flex-wrap:wrap;
-  gap:15px;
+  gap:20px;
+  justify-content:center;
   margin-top:20px;
 }
 .skills div, .hobbies div {
   flex:1 1 120px;
   background-color:#c9d6e3;
-  padding:15px;
+  padding:12px;
   border-radius:12px;
   text-align:center;
   font-family:'Press Start 2P', cursive;
   color:#0b1f3b;
+  font-size:0.9rem; /* lebih kecil */
   transition: transform 0.3s, background-color 0.3s;
 }
 .skills div:hover, .hobbies div:hover {
@@ -66,10 +68,10 @@ blockquote {
   background-color:#e2ebf2;
   border-left:4px solid #0b1f3b;
   padding:15px 20px;
-  margin:30px auto;
+  margin:35px auto;
   max-width:700px;
   border-radius:8px;
-  line-height:1.6;
+  line-height:1.8;
 }
 </style>
 </head>
@@ -80,13 +82,11 @@ blockquote {
   
   <img src="profil.jpg" alt="Foto Profil Saya">
 
-  <p>Halo! Saya mahasiswa Informatika yang sedang mengerjakan Tugas Akhir dengan proyek game bernama "Apostle". Fokus saya meliputi game development, programming, dan desain kreatif.</p>
-
   <p>Saya aktif dalam pelayanan Kristen di kampus melalui UPK-Kr. FT UNSRAT, tertarik pada apologetika Protestan Reformed, mentoring, dan pengembangan komunitas untuk membantu sesama.</p>
 
   <p>Selain itu, saya memiliki ketertarikan pada budaya Minahasa: kesenian tradisional, kolintang, belajar bahasa Minahasa, serta sejarah lokal. Hobi saya juga mencakup musik dan menonton film/series fantasi favorit seperti Lord of The Rings.</p>
 
-  <h2>Skill & Kemampuan</h2>
+  <h2 style="font-size:1.5rem; margin-top:40px;">Skill & Kemampuan</h2>
   <div class="skills">
     <div>Programming</div>
     <div>Game Dev</div>
@@ -95,7 +95,7 @@ blockquote {
     <div>Apologetika</div>
   </div>
 
-  <h2>Hobi & Minat</h2>
+  <h2 style="font-size:1.5rem; margin-top:40px;">Hobi & Minat</h2>
   <div class="hobbies">
     <div>Minecraft</div>
     <div>Roblox</div>
