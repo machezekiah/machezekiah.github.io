@@ -36,33 +36,26 @@ p {
   margin:0 auto 30px;
 }
 
-/* Contact box */
-.contact-box {
+/* Contact button */
+.contact-button {
+  display:block;
   background: linear-gradient(145deg,#c9d6e3,#a3bcd9);
   border:3px solid #0b1f3b;
   border-radius:12px;
   max-width:600px;
   margin:20px auto;
   padding:20px;
-  text-align:left;
+  text-align:center;
+  text-decoration:none;
+  color:#0b1f3b;
+  font-weight:bold;
+  transition: all 0.3s ease;
   box-shadow: 4px 4px 0 #0b1f3b;
 }
-
-.contact-box h2 {
-  font-family:'Press Start 2P', cursive;
-  font-size:1.2rem;
-  margin-bottom:15px;
-}
-
-.contact-box a {
-  color:#0b1f3b;
-  text-decoration:none;
-  font-weight:bold;
-  transition: all 0.2s ease;
-}
-.contact-box a:hover {
-  color:#1e4f91;
-  text-decoration:underline;
+.contact-button:hover {
+  background: linear-gradient(145deg,#a3bcd9,#82a1c3);
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 0 #0b1f3b;
 }
 
 /* Back home button */
@@ -88,30 +81,17 @@ a.home-button:hover {
 <body>
 
 <h1>Contact Me</h1>
-<p>Got a question, wanna collab, or just say hi? Here’s where you can reach out and connect with me 👇</p>
+<p>You can easily reach me through these links below:</p>
 
-<div class="contact-box">
-  <h2>Email</h2>
-  <p><a href="mailto:youremail@example.com">youremail@example.com</a></p>
-</div>
+<a href="mailto:hizkiapalit0702@gmail.com" class="contact-button">Email: hizkiapalit0702@gmail.com</a>
 
-<div class="contact-box">
-  <h2>Instagram</h2>
-  <p><a href="https://instagram.com/yourusername" target="_blank">@yourusername</a></p>
-</div>
+<a href="https://instagram.com/mchelien" target="_blank" class="contact-button">Instagram: @mchelien</a>
 
-<div class="contact-box">
-  <h2>GitHub</h2>
-  <p><a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-</div>
+<a href="https://facebook.com/mchelien.palit" target="_blank" class="contact-button">Facebook: Mchelien Palit</a>
 
-<div class="contact-box">
-  <h2>LinkedIn</h2>
-  <p><a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
-</div>
+<a href="https://discord.gg/YOUR_SERVER_INVITE" target="_blank" class="contact-button">Discord: mchelien's server</a>
 
 <a href="index.html" class="home-button">Back to Home</a>
 
 </body>
 </html>
-
