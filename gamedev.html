@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ministry & Service | mchelien's world!</title>
+    <title>Game Dev | mchelien's world!</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -45,31 +45,27 @@
 
         .page-title { font-family: 'Press Start 2P', cursive; font-size: 1.5rem; margin-bottom: 20px; color: var(--dark); }
         
-        .status-badge {
-            display: inline-block;
-            background: var(--dark);
-            color: var(--accent);
-            padding: 8px 15px;
+        .status-box {
+            background: #0b1f3b;
+            color: #7ba4d0;
+            padding: 15px;
             font-family: 'Press Start 2P', cursive;
             font-size: 0.6rem;
             margin-bottom: 30px;
+            line-height: 1.6;
         }
 
-        .ministry-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .ministry-item {
-            border-left: 4px solid var(--dark);
-            padding: 15px 20px;
-            margin-bottom: 20px;
-            background: #f8fafc;
-        }
-
-        h3 { font-family: 'Press Start 2P', cursive; font-size: 0.75rem; margin: 0 0 10px 0; color: var(--dark); }
-        p { margin: 0; color: #444; font-size: 0.95rem; }
+        h3 { font-family: 'Press Start 2P', cursive; font-size: 0.8rem; margin-top: 35px; color: var(--dark); text-transform: uppercase; }
+        .tech-stack { font-weight: bold; color: var(--accent); margin-bottom: 15px; display: block; }
         
+        .download-box {
+            margin-top: 40px;
+            padding: 20px;
+            border: 4px dashed var(--dark);
+            text-align: center;
+            background: #f0f4f8;
+        }
+
         footer { text-align: center; padding: 50px; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; color: #666; }
     </style>
 </head>
@@ -77,36 +73,30 @@
 
     <nav>
         <a href="index.html" class="nav-logo">MCHELIEN.</a>
-        <a href="index.html" class="back-link">< BACK</a>
+        <a href="index.html" class="back-link">< BACK_TO_HOME</a>
     </nav>
 
     <div class="content-wrapper">
         <main>
-            <h1 class="page-title">Ministry & Service</h1>
-            <div class="status-badge">FAITH_IN_ACTION</div>
+            <h1 class="page-title">Game Development</h1>
             
-            <p style="margin-bottom: 30px;">A documentation of my journey and involvement in the campus ministry at <b>UPK-Kr. FT UNSRAT</b>.</p>
+            <div class="status-box">
+                CURRENT_LEVEL: UNDERGRADUATE_THESIS_PROJECT<br>
+                STATUS: IN_DEVELOPMENT
+            </div>
 
-            <div class="ministry-list">
-                <div class="ministry-item">
-                    <h3>Campus Ministry Executive</h3>
-                    <p>Served for 2 consecutive periods as a board member in UPK-Kr. FT UNSRAT.</p>
-                </div>
+            <p>Welcome to my digital workspace. This is where I document my journey in building interactive experiences, specifically for my IT project at UNSRAT.</p>
 
-                <div class="ministry-item">
-                    <h3>Christian Camp for Students (CCS)</h3>
-                    <p>Actively involved in organizing and participating in the annual CCS events.</p>
-                </div>
+            <h3>Project: "Apostle"</h3>
+            <span class="tech-stack">Unity Engine | C# | 2D Sprite Art</span>
+            <p>Apostle is a 2D educational game designed to provide an immersive learning experience through strong narrative and puzzle-platformer mechanics.</p>
 
-                <div class="ministry-item">
-                    <h3>Christian Fellowship for Students (CFS)</h3>
-                    <p>Engaged in the planning and execution of CFS fellowship activities.</p>
-                </div>
+            <h3>Core Mechanics</h3>
+            <p>I am focusing on creating smooth gameplay logic and intuitive mechanics, ensuring that the educational message is delivered naturally through the game's flow.</p>
 
-                <div class="ministry-item">
-                    <h3>Discipleship Group</h3>
-                    <p>Part of a "Kelompok Kecil" (small group) for spiritual growth and fellowship.</p>
-                </div>
+            <div class="download-box">
+                <p style="font-family: 'Press Start 2P', cursive; font-size: 0.7rem;">BUILD_STATUS: COMING_SOON</p>
+                <p><b>I will provide the download link for the app as soon as it is ready!</b></p>
             </div>
         </main>
     </div>
