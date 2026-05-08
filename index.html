@@ -7,22 +7,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;800&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-blue: #e0e9f5;
-            --dark-blue: #2c4a7c;
-            --accent-blue: #8eb9ff;
-            --tape-color: rgba(142, 185, 255, 0.5);
+            --bg-dark: #1a1a1a; /* Abu-abu gelap/hitam matte */
+            --card-grey: #2d2d2d; /* Abu-abu kartu */
+            --steel-blue: #7ba4d0; /* Aksen biru baja */
+            --tape-dark: rgba(123, 164, 208, 0.2);
+            --text-main: #e0e0e0;
         }
 
         body {
             margin: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: var(--bg-blue);
-            /* Gingham Pattern yang lebih soft */
+            background-color: var(--bg-dark);
+            /* Gingham Pattern versi Gelap */
             background-image: 
-                linear-gradient(white 2px, transparent 2px),
-                linear-gradient(90deg, white 2px, transparent 2px);
+                linear-gradient(rgba(255,255,255,0.03) 2px, transparent 2px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 2px, transparent 2px);
             background-size: 40px 40px;
-            color: var(--dark-blue);
+            color: var(--text-main);
             overflow-x: hidden;
         }
 
@@ -34,12 +35,13 @@
         .pixel-header {
             font-family: 'Press Start 2P', cursive;
             font-size: clamp(1rem, 4vw, 1.8rem);
-            background: white;
+            background: var(--card-grey);
+            color: var(--steel-blue);
             padding: 15px 25px;
             display: inline-block;
-            border: 2px dashed var(--dark-blue);
+            border: 2px dashed var(--steel-blue);
             transform: rotate(-1deg);
-            box-shadow: 5px 5px 0px var(--dark-blue);
+            box-shadow: 6px 6px 0px #000;
         }
 
         .container {
@@ -48,108 +50,106 @@
             padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 20px; /* Jarak antar kartu lebih rapat agar terkesan bertumpuk */
+            gap: 25px;
         }
 
-        /* Base Card Style */
+        /* Card Style - Dark Version */
         .card {
-            background: #fff;
+            background: var(--card-grey);
             padding: 35px;
             text-decoration: none;
             color: inherit;
             position: relative;
-            box-shadow: 3px 10px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            /* Tekstur Kertas Grain */
-            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
+            box-shadow: 5px 15px 30px rgba(0,0,0,0.5);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background-image: url('https://www.transparenttextures.com/patterns/dark-matter.png');
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* Torn Edge Effect menggunakan Clip-Path yang lebih organik */
+        /* Torn Edge Effect */
         .card-scrap {
             clip-path: polygon(
-                0% 3%, 12% 1%, 25% 4%, 38% 0%, 52% 3%, 65% 1%, 78% 4%, 92% 0%, 100% 3%, 
-                99% 25%, 100% 50%, 98% 75%, 100% 97%, 
-                88% 100%, 75% 98%, 62% 100%, 50% 97%, 35% 100%, 22% 98%, 10% 100%, 0% 97%, 
+                0% 2%, 15% 0%, 30% 3%, 45% 0%, 60% 2%, 75% 0%, 90% 3%, 100% 1%, 
+                98% 25%, 100% 50%, 99% 75%, 100% 98%, 
+                85% 100%, 70% 97%, 55% 100%, 40% 98%, 25% 100%, 10% 97%, 0% 100%, 
                 1% 75%, 0% 50%, 2% 25%
             );
-            border: 1px solid rgba(0,0,0,0.05);
-            padding: 10px;
         }
 
-        /* Variasi Posisi agar seperti tempelan tangan */
-        .card:nth-child(1) { transform: rotate(1.5deg) translateX(10px); }
-        .card:nth-child(2) { transform: rotate(-1deg) translateX(-15px); }
-        .card:nth-child(3) { transform: rotate(0.5deg) translateX(5px); }
-        .card:nth-child(4) { transform: rotate(-2deg) translateX(-5px); }
-        .card:nth-child(5) { transform: rotate(1deg) translateX(10px); }
+        /* Dinamika Posisi */
+        .card:nth-child(1) { transform: rotate(1deg); }
+        .card:nth-child(2) { transform: rotate(-1.5deg); }
+        .card:nth-child(3) { transform: rotate(0.8deg); }
+        .card:nth-child(4) { transform: rotate(-1deg); }
+        .card:nth-child(5) { transform: rotate(1.2deg); }
 
         .card:hover {
-            transform: scale(1.03) rotate(0deg) !important;
+            transform: scale(1.04) rotate(0deg) !important;
             z-index: 50;
-            box-shadow: 0 15px 35px rgba(44, 74, 124, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+            border-color: var(--steel-blue);
         }
 
-        /* Washi Tape Aksen */
+        /* Washi Tape - Dark Blue */
         .tape {
             position: absolute;
-            width: 90px;
+            width: 80px;
             height: 25px;
-            background: var(--tape-color);
-            top: -10px;
-            left: 20px;
-            transform: rotate(-15deg);
-            backdrop-filter: blur(2px);
-            border-left: 2px dotted rgba(255,255,255,0.5);
-            border-right: 2px dotted rgba(255,255,255,0.5);
+            background: var(--steel-blue);
+            opacity: 0.3;
+            top: -12px;
+            left: 30px;
+            transform: rotate(-10deg);
+            z-index: 10;
         }
 
         .tag {
             font-family: 'Shadows Into Light', cursive;
-            font-size: 1.5rem;
-            color: #6a89cc;
+            font-size: 1.4rem;
+            color: var(--steel-blue);
             display: block;
             margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
         h2 {
             font-family: 'Press Start 2P', cursive;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin: 10px 0;
-            letter-spacing: -1px;
-            color: var(--dark-blue);
+            color: #fff;
+            text-shadow: 2px 2px 0px #000;
         }
 
         p {
             font-size: 0.95rem;
             line-height: 1.5;
-            color: #556a8a;
+            color: #b0b0b0;
             margin: 0;
         }
 
-        /* Sticker Element (Elemen tambahan agar aesthetic) */
         .sticker {
             position: absolute;
-            bottom: -15px;
+            bottom: -10px;
             right: -10px;
-            width: 50px;
-            height: 50px;
-            background: var(--accent-blue);
+            width: 45px;
+            height: 45px;
+            background: #111;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-            transform: rotate(15deg);
-            border: 2px dashed white;
-            box-shadow: 3px 3px 0px var(--dark-blue);
+            font-size: 1.1rem;
+            transform: rotate(10deg);
+            border: 2px solid var(--steel-blue);
+            box-shadow: 3px 3px 0px #000;
         }
 
         footer {
             text-align: center;
-            padding: 50px;
+            padding: 60px;
             font-family: 'Shadows Into Light', cursive;
-            font-size: 1.5rem;
-            color: var(--dark-blue);
+            font-size: 1.3rem;
+            color: #555;
         }
     </style>
 </head>
@@ -166,26 +166,25 @@
             <div class="card-scrap">
                 <span class="tag">#The Architect</span>
                 <h2>PROFILE</h2>
-                <p>Mchelien V. Hizkia Palit | IT Student @ UNSRAT '21. Focused on Information Technology studies and systems.</p>
+                <p>Mchelien V. Hizkia Palit | IT Student @ UNSRAT '21. Focused on Information Technology and logic-based systems.</p>
             </div>
-            <div class="sticker">💎</div>
         </a>
 
         <a href="gamedev.html" class="card">
-            <div class="tape" style="left: auto; right: 20px; transform: rotate(10deg); background: rgba(255,255,255,0.6);"></div>
+            <div class="tape" style="left: auto; right: 20px; background: #fff; opacity: 0.1;"></div>
             <div class="card-scrap">
                 <span class="tag">#ThesisWork</span>
                 <h2>PROJECT: Apostle</h2>
                 <p>Developing an educational 2D game using Unity and C#. Check out the project progress here.</p>
             </div>
+            <div class="sticker">⚔️</div>
         </a>
 
         <a href="service.html" class="card">
-            <div class="tape" style="top: auto; bottom: -10px; left: 40%; width: 120px; background: rgba(44, 74, 124, 0.2);"></div>
             <div class="card-scrap">
                 <span class="tag">#ServingGod</span>
                 <h2>FAITH</h2>
-                <p>Serving as a Christian student in UPK-Kr. FT UNSRAT. Faith-based activities and campus ministry.</p>
+                <p>Serving as a Christian student in UPK-Kr. FT UNSRAT. Documenting the ministry journey.</p>
             </div>
         </a>
 
@@ -193,32 +192,32 @@
             <div class="card-scrap">
                 <span class="tag">#Hobbies</span>
                 <h2>INTERESTS</h2>
-                <p>Movies, music, and gaming sessions on Minecraft or Roblox. Just a collection of things I enjoy.</p>
+                <p>Movies, music, and gaming sessions. A curated collection of things that keep me inspired.</p>
             </div>
-            <div class="sticker" style="background: #fff; left: -10px; right: auto; border: 2px solid var(--dark-blue);">🎮</div>
+            <div class="sticker" style="left: -10px; right: auto;">🎧</div>
         </a>
 
         <a href="minahasa.html" class="card">
-            <div class="tape" style="width: 40px; height: 40px; border-radius: 50%; top: -20px; left: -10px; transform: none; background: white; border: 2px solid var(--dark-blue);"></div>
+            <div class="tape" style="width: 100px; left: 50%; transform: translateX(-50%) rotate(2deg); top: -15px;"></div>
             <div class="card-scrap">
                 <span class="tag">#Identity</span>
                 <h2>CULTURE</h2>
-                <p>Exploring Minahasa history and art. A personal journey into my own roots and cultural legacy.</p>
+                <p>Exploring Minahasa history and art. A personal journey into cultural legacy.</p>
             </div>
         </a>
 
-        <a href="contact.html" class="card" style="background: var(--dark-blue); color: white;">
+        <a href="contact.html" class="card" style="background: var(--steel-blue); border: none;">
             <div class="card-scrap">
-                <span class="tag" style="color: var(--accent-blue);">@ContactMe</span>
-                <h2 style="color: white;">LET'S CONNECT!</h2>
-                <p style="color: #a5b4fc;">Open for discussions on IT, history, or any creative collaborations.</p>
+                <span class="tag" style="color: var(--bg-dark);">@ContactMe</span>
+                <h2 style="color: var(--bg-dark); text-shadow: none;">LET'S CONNECT!</h2>
+                <p style="color: #2c4a7c;">Open for discussions on IT, history, or creative collaborations.</p>
             </div>
         </a>
 
     </div>
 
     <footer>
-        Handcrafted by Mchelien &copy; 2026
+        mchelien &bull; 2026 &bull; dark_mode_active
     </footer>
 
 </body>
