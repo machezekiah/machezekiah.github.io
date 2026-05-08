@@ -7,190 +7,202 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;800&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #121212;
-            --card-grey: #1e1e1e;
+            --bg-dark: #0f0f0f;
+            --card-grey: #1a1a1a;
             --steel-blue: #7ba4d0;
             --text-main: #d1d1d1;
+            --washi: rgba(123, 164, 208, 0.35);
         }
 
         body {
             margin: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-dark);
-            /* Gingham pattern abu-abu sangat gelap */
+            /* Grid background lebih halus */
             background-image: 
-                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-            background-size: 30px 30px;
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
             color: var(--text-main);
+            overflow-x: hidden;
         }
 
         header {
-            padding: 100px 20px;
+            padding: 120px 20px 60px;
             text-align: center;
         }
 
-        /* Sobekan kertas untuk Judul Utama */
+        /* Torn Header yang lebih estetik */
         .torn-header {
-            background: #f0f0f0;
-            color: #1a1a1a;
-            padding: 20px 40px;
+            background: #ffffff;
+            color: #111;
+            padding: 25px 50px;
             font-family: 'Press Start 2P', cursive;
-            font-size: 1.2rem;
+            font-size: clamp(1rem, 5vw, 1.5rem);
             display: inline-block;
-            transform: rotate(-2deg);
-            box-shadow: 8px 8px 0px var(--steel-blue);
-            clip-path: polygon(0% 15%, 15% 0%, 30% 10%, 45% 0%, 60% 15%, 75% 5%, 90% 15%, 100% 0%, 100% 85%, 85% 100%, 70% 90%, 55% 100%, 40% 85%, 25% 95%, 10% 85%, 0% 100%);
+            transform: rotate(-1.5deg);
+            box-shadow: 12px 12px 0px var(--steel-blue);
+            clip-path: polygon(2% 10%, 12% 2%, 25% 12%, 40% 4%, 55% 15%, 72% 3%, 88% 12%, 100% 5%, 98% 88%, 85% 98%, 70% 90%, 52% 100%, 35% 88%, 18% 98%, 4% 90%, 0% 100%);
         }
 
         .container {
-            max-width: 800px;
+            max-width: 750px;
             margin: 0 auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px; /* Jarak lebih jauh agar stiker tidak menabrak teks */
         }
 
-        /* Kartu dengan Grid Notebook di dalamnya */
+        /* Card Enhancement */
         .card {
             background: var(--card-grey);
-            background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
-            background-size: 15px 15px; /* Grid kecil seperti buku tulis */
-            padding: 30px;
+            background-image: radial-gradient(rgba(255,255,255,0.04) 1.5px, transparent 1.5px);
+            background-size: 20px 20px;
+            padding: 45px 35px;
             text-decoration: none;
             color: inherit;
             position: relative;
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 20px 20px 40px rgba(0,0,0,0.6);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .card:hover {
-            transform: translateY(-10px) rotate(1deg);
+            transform: scale(1.02) rotate(0deg) !important;
             border-color: var(--steel-blue);
+            z-index: 10;
         }
 
-        /* Efek Polaroid */
-        .polaroid {
-            background: white;
-            padding: 10px 10px 30px 10px;
-            width: 120px;
-            height: 140px;
+        /* Washi Tape yang terlihat seperti selotip asli */
+        .washi-tape {
             position: absolute;
-            top: -20px;
-            right: -20px;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
-            transform: rotate(15deg);
-            z-index: 5;
+            width: 100px;
+            height: 30px;
+            background: var(--washi);
+            backdrop-filter: blur(2px);
+            top: -15px;
+            left: 30px;
+            transform: rotate(-5deg);
+            border-left: 2px dashed rgba(255,255,255,0.2);
+            border-right: 2px dashed rgba(255,255,255,0.2);
+            z-index: 2;
+        }
+
+        /* Polaroid Frame */
+        .polaroid {
+            background: #fdfdfd;
+            padding: 10px 10px 35px 10px;
+            width: 130px;
+            position: absolute;
+            top: -30px;
+            right: -25px;
+            box-shadow: 10px 15px 25px rgba(0,0,0,0.5);
+            transform: rotate(12deg);
+            transition: 0.3s;
         }
 
         .polaroid img {
             width: 100%;
-            height: 100px;
+            height: 110px;
             object-fit: cover;
-            filter: grayscale(0.5);
+            filter: sepia(0.2) contrast(1.1);
         }
 
+        /* Tipografi */
         .tag {
             font-family: 'Shadows Into Light', cursive;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: var(--steel-blue);
-            margin-bottom: 10px;
-            display: block;
+            margin-bottom: 5px;
+            display: inline-block;
+            background: linear-gradient(transparent 70%, rgba(123, 164, 208, 0.15) 0%);
         }
 
         h2 {
             font-family: 'Press Start 2P', cursive;
             font-size: 0.9rem;
             color: #fff;
-            line-height: 1.4;
+            margin: 15px 0;
+            letter-spacing: 1px;
         }
 
         p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            line-height: 1.6;
+            font-size: 0.95rem;
+            opacity: 0.7;
+            line-height: 1.7;
+            margin: 0;
         }
 
-        /* Pin/Staples dekorasi */
-        .pin {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 10px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 2px;
-        }
-
-        /* Stiker Emoji */
+        /* Dekorasi Stiker */
         .sticker {
             position: absolute;
-            bottom: -15px;
-            left: -15px;
-            font-size: 2rem;
-            filter: drop-shadow(3px 3px 0px black);
-            transform: rotate(-10deg);
+            bottom: -20px;
+            font-size: 2.5rem;
+            filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.8));
+            transition: 0.3s;
         }
+
+        .sticker:hover { transform: scale(1.2) rotate(10deg); }
 
         footer {
             text-align: center;
-            padding: 100px;
+            padding: 80px;
             font-family: 'Shadows Into Light', cursive;
-            font-size: 1.5rem;
-            opacity: 0.5;
+            font-size: 1.6rem;
+            color: #444;
         }
-
     </style>
 </head>
 <body>
 
     <header>
-        <div class="torn-header">mchelien's world!</div>
+        <div class="torn-header">Dunia<br>McHelien!</div>
     </header>
 
     <div class="container">
         
-        <a href="about.html" class="card" style="transform: rotate(-1deg);">
-            <div class="pin"></div>
+        <a href="about.html" class="card" style="transform: rotate(-1.5deg);">
+            <div class="washi-tape"></div>
             <div class="polaroid">
-                <img src="profile-pic.jpg" alt="Me">
+                <img src="profile-pic.jpg" alt="Aku">
+                <p style="font-family:'Shadows Into Light'; font-size: 0.7rem; text-align: center; color: #666; margin-top: 5px;">2026_shot</p>
             </div>
-            <span class="tag">#The Architect</span>
-            <h2>PROFILE</h2>
-            <p>IT Student @ UNSRAT '21. Focused on Information Technology and systems.</p>
-            <span class="sticker">✨</span>
+            <span class="tag">#SangArsitek</span>
+            <h2>PROFIL</h2>
+            <p>Mahasiswa IT di UNSRAT '21. Fokus pada eksplorasi Teknologi Informasi dan sistem.</p>
+            <span class="sticker" style="right: 20px;">✨</span>
         </a>
 
-        <a href="gamedev.html" class="card" style="transform: rotate(2deg); margin-top: 20px;">
-            <div class="pin" style="background: var(--steel-blue); opacity: 0.3;"></div>
-            <span class="tag">#ThesisWork</span>
-            <h2>PROJECT: Apostle</h2>
-            <p>2D educational game development with Unity. Progressing through logic and design.</p>
-            <span class="sticker" style="left: auto; right: -10px; bottom: -10px;">🎮</span>
+        <a href="gamedev.html" class="card" style="transform: rotate(1deg); align-self: flex-end;">
+            <div class="washi-tape" style="left: auto; right: 40px; background: rgba(255,255,255,0.1);"></div>
+            <span class="tag">#Tulisan</span>
+            <h2>PROYEK: Rasul</h2>
+            <p>Pengembangan game edukasi 2D dengan Unity. Berkembang melalui logika dan desain.</p>
+            <span class="sticker" style="left: -15px; bottom: 10px;">🎮</span>
         </a>
 
-        <a href="service.html" class="card" style="background-color: #252525;">
-            <span class="tag">#ServingGod</span>
-            <h2>MINISTRY</h2>
-            <p>UPK-Kr. FT UNSRAT service journey. From CCS to CFS periods.</p>
-            <div class="polaroid" style="top: auto; bottom: -20px; left: -10px; rotate: -10deg; width: 100px; height: 120px;">
-                <img src="ministry-thumb.jpg" alt="Service">
+        <a href="service.html" class="card" style="transform: rotate(-1deg); background-color: #222;">
+            <div class="polaroid" style="right: auto; left: -30px; top: auto; bottom: -20px; transform: rotate(-8deg);">
+                <img src="ministry.jpg" alt="Service">
             </div>
+            <span class="tag" style="margin-left: 80px;">#MelayaniTuhan</span>
+            <h2 style="margin-left: 80px;">PELAYANAN</h2>
+            <p style="margin-left: 80px;">Perjalanan pelayanan UPK-Kr. FT UNSRAT. CCS menuju CFS.</p>
         </a>
 
-        <a href="recommendations.html" class="card" style="transform: rotate(-2deg);">
-            <span class="tag">#Hobbies</span>
-            <h2>INTERESTS</h2>
-            <p>Curation of movies, melancholic tracks, and simulation games like Minecraft.</p>
-            <span class="sticker" style="left: 40%; bottom: -25px;">💿</span>
+        <a href="recommendations.html" class="card" style="transform: rotate(1.5deg);">
+            <div class="washi-tape" style="width: 150px; left: 20%; top: -10px; opacity: 0.2;"></div>
+            <span class="tag">#Hobi</span>
+            <h2>MINAT</h2>
+            <p>Koleksi film, lagu-lagu melankolis, dan game simulasi seperti Minecraft.</p>
+            <span class="sticker" style="right: 10%; bottom: -30px;">💿</span>
         </a>
 
     </div>
 
     <footer>
-        "designed in Manado, 2026"
+        "dirancang di Manado, 2026"
     </footer>
 
 </body>
