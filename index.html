@@ -7,151 +7,156 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;800&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0f0f0f;
-            --card-grey: #1a1a1a;
+            --bg-dark: #0a0a0a;
+            --card-grey: #161616;
             --steel-blue: #7ba4d0;
             --text-main: #d1d1d1;
-            --washi: rgba(123, 164, 208, 0.35);
+            --washi: rgba(123, 164, 208, 0.45);
         }
 
         body {
             margin: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-dark);
-            /* Grid background lebih halus */
+            /* Grid background lebih halus dan besar */
             background-image: 
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 50px 50px;
             color: var(--text-main);
             overflow-x: hidden;
         }
 
         header {
-            padding: 120px 20px 60px;
+            padding: 100px 20px 80px;
             text-align: center;
         }
 
-        /* Torn Header yang lebih estetik */
+        /* Torn Header dengan bayangan ganda */
         .torn-header {
             background: #ffffff;
             color: #111;
-            padding: 25px 50px;
+            padding: 30px 50px;
             font-family: 'Press Start 2P', cursive;
-            font-size: clamp(1rem, 5vw, 1.5rem);
+            font-size: clamp(0.9rem, 4vw, 1.3rem);
             display: inline-block;
-            transform: rotate(-1.5deg);
-            box-shadow: 12px 12px 0px var(--steel-blue);
-            clip-path: polygon(2% 10%, 12% 2%, 25% 12%, 40% 4%, 55% 15%, 72% 3%, 88% 12%, 100% 5%, 98% 88%, 85% 98%, 70% 90%, 52% 100%, 35% 88%, 18% 98%, 4% 90%, 0% 100%);
+            transform: rotate(-2deg);
+            box-shadow: 10px 10px 0px var(--steel-blue), 20px 20px 40px rgba(0,0,0,0.5);
+            clip-path: polygon(0% 15%, 15% 2%, 35% 10%, 50% 0%, 65% 15%, 85% 5%, 100% 12%, 98% 85%, 80% 95%, 60% 88%, 45% 100%, 25% 90%, 10% 98%, 0% 85%);
         }
 
         .container {
-            max-width: 750px;
+            max-width: 850px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 60px; /* Jarak lebih jauh agar stiker tidak menabrak teks */
+            gap: 100px; /* Jarak antar kartu untuk estetika kolase */
         }
 
-        /* Card Enhancement */
+        /* Card Enhancement dengan tekstur noise */
         .card {
             background: var(--card-grey);
-            background-image: radial-gradient(rgba(255,255,255,0.04) 1.5px, transparent 1.5px);
-            background-size: 20px 20px;
-            padding: 45px 35px;
+            background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+            padding: 50px 40px;
             text-decoration: none;
             color: inherit;
             position: relative;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 20px 20px 40px rgba(0,0,0,0.6);
+            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 30px 30px 60px rgba(0,0,0,0.7);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-width: 450px;
         }
 
         .card:hover {
-            transform: scale(1.02) rotate(0deg) !important;
+            transform: scale(1.05) rotate(0deg) !important;
             border-color: var(--steel-blue);
-            z-index: 10;
+            z-index: 50;
         }
 
-        /* Washi Tape yang terlihat seperti selotip asli */
+        /* Washi Tape bergerigi */
         .washi-tape {
             position: absolute;
-            width: 100px;
-            height: 30px;
+            width: 120px;
+            height: 35px;
             background: var(--washi);
             backdrop-filter: blur(2px);
-            top: -15px;
+            top: -18px;
             left: 30px;
-            transform: rotate(-5deg);
+            transform: rotate(-4deg);
+            z-index: 10;
+            clip-path: polygon(0% 10%, 10% 0%, 90% 5%, 100% 15%, 95% 90%, 85% 100%, 15% 95%, 0% 80%);
             border-left: 2px dashed rgba(255,255,255,0.2);
             border-right: 2px dashed rgba(255,255,255,0.2);
-            z-index: 2;
         }
 
-        /* Polaroid Frame */
+        /* Polaroid Frame yang lebih nyata */
         .polaroid {
-            background: #fdfdfd;
+            background: #fff;
             padding: 10px 10px 35px 10px;
-            width: 130px;
+            width: 140px;
             position: absolute;
-            top: -30px;
-            right: -25px;
-            box-shadow: 10px 15px 25px rgba(0,0,0,0.5);
+            box-shadow: 15px 20px 30px rgba(0,0,0,0.6);
             transform: rotate(12deg);
-            transition: 0.3s;
+            z-index: 5;
+            border: 1px solid #ddd;
         }
 
         .polaroid img {
             width: 100%;
             height: 110px;
             object-fit: cover;
-            filter: sepia(0.2) contrast(1.1);
+            filter: grayscale(0.2) contrast(1.1) sepia(0.2);
+            background: #eee; /* Placeholder jika gambar tidak ada */
         }
 
-        /* Tipografi */
         .tag {
             font-family: 'Shadows Into Light', cursive;
             font-size: 1.8rem;
             color: var(--steel-blue);
             margin-bottom: 5px;
             display: inline-block;
-            background: linear-gradient(transparent 70%, rgba(123, 164, 208, 0.15) 0%);
+            background: linear-gradient(transparent 70%, rgba(123, 164, 208, 0.2) 0%);
         }
 
         h2 {
             font-family: 'Press Start 2P', cursive;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #fff;
             margin: 15px 0;
             letter-spacing: 1px;
         }
 
         p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             opacity: 0.7;
-            line-height: 1.7;
+            line-height: 1.8;
             margin: 0;
         }
 
-        /* Dekorasi Stiker */
         .sticker {
             position: absolute;
-            bottom: -20px;
-            font-size: 2.5rem;
-            filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.8));
+            font-size: 3rem;
+            filter: drop-shadow(5px 5px 0px rgba(0,0,0,1));
+            z-index: 20;
             transition: 0.3s;
         }
 
-        .sticker:hover { transform: scale(1.2) rotate(10deg); }
+        .sticker:hover { transform: scale(1.3) rotate(15deg); }
 
         footer {
             text-align: center;
-            padding: 80px;
+            padding: 120px 20px;
             font-family: 'Shadows Into Light', cursive;
-            font-size: 1.6rem;
-            color: #444;
+            font-size: 1.5rem;
+            color: #333;
         }
+
+        /* Layout Positions untuk kesan Scrapbook */
+        .pos-left { align-self: flex-start; }
+        .pos-right { align-self: flex-end; }
+        .pos-center { align-self: center; }
+
     </style>
 </head>
 <body>
@@ -162,47 +167,48 @@
 
     <div class="container">
         
-        <a href="about.html" class="card" style="transform: rotate(-1.5deg);">
+        <a href="about.html" class="card pos-left" style="transform: rotate(-2deg);">
             <div class="washi-tape"></div>
-            <div class="polaroid">
-                <img src="profile-pic.jpg" alt="Aku">
-                <p style="font-family:'Shadows Into Light'; font-size: 0.7rem; text-align: center; color: #666; margin-top: 5px;">2026_shot</p>
+            <div class="polaroid" style="top: -40px; right: -40px;">
+                <img src="profile-pic.jpg" alt="Me">
+                <p style="font-family:'Shadows Into Light'; font-size: 0.7rem; text-align: center; color: #777; margin-top: 5px;">captured_2026</p>
             </div>
             <span class="tag">#SangArsitek</span>
             <h2>PROFIL</h2>
-            <p>Mahasiswa IT di UNSRAT '21. Fokus pada eksplorasi Teknologi Informasi dan sistem.</p>
-            <span class="sticker" style="right: 20px;">✨</span>
+            <p>Mahasiswa IT di UNSRAT '21. Sedang mendalami arsitektur sistem dan logika pemrograman.</p>
+            <span class="sticker" style="bottom: -25px; left: -10px;">✨</span>
         </a>
 
-        <a href="gamedev.html" class="card" style="transform: rotate(1deg); align-self: flex-end;">
-            <div class="washi-tape" style="left: auto; right: 40px; background: rgba(255,255,255,0.1);"></div>
+        <a href="gamedev.html" class="card pos-right" style="transform: rotate(2deg);">
+            <div class="washi-tape" style="left: auto; right: 20px; background: rgba(255,255,255,0.1); width: 80px;"></div>
             <span class="tag">#Tulisan</span>
             <h2>PROYEK: Rasul</h2>
-            <p>Pengembangan game edukasi 2D dengan Unity. Berkembang melalui logika dan desain.</p>
-            <span class="sticker" style="left: -15px; bottom: 10px;">🎮</span>
+            <p>Pengembangan game edukasi 2D berbasis Unity. Fokus pada integrasi cerita dan mekanik game.</p>
+            <span class="sticker" style="top: -30px; left: -20px;">🎮</span>
         </a>
 
-        <a href="service.html" class="card" style="transform: rotate(-1deg); background-color: #222;">
-            <div class="polaroid" style="right: auto; left: -30px; top: auto; bottom: -20px; transform: rotate(-8deg);">
+        <a href="service.html" class="card pos-center" style="transform: rotate(-1deg); background-color: #111;">
+            <div class="polaroid" style="top: auto; bottom: -30px; left: -50px; transform: rotate(-10deg); width: 120px;">
                 <img src="ministry.jpg" alt="Service">
             </div>
-            <span class="tag" style="margin-left: 80px;">#MelayaniTuhan</span>
-            <h2 style="margin-left: 80px;">PELAYANAN</h2>
-            <p style="margin-left: 80px;">Perjalanan pelayanan UPK-Kr. FT UNSRAT. CCS menuju CFS.</p>
+            <span class="tag" style="margin-left: 50px;">#MelayaniTuhan</span>
+            <h2 style="margin-left: 50px;">PELAYANAN</h2>
+            <p style="margin-left: 50px;">Perjalanan iman di UPK-Kr. FT UNSRAT. Menghubungkan CCS dan CFS.</p>
+            <span class="sticker" style="right: -10px; top: -10px;">☁️</span>
         </a>
 
-        <a href="recommendations.html" class="card" style="transform: rotate(1.5deg);">
-            <div class="washi-tape" style="width: 150px; left: 20%; top: -10px; opacity: 0.2;"></div>
+        <a href="recommendations.html" class="card pos-right" style="transform: rotate(3deg);">
+            <div class="washi-tape" style="width: 160px; left: -30px; top: 10px; transform: rotate(-45deg); opacity: 0.3;"></div>
             <span class="tag">#Hobi</span>
             <h2>MINAT</h2>
-            <p>Koleksi film, lagu-lagu melankolis, dan game simulasi seperti Minecraft.</p>
-            <span class="sticker" style="right: 10%; bottom: -30px;">💿</span>
+            <p>Koleksi film melankolis, eksplorasi Minecraft, dan kurasi playlist atmosferik.</p>
+            <span class="sticker" style="bottom: -30px; right: 30%;">💿</span>
         </a>
 
     </div>
 
     <footer>
-        "dirancang di Manado, 2026"
+        "designed in Manado, 2026"
     </footer>
 
 </body>
