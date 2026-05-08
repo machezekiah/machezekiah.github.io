@@ -4,133 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mchelien's world! 2026</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;800&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-blue: #dbeafe; /* Light blue gingham base */
-            --dark-blue: #1e3a8a;
-            --accent-blue: #60a5fa;
-            --paper-white: #fdfdfd;
+            --bg-blue: #e0e9f5;
+            --dark-blue: #2c4a7c;
+            --accent-blue: #8eb9ff;
+            --tape-color: rgba(142, 185, 255, 0.5);
         }
 
         body {
             margin: 0;
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-blue);
-            /* Gingham Pattern */
+            /* Gingham Pattern yang lebih soft */
             background-image: 
-                linear-gradient(rgba(255,255,255,.5) 50%, transparent 50%, transparent),
-                linear-gradient(90deg, rgba(255,255,255,.5) 50%, transparent 50%, transparent);
-            background-size: 50px 50px;
+                linear-gradient(white 2px, transparent 2px),
+                linear-gradient(90deg, white 2px, transparent 2px);
+            background-size: 40px 40px;
             color: var(--dark-blue);
+            overflow-x: hidden;
         }
 
         header {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 80px 20px;
             text-align: center;
-            background: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png'); /* subtle texture */
         }
 
         .pixel-header {
             font-family: 'Press Start 2P', cursive;
-            font-size: clamp(1.2rem, 5vw, 2rem);
-            background: var(--dark-blue);
-            color: white;
-            padding: 20px;
-            transform: rotate(-2deg);
-            box-shadow: 8px 8px 0px var(--accent-blue);
+            font-size: clamp(1rem, 4vw, 1.8rem);
+            background: white;
+            padding: 15px 25px;
+            display: inline-block;
+            border: 2px dashed var(--dark-blue);
+            transform: rotate(-1deg);
+            box-shadow: 5px 5px 0px var(--dark-blue);
         }
 
         .container {
-            max-width: 700px;
-            margin: 20px auto;
+            max-width: 650px;
+            margin: 0 auto 100px;
             padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 40px;
+            gap: 20px; /* Jarak antar kartu lebih rapat agar terkesan bertumpuk */
         }
 
-        /* Torn Paper Effect */
+        /* Base Card Style */
         .card {
-            background: var(--paper-white);
-            padding: 40px;
-            position: relative;
+            background: #fff;
+            padding: 35px;
             text-decoration: none;
             color: inherit;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            /* Masking for torn paper look at top and bottom */
-            -webkit-mask-image: url('https://img00.deviantart.net/060b/i/2012/112/3/9/torn_paper_edge_brushes_by_stock_and_resources-d4x8y7m.png'); /* Placeholder logic */
+            position: relative;
+            box-shadow: 3px 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            /* Tekstur Kertas Grain */
+            background-image: url('https://www.transparenttextures.com/patterns/natural-paper.png');
         }
 
-        /* Border gaya sobek (manual dengan clip-path sederhana) */
+        /* Torn Edge Effect menggunakan Clip-Path yang lebih organik */
         .card-scrap {
-            clip-path: polygon(0% 2%, 5% 0%, 10% 3%, 15% 0%, 20% 2%, 25% 1%, 30% 4%, 35% 1%, 40% 3%, 45% 0%, 50% 2%, 55% 1%, 60% 3%, 65% 0%, 70% 2%, 75% 1%, 80% 4%, 85% 1%, 90% 3%, 95% 0%, 100% 2%, 100% 98%, 95% 100%, 90% 97%, 85% 100%, 80% 98%, 75% 99%, 70% 96%, 65% 100%, 60% 98%, 55% 99%, 50% 97%, 45% 100%, 40% 98%, 35% 99%, 30% 96%, 25% 100%, 20% 98%, 15% 99%, 10% 97%, 5% 100%, 0% 98%);
-            background: white;
-            padding: 30px;
-            border: 1px solid #eee;
+            clip-path: polygon(
+                0% 3%, 12% 1%, 25% 4%, 38% 0%, 52% 3%, 65% 1%, 78% 4%, 92% 0%, 100% 3%, 
+                99% 25%, 100% 50%, 98% 75%, 100% 97%, 
+                88% 100%, 75% 98%, 62% 100%, 50% 97%, 35% 100%, 22% 98%, 10% 100%, 0% 97%, 
+                1% 75%, 0% 50%, 2% 25%
+            );
+            border: 1px solid rgba(0,0,0,0.05);
+            padding: 10px;
         }
 
-        .card:nth-child(even) { transform: rotate(1deg); }
-        .card:nth-child(odd) { transform: rotate(-1deg); }
+        /* Variasi Posisi agar seperti tempelan tangan */
+        .card:nth-child(1) { transform: rotate(1.5deg) translateX(10px); }
+        .card:nth-child(2) { transform: rotate(-1deg) translateX(-15px); }
+        .card:nth-child(3) { transform: rotate(0.5deg) translateX(5px); }
+        .card:nth-child(4) { transform: rotate(-2deg) translateX(-5px); }
+        .card:nth-child(5) { transform: rotate(1deg) translateX(10px); }
 
         .card:hover {
-            transform: scale(1.02) rotate(0deg);
-            z-index: 30;
+            transform: scale(1.03) rotate(0deg) !important;
+            z-index: 50;
+            box-shadow: 0 15px 35px rgba(44, 74, 124, 0.2);
+        }
+
+        /* Washi Tape Aksen */
+        .tape {
+            position: absolute;
+            width: 90px;
+            height: 25px;
+            background: var(--tape-color);
+            top: -10px;
+            left: 20px;
+            transform: rotate(-15deg);
+            backdrop-filter: blur(2px);
+            border-left: 2px dotted rgba(255,255,255,0.5);
+            border-right: 2px dotted rgba(255,255,255,0.5);
         }
 
         .tag {
             font-family: 'Shadows Into Light', cursive;
-            font-size: 1.4rem;
-            color: var(--accent-blue);
+            font-size: 1.5rem;
+            color: #6a89cc;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
         h2 {
             font-family: 'Press Start 2P', cursive;
-            font-size: 1rem;
-            margin: 0 0 15px 0;
+            font-size: 0.9rem;
+            margin: 10px 0;
+            letter-spacing: -1px;
             color: var(--dark-blue);
         }
 
         p {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #556a8a;
+            margin: 0;
         }
 
-        /* Tape effect */
-        .card::before {
-            content: "";
+        /* Sticker Element (Elemen tambahan agar aesthetic) */
+        .sticker {
             position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 30px;
-            background: rgba(96, 165, 250, 0.4); /* blue washi tape */
-            border: 1px solid rgba(255,255,255,0.3);
-            z-index: 10;
+            bottom: -15px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transform: rotate(15deg);
+            border: 2px dashed white;
+            box-shadow: 3px 3px 0px var(--dark-blue);
         }
-
-        .contact-card {
-            background: var(--dark-blue) !important;
-            color: white !important;
-        }
-        
-        .contact-card .tag { color: var(--accent-blue); }
 
         footer {
             text-align: center;
-            padding: 40px;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.6rem;
-            opacity: 0.7;
+            padding: 50px;
+            font-family: 'Shadows Into Light', cursive;
+            font-size: 1.5rem;
+            color: var(--dark-blue);
         }
     </style>
 </head>
@@ -143,14 +162,17 @@
     <div class="container">
         
         <a href="about.html" class="card">
+            <div class="tape"></div>
             <div class="card-scrap">
                 <span class="tag">#The Architect</span>
                 <h2>PROFILE</h2>
                 <p>Mchelien V. Hizkia Palit | IT Student @ UNSRAT '21. Focused on Information Technology studies and systems.</p>
             </div>
+            <div class="sticker">💎</div>
         </a>
 
         <a href="gamedev.html" class="card">
+            <div class="tape" style="left: auto; right: 20px; transform: rotate(10deg); background: rgba(255,255,255,0.6);"></div>
             <div class="card-scrap">
                 <span class="tag">#ThesisWork</span>
                 <h2>PROJECT: Apostle</h2>
@@ -159,6 +181,7 @@
         </a>
 
         <a href="service.html" class="card">
+            <div class="tape" style="top: auto; bottom: -10px; left: 40%; width: 120px; background: rgba(44, 74, 124, 0.2);"></div>
             <div class="card-scrap">
                 <span class="tag">#ServingGod</span>
                 <h2>FAITH</h2>
@@ -172,9 +195,11 @@
                 <h2>INTERESTS</h2>
                 <p>Movies, music, and gaming sessions on Minecraft or Roblox. Just a collection of things I enjoy.</p>
             </div>
+            <div class="sticker" style="background: #fff; left: -10px; right: auto; border: 2px solid var(--dark-blue);">🎮</div>
         </a>
 
         <a href="minahasa.html" class="card">
+            <div class="tape" style="width: 40px; height: 40px; border-radius: 50%; top: -20px; left: -10px; transform: none; background: white; border: 2px solid var(--dark-blue);"></div>
             <div class="card-scrap">
                 <span class="tag">#Identity</span>
                 <h2>CULTURE</h2>
@@ -182,18 +207,18 @@
             </div>
         </a>
 
-        <a href="contact.html" class="card contact-card">
-            <div class="card-scrap" style="background: transparent; border: none;">
-                <span class="tag">@ContactMe</span>
+        <a href="contact.html" class="card" style="background: var(--dark-blue); color: white;">
+            <div class="card-scrap">
+                <span class="tag" style="color: var(--accent-blue);">@ContactMe</span>
                 <h2 style="color: white;">LET'S CONNECT!</h2>
-                <p style="color: #cbd5e1;">Open for discussions on IT, history, or any creative collaborations.</p>
+                <p style="color: #a5b4fc;">Open for discussions on IT, history, or any creative collaborations.</p>
             </div>
         </a>
 
     </div>
 
     <footer>
-        &copy; 2026 MCHELIEN - SCRAPBOOK VERSION
+        Handcrafted by Mchelien &copy; 2026
     </footer>
 
 </body>
