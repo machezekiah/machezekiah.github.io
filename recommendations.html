@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations | mchelien's world!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #eef2f7; --dark: #0b1f3b; --accent: #7ba4d0; --white: #ffffff; }
+        body { margin: 0; font-family: 'Inter', sans-serif; background-color: var(--bg); background-image: linear-gradient(#d1d9e6 1px, transparent 1px), linear-gradient(90deg, #d1d9e6 1px, transparent 1px); background-size: 40px 40px; color: var(--dark); }
+        nav { background: var(--dark); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--accent); }
+        .nav-logo { font-family: 'Press Start 2P', cursive; color: var(--white); text-decoration: none; font-size: 0.8rem; }
+        .back-link { color: var(--accent); text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; }
+        .content-wrapper { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        main { background: var(--white); border: 4px solid var(--dark); padding: 40px; box-shadow: 10px 10px 0px var(--dark); }
+        .page-title { font-family: 'Press Start 2P', cursive; font-size: 1.5rem; margin-bottom: 30px; color: var(--dark); }
+        h3 { font-family: 'Press Start 2P', cursive; font-size: 0.9rem; margin-top: 30px; color: var(--dark); border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 15px; padding-left: 20px; position: relative; }
+        li::before { content: ">"; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+        .rating { color: #f1c40f; font-size: 0.8rem; margin-left: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">MCHELIEN.</a>
+        <a href="index.html" class="back-link">< BACK_TO_HOME</a>
+    </nav>
+    <div class="content-wrapper">
+        <main>
+            <h1 class="page-title">Recommendations</h1>
+            <p>Daftar hal-hal yang menginspirasi saya, mulai dari media atmosferik hingga alat bantu produktivitas.</p>
+            
+            <h3>Films & Series</h3>
+            <ul>
+                <li>The Perks of Being a Wallflower <span class="rating">★★★★★</span></li>
+                <li>Midsommar <span class="rating">★★★★☆</span></li>
+                <li>Lord of The Rings Trilogy <span class="rating">★★★★★</span></li>
+            </ul>
 
+            <h3>Games (Sandbox & Sim)</h3>
+            <ul>
+                <li>Minecraft (Java Edition)</li>
+                <li>Townscaper</li>
+                <li>TheoTown</li>
+            </ul>
+
+            <h3>Learning</h3>
+            <ul>
+                <li>Duolingo (German & Japanese Track)</li>
+                <li>Historical Archives of Minahasa</li>
+            </ul>
+        </main>
+    </div>
+    <footer><center>&copy; 2026 mchelien's world!</center></footer>
+</body>
+</html>
