@@ -58,32 +58,47 @@
         .gallery-nav {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
             margin-top: 20px;
         }
 
         .gallery-button {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 25px;
+            gap: 20px;
+            padding: 15px;
             border: 4px solid var(--dark);
             background: #f8fafc;
             text-decoration: none;
             color: var(--dark);
             transition: all 0.2s ease;
             box-shadow: 6px 6px 0px var(--dark);
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.7rem;
         }
 
         .gallery-button:hover {
             transform: translate(-2px, -2px);
-            box-shadow: 10px 10px 0px var(--accent);
+            box-shadow: 12px 12px 0px var(--accent);
             background: var(--white);
         }
 
-        .arrow { font-size: 1rem; }
+        /* Foto Spoiler */
+        .preview-img {
+            width: 80px;
+            height: 80px;
+            border: 3px solid var(--dark);
+            object-fit: cover;
+            flex-shrink: 0;
+            background: #ccc;
+        }
+
+        .button-text {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+            flex-grow: 1;
+            line-height: 1.5;
+        }
+
+        .arrow { font-size: 1.2rem; font-weight: bold; margin-right: 10px; }
         
         footer { text-align: center; padding: 50px; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; color: #666; }
     </style>
@@ -101,18 +116,24 @@
             <div class="status-badge">UPK-Kr. FT UNSRAT</div>
             
             <div class="gallery-nav">
+                <!-- CCS Gallery -->
                 <a href="ccs-gallery.html" class="gallery-button">
-                    <span>Christ-Centered Servant (2023-2024)</span>
+                    <img src="ccs-preview.jpg" alt="CCS" class="preview-img">
+                    <span class="button-text">Christ-Centered Servant (2023-2024)</span>
                     <span class="arrow">></span>
                 </a>
 
+                <!-- CFS Gallery -->
                 <a href="cfs-gallery.html" class="gallery-button">
-                    <span>Christ Faithful Servant (2024-2025)</span>
+                    <img src="cfs-preview.jpg" alt="CFS" class="preview-img">
+                    <span class="button-text">Christ Faithful Servant (2024-2025)</span>
                     <span class="arrow">></span>
                 </a>
 
+                <!-- KK Gallery -->
                 <a href="kk-gallery.html" class="gallery-button">
-                    <span>Discipleship Groups</span>
+                    <img src="kk-preview.jpg" alt="KK" class="preview-img">
+                    <span class="button-text">Discipleship Groups</span>
                     <span class="arrow">></span>
                 </a>
             </div>
