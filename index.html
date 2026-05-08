@@ -1,170 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>mchelien's world!</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<style>
-/* Base */
-body {
-  margin:0;
-  font-family:'Roboto', sans-serif;
-  color:#1c1c1c;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mchelien's world! 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #eef2f7;
+            --dark: #0b1f3b;
+            --accent: #7ba4d0;
+            --white: #ffffff;
+        }
 
-  /* Background pixel grid */
-  background-color: #e0e8f0;
-  background-image: 
-    linear-gradient(#c9d6e3 1px, transparent 1px),
-    linear-gradient(90deg, #c9d6e3 1px, transparent 1px);
-  background-size: 40px 40px;
-}
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image: 
+                linear-gradient(#d1d9e6 1px, transparent 1px),
+                linear-gradient(90deg, #d1d9e6 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--dark);
+        }
 
-/* Header */
-header {
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background: linear-gradient(135deg,#a3bcd9,#c9d6e3);
-  position:relative;
-  overflow:hidden;
-}
-.pixel-header {
-  font-family:'Press Start 2P', cursive;
-  font-size:2.8rem;
-  color:#0b1f3b;
-  text-shadow: 2px 2px 0 #fff, -2px -2px 0 #fff;
-  margin-bottom:30px;
-}
-/* Pixel clouds */
-.pixel-cloud {
-  position:absolute;
-  width:50px;
-  height:30px;
-  background-color:#ffffff70;
-  animation: moveCloud 20s linear infinite;
-  border:2px solid #c9d6e3;
-}
-.pixel-cloud:nth-child(2){top:50px; left:150px; animation-duration:25s;}
-.pixel-cloud:nth-child(3){top:120px; left:300px; animation-duration:18s;}
-@keyframes moveCloud{
-  0%{transform: translateX(-100px);}
-  100%{transform: translateX(100vw);}
-}
+        header {
+            height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, #a3bcd9 0%, var(--bg) 100%);
+            border-bottom: 5px solid var(--dark);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-/* Vertical buttons */
-.vertical-button {
-  display:block;
-  background: linear-gradient(145deg,#c9d6e3,#a3bcd9);
-  border:3px solid #0b1f3b;
-  border-radius:12px;
-  margin:40px auto;
-  padding:25px;
-  max-width:800px;
-  text-decoration:none;
-  color:#0b1f3b;
-  transition: all 0.3s ease;
-  position:relative;
-}
-.vertical-button:hover {
-  background: linear-gradient(145deg,#a3bcd9,#82a1c3);
-  transform: translateY(-5px);
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-}
-.vertical-button h2 {
-  font-family:'Press Start 2P', cursive;
-  font-size:1.4rem;
-  margin-bottom:12px;
-}
-.vertical-button p {
-  font-size:1rem;
-  line-height:1.8;
-  margin:0;
-}
-/* Pixel accent for buttons */
-.vertical-button::before {
-  content:"";
-  position:absolute;
-  top:10px;
-  left:10px;
-  width:10px;
-  height:10px;
-  background-color:#0b1f3b;
-  border:1px solid #fff;
-}
+        .pixel-header {
+            font-family: 'Press Start 2P', cursive;
+            font-size: clamp(1.2rem, 5vw, 2.5rem);
+            color: var(--dark);
+            text-shadow: 4px 4px 0 var(--white);
+            z-index: 10;
+        }
 
-/* Responsive */
-@media(max-width:600px){
-  .vertical-button{padding:20px;}
-  .vertical-button h2{font-size:1.2rem;}
-  .vertical-button p{font-size:0.95rem;}
-}
+        .container {
+            max-width: 850px;
+            margin: -60px auto 60px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 20;
+        }
 
-footer {
-  text-align:center;
-  padding:20px;
-  font-size:0.8rem;
-  background-color:#d3dce5;
-  font-family:'Roboto', sans-serif;
-  color:#1c1c1c;
-}
-</style>
+        .card {
+            display: block;
+            background: var(--white);
+            border: 4px solid var(--dark);
+            padding: 30px;
+            margin-bottom: 30px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 10px 10px 0px var(--dark);
+            transition: all 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 15px 15px 0px var(--accent);
+            background: #fdfdfd;
+        }
+
+        .tag {
+            display: inline-block;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6rem;
+            background: var(--dark);
+            color: var(--white);
+            padding: 6px 12px;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1.1rem;
+            margin: 0 0 12px 0;
+            line-height: 1.4;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+            color: #444;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            background: var(--dark);
+            color: var(--accent);
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.7rem;
+        }
+
+        /* Pixel Clouds */
+        .cloud {
+            position: absolute;
+            width: 50px;
+            height: 20px;
+            background: var(--white);
+            opacity: 0.7;
+            animation: move 20s linear infinite;
+        }
+        @keyframes move {
+            from { transform: translateX(-100px); }
+            to { transform: translateX(100vw); }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-  <span class="pixel-header">mchelien's world!</span>
-  <!-- Pixel Clouds -->
-  <div class="pixel-cloud"></div>
-  <div class="pixel-cloud"></div>
-  <div class="pixel-cloud"></div>
-</header>
+    <header>
+        <div class="cloud" style="top:20%; left:-50px;"></div>
+        <div class="cloud" style="top:50%; left:-150px; animation-duration: 30s;"></div>
+        <h1 class="pixel-header">mchelien's world!</h1>
+    </header>
 
-<!-- Vertical large buttons pointing to maintenance page -->
-<a href="maintenance.html" class="vertical-button">
-  <h2>About Me</h2>
-  <p>Hey! Wanna know who I am, my background & what I geek out on? This is my corner to share my journey in tech and creativity.</p>
-</a>
+    <div class="container">
+        
+        <a href="about.html" class="card">
+            <span class="tag">PROFILE</span>
+            <h2>About Me</h2>
+            <p>Hizkia Palit | Mahasiswa IT UNSRAT 2021. Sedang fokus pada pengembangan diri di bidang teknologi dan linguistik.</p>
+        </a>
 
-<a href="maintenance.html" class="vertical-button">
-  <h2>Service / Ministry</h2>
-  <p>Here’s the scoop on my chill but meaningful campus ministry vibes at UPK-Kr. FT UNSRAT and beyond. Mentoring, organizing, and sharing Christian content.</p>
-</a>
+        <a href="gamedev.html" class="card">
+            <span class="tag">THESIS PROJECT</span>
+            <h2>Game Dev: Apostle</h2>
+            <p>Membangun game edukasi 2D dengan Unity & C#. Cek progres pengerjaan skripsi dan mekanik game di sini.</p>
+        </a>
 
-<a href="maintenance.html" class="vertical-button">
-  <h2>Game Dev</h2>
-  <p>Working on my personal game "Apostle"! Peek at my ideas, mechanics, and dev progress as part of my final year project in Informatics.</p>
-</a>
+        <a href="minahasa.html" class="card">
+            <span class="tag">CULTURE</span>
+            <h2>Minahasa Heritage</h2>
+            <p>Eksplorasi sejarah Semenanjung Minahasa, arsip kolonial, dan pelestarian bahasa daerah.</p>
+        </a>
 
-<a href="maintenance.html" class="vertical-button">
-  <h2>Favorite Games</h2>
-  <p>Minecraft & Roblox are my jam. I also share creative stuff and lessons learned while playing and leveling up my creativity.</p>
-</a>
+        <a href="recommendations.html" class="card">
+            <span class="tag">INTERESTS</span>
+            <h2>Tech & Recommendations</h2>
+            <p>Simulasi (Minecraft/TheoTown), hardware storage, hingga rekomendasi film atmosferik favorit.</p>
+        </a>
 
-<a href="maintenance.html" class="vertical-button">
-  <h2>Minahasa Culture</h2>
-  <p>Super into Minahasa culture: traditional arts, kolintang, and learning the language. Plus, local history and how I try to keep the culture alive.</p>
-</a>
+        <a href="contact.html" class="card" style="background: var(--dark); color: white;">
+            <h2 style="color: white;">> Contact Me</h2>
+            <p style="color: var(--accent);">Mari berdiskusi tentang IT, sejarah, atau kolaborasi proyek!</p>
+        </a>
 
-<a href="maintenance.html" class="vertical-button">
-  <h2>Music</h2>
-  <p>Music vibes! Listening, jamming, and sharing my playlists plus inspirations from genres I love.</p>
-</a>
+    </div>
 
-<a href="maintenance.html" class="vertical-button">
-  <h2>Recommendations</h2>
-  <p>Fantasy films & series recs! Quick thoughts on my faves like Lord of The Rings and why they’re worth the watch.</p>
-</a>
-
-<a href="contact.html" class="vertical-button">
-  <h2>Contact</h2>
-  <p>Wanna collab, ask stuff, or just say hi? Hit me up through the links here!</p>
-</a>
-
-<footer>&copy; 2023 mchelien's world!</footer>
+    <footer>
+        &copy; 2026 MCHELIEN - VERSI TERBARU SUDAH AKTIF!
+    </footer>
 
 </body>
 </html>
