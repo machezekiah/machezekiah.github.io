@@ -4,103 +4,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ministry & Service | mchelien's world!</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #eef2f7;
+            --bg: #f0f4f9;
             --dark: #0b1f3b;
             --accent: #7ba4d0;
             --white: #ffffff;
+            --soft-blue: #dbeafe;
         }
 
         body {
             margin: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg);
-            background-image: linear-gradient(#d1d9e6 1px, transparent 1px), linear-gradient(90deg, #d1d9e6 1px, transparent 1px);
-            background-size: 40px 40px;
+            background-image: 
+                radial-gradient(circle at 2px 2px, #d1d9e6 1px, transparent 0);
+            background-size: 32px 32px;
             color: var(--dark);
         }
 
         nav {
-            background: var(--dark);
-            padding: 15px 5%;
+            background: rgba(11, 31, 59, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 4px solid var(--accent);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid var(--accent);
         }
 
-        .nav-logo { font-family: 'Press Start 2P', cursive; color: var(--white); text-decoration: none; font-size: 0.8rem; }
-        .back-link { color: var(--accent); text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; }
+        .nav-logo { font-family: 'Press Start 2P', cursive; color: var(--white); text-decoration: none; font-size: 0.8rem; letter-spacing: 2px; }
+        .back-link { color: var(--accent); text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; transition: 0.3s; }
+        .back-link:hover { color: var(--white); text-shadow: 0 0 8px var(--accent); }
 
-        .content-wrapper { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .content-wrapper { max-width: 900px; margin: 60px auto; padding: 0 25px; }
 
-        main {
-            background: var(--white);
-            border: 4px solid var(--dark);
-            padding: 40px;
-            box-shadow: 10px 10px 0px var(--dark);
-        }
-
-        .page-title { font-family: 'Press Start 2P', cursive; font-size: 1.5rem; margin-bottom: 20px; color: var(--dark); }
+        .header-area { text-align: center; margin-bottom: 50px; }
+        .page-title { font-family: 'Press Start 2P', cursive; font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 15px; color: var(--dark); }
         
         .status-badge {
             display: inline-block;
-            background: var(--dark);
-            color: var(--accent);
-            padding: 8px 15px;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.6rem;
-            margin-bottom: 30px;
+            background: var(--soft-blue);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--dark);
         }
 
         .gallery-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-top: 20px;
+            display: grid;
+            gap: 30px;
         }
 
-        .gallery-button {
+        .gallery-card {
             display: flex;
             align-items: center;
-            gap: 20px;
-            padding: 15px;
-            border: 4px solid var(--dark);
-            background: #f8fafc;
+            background: var(--white);
+            border: 3px solid var(--dark);
+            border-radius: 20px;
+            overflow: hidden;
             text-decoration: none;
             color: var(--dark);
-            transition: all 0.2s ease;
-            box-shadow: 6px 6px 0px var(--dark);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 12px 12px 0px var(--dark);
+            position: relative;
         }
 
-        .gallery-button:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 12px 12px 0px var(--accent);
-            background: var(--white);
+        .gallery-card:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 18px 18px 0px var(--accent);
         }
 
-        /* Foto Spoiler */
-        .preview-img {
-            width: 80px;
-            height: 80px;
-            border: 3px solid var(--dark);
-            object-fit: cover;
+        /* Foto Spoiler Aesthetic */
+        .preview-wrapper {
+            width: 180px;
+            height: 180px;
+            overflow: hidden;
+            border-right: 3px solid var(--dark);
             flex-shrink: 0;
-            background: #ccc;
         }
 
-        .button-text {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.7rem;
+        .preview-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-card:hover .preview-img {
+            transform: scale(1.1) rotate(2deg);
+        }
+
+        .card-content {
+            padding: 30px;
             flex-grow: 1;
-            line-height: 1.5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .arrow { font-size: 1.2rem; font-weight: bold; margin-right: 10px; }
+        .card-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.75rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .card-tag {
+            display: block;
+            font-size: 0.65rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .arrow-circle {
+            width: 45px;
+            height: 45px;
+            background: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .gallery-card:hover .arrow-circle {
+            background: var(--accent);
+            transform: translateX(5px);
+        }
         
-        footer { text-align: center; padding: 50px; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; color: #666; }
+        footer { 
+            text-align: center; 
+            padding: 80px 20px; 
+            font-family: 'Press Start 2P', cursive; 
+            font-size: 0.6rem; 
+            color: #94a3b8;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 600px) {
+            .gallery-card { flex-direction: column; }
+            .preview-wrapper { width: 100%; height: 200px; border-right: none; border-bottom: 3px solid var(--dark); }
+            .card-content { width: 100%; box-sizing: border-box; }
+        }
     </style>
 </head>
 <body>
@@ -111,37 +169,58 @@
     </nav>
 
     <div class="content-wrapper">
-        <main>
+        <div class="header-area">
             <h1 class="page-title">Ministry & Service</h1>
             <div class="status-badge">UPK-Kr. FT UNSRAT</div>
-            
-            <div class="gallery-nav">
-                <!-- CCS Gallery -->
-                <a href="ccs-gallery.html" class="gallery-button">
-                    <img src="ccs-preview.jpg" alt="CCS" class="preview-img">
-                    <span class="button-text">Christ-Centered Servant (2023-2024)</span>
-                    <span class="arrow">></span>
-                </a>
+        </div>
+        
+        <div class="gallery-nav">
+            <!-- CCS Category -->
+            <a href="ccs-gallery.html" class="gallery-card">
+                <div class="preview-wrapper">
+                    <img src="ccs-preview.jpg" alt="CCS Preview" class="preview-img">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <span class="card-tag">Year 2023-2024</span>
+                        <h2 class="card-title">Christ-Centered Servant</h2>
+                    </div>
+                    <div class="arrow-circle">></div>
+                </div>
+            </a>
 
-                <!-- CFS Gallery -->
-                <a href="cfs-gallery.html" class="gallery-button">
-                    <img src="cfs-preview.jpg" alt="CFS" class="preview-img">
-                    <span class="button-text">Christ Faithful Servant (2024-2025)</span>
-                    <span class="arrow">></span>
-                </a>
+            <!-- CFS Category -->
+            <a href="cfs-gallery.html" class="gallery-card">
+                <div class="preview-wrapper">
+                    <img src="cfs-preview.jpg" alt="CFS Preview" class="preview-img">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <span class="card-tag">Year 2024-2025</span>
+                        <h2 class="card-title">Christ Faithful Servant</h2>
+                    </div>
+                    <div class="arrow-circle">></div>
+                </div>
+            </a>
 
-                <!-- KK Gallery -->
-                <a href="kk-gallery.html" class="gallery-button">
-                    <img src="kk-preview.jpg" alt="KK" class="preview-img">
-                    <span class="button-text">Discipleship Groups</span>
-                    <span class="arrow">></span>
-                </a>
-            </div>
-        </main>
+            <!-- KK Category -->
+            <a href="kk-gallery.html" class="gallery-card">
+                <div class="preview-wrapper">
+                    <img src="kk-preview.jpg" alt="KK Preview" class="preview-img">
+                </div>
+                <div class="card-content">
+                    <div>
+                        <span class="card-tag">Discipleship</span>
+                        <h2 class="card-title">Discipleship Groups</h2>
+                    </div>
+                    <div class="arrow-circle">></div>
+                </div>
+            </a>
+        </div>
     </div>
 
     <footer>
-        &copy; 2026 mchelien's world!
+        &copy; 2026 MCHELIEN'S WORLD! • CRAFTED WITH SOUL
     </footer>
 
 </body>
