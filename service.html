@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
         :root {
             --bg: #eef2f7;
             --dark: #0b1f3b;
-            --accent: #3498db;
+            --accent: #7ba4d0;
             --white: #ffffff;
         }
 
@@ -47,23 +47,28 @@
         
         .status-badge {
             display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 5px 12px;
+            background: var(--dark);
+            color: var(--accent);
+            padding: 8px 15px;
             font-family: 'Press Start 2P', cursive;
             font-size: 0.6rem;
             margin-bottom: 30px;
         }
 
-        .ministry-card {
-            border: 2px dashed var(--dark);
-            padding: 20px;
-            margin-bottom: 20px;
-            background: #f0f7fc;
+        .ministry-list {
+            list-style: none;
+            padding: 0;
         }
 
-        h3 { font-family: 'Press Start 2P', cursive; font-size: 0.8rem; margin: 0 0 10px 0; color: var(--dark); }
-        p { line-height: 1.8; color: #444; margin: 0; }
+        .ministry-item {
+            border-left: 4px solid var(--dark);
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            background: #f8fafc;
+        }
+
+        h3 { font-family: 'Press Start 2P', cursive; font-size: 0.75rem; margin: 0 0 10px 0; color: var(--dark); }
+        p { margin: 0; color: #444; font-size: 0.95rem; }
         
         footer { text-align: center; padding: 50px; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; color: #666; }
     </style>
@@ -72,7 +77,7 @@
 
     <nav>
         <a href="index.html" class="nav-logo">MCHELIEN.</a>
-        <a href="index.html" class="back-link">< KEMBALI</a>
+        <a href="index.html" class="back-link">< BACK</a>
     </nav>
 
     <div class="content-wrapper">
@@ -80,21 +85,28 @@
             <h1 class="page-title">Ministry & Service</h1>
             <div class="status-badge">FAITH_IN_ACTION</div>
             
-            <p>Bagi saya, talenta dalam bidang teknologi dan manajemen adalah titipan yang harus digunakan untuk melayani sesama. Berikut adalah keterlibatan saya dalam pelayanan pemuda Kristen:</p>
+            <p style="margin-bottom: 30px;">A documentation of my journey and involvement in the campus ministry at <b>UPK-Kr. FT UNSRAT</b>.</p>
 
-            <div class="ministry-card" style="margin-top: 30px;">
-                <h3>Pelayanan Pemuda & Kampus</h3>
-                <p>Aktif dalam organisasi Kristen di lingkungan universitas (UPK-Kr. FT UNSRAT), berperan dalam pembinaan karakter serta manajemen kegiatan rohani mahasiswa.</p>
-            </div>
+            <div class="ministry-list">
+                <div class="ministry-item">
+                    <h3>Campus Ministry Executive</h3>
+                    <p>Served for 2 consecutive periods as a board member in UPK-Kr. FT UNSRAT.</p>
+                </div>
 
-            <div class="ministry-card">
-                <h3>Logistik & Perencanaan</h3>
-                <p>Terlibat dalam tim teknis dan perencanaan untuk berbagai kegiatan gerejawi, termasuk retreat pemuda dan koordinasi acara berskala besar.</p>
-            </div>
+                <div class="ministry-item">
+                    <h3>Christian Camp for Students (CCS)</h3>
+                    <p>Actively involved in organizing and participating in the annual CCS events.</p>
+                </div>
 
-            <div class="ministry-card">
-                <h3>Visi Pelayanan</h3>
-                <p>Mengintegrasikan nilai-nilai Kristiani dalam etika kerja profesional di bidang IT, serta memberikan kontribusi nyata bagi komunitas melalui keahlian yang saya miliki.</p>
+                <div class="ministry-item">
+                    <h3>Christian Fellowship for Students (CFS)</h3>
+                    <p>Engaged in the planning and execution of CFS fellowship activities.</p>
+                </div>
+
+                <div class="ministry-item">
+                    <h3>Discipleship Group</h3>
+                    <p>Part of a "Kelompok Kecil" (small group) for spiritual growth and fellowship.</p>
+                </div>
             </div>
         </main>
     </div>
