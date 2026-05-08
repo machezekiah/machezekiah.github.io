@@ -1,125 +1,107 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pelayanan - UPK-Kr. FT Unsrat</title>
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link href="style.css" rel="stylesheet">
-<style>
-section.service-content {
-  max-width:800px;
-  margin:50px auto;
-  text-align:center;
-  padding:0 20px;
-}
-section.service-content h2 {
-  font-family:'Press Start 2P', cursive;
-  font-size:1.8rem;
-  color:#0b1f3b;
-  margin-bottom:15px;
-}
-section.service-content p, section.service-content li {
-  font-family:'Roboto', sans-serif;
-  font-size:1rem;
-  color:#1c1c1c;
-  line-height:1.8;
-  margin-bottom:20px;
-}
-section.service-content img.logo {
-  display:block;
-  max-width:220px;
-  width:100%;
-  margin:20px auto 25px auto;
-  border-radius:12px;
-  border:2px solid #1c1c1c;
-}
-.activities {
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-  margin-top:20px;
-}
-.activities div {
-  flex:1 1 150px;
-  background-color:#c9d6e3;
-  padding:15px;
-  border-radius:12px;
-  text-align:center;
-  font-family:'Press Start 2P', cursive;
-  color:#0b1f3b;
-  font-size:0.9rem;
-  transition: transform 0.3s, background-color 0.3s;
-}
-.activities div:hover {
-  background-color:#a3bcd9;
-  transform: translateY(-5px);
-}
-.external-links a {
-  display:inline-block;
-  margin:10px;
-  padding:12px 20px;
-  background-color:#c9d6e3;
-  color:#0b1f3b;
-  text-decoration:none;
-  border-radius:12px;
-  font-family:'Press Start 2P', cursive;
-  transition: transform 0.3s, background-color 0.3s;
-}
-.external-links a:hover {
-  background-color:#a3bcd9;
-  transform: translateY(-5px);
-}
-blockquote {
-  font-style:italic;
-  font-family:'Roboto', sans-serif;
-  color:#1c1c1c;
-  background-color:#e2ebf2;
-  border-left:4px solid #0b1f3b;
-  padding:15px 20px;
-  margin:35px auto;
-  max-width:700px;
-  border-radius:8px;
-  line-height:1.8;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministry & Service | mchelien's world!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #eef2f7;
+            --dark: #0b1f3b;
+            --accent: #3498db;
+            --white: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            background-image: linear-gradient(#d1d9e6 1px, transparent 1px), linear-gradient(90deg, #d1d9e6 1px, transparent 1px);
+            background-size: 40px 40px;
+            color: var(--dark);
+        }
+
+        nav {
+            background: var(--dark);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .nav-logo { font-family: 'Press Start 2P', cursive; color: var(--white); text-decoration: none; font-size: 0.8rem; }
+        .back-link { color: var(--accent); text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; }
+
+        .content-wrapper { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+
+        main {
+            background: var(--white);
+            border: 4px solid var(--dark);
+            padding: 40px;
+            box-shadow: 10px 10px 0px var(--dark);
+        }
+
+        .page-title { font-family: 'Press Start 2P', cursive; font-size: 1.5rem; margin-bottom: 20px; color: var(--dark); }
+        
+        .status-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 5px 12px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.6rem;
+            margin-bottom: 30px;
+        }
+
+        .ministry-card {
+            border: 2px dashed var(--dark);
+            padding: 20px;
+            margin-bottom: 20px;
+            background: #f0f7fc;
+        }
+
+        h3 { font-family: 'Press Start 2P', cursive; font-size: 0.8rem; margin: 0 0 10px 0; color: var(--dark); }
+        p { line-height: 1.8; color: #444; margin: 0; }
+        
+        footer { text-align: center; padding: 50px; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; color: #666; }
+    </style>
 </head>
 <body>
 
-<section class="service-content">
-  <h2>UPK-Kr. FT Unsrat</h2>
-  <p><strong>Ini tentang Unit Pelayanan Kerohanian Kristen Fakultas Teknik Universitas Sam Ratulangi, tempat saya bertumbuh dan melayani.</strong></p>
-  
-  <img src="302733558_5309515425752269_1887469212125523371_n-removebg-preview.png" alt="Logo UPK-Kr. FT Unsrat" class="logo">
+    <nav>
+        <a href="index.html" class="nav-logo">MCHELIEN.</a>
+        <a href="index.html" class="back-link">< KEMBALI</a>
+    </nav>
 
-  <h2 style="font-size:1.5rem; margin-top:30px;">Visi & Misi</h2>
-  <p><strong>VISI:</strong> Menjadi Sarjana Kristen yang Profesional dan Injili.</p>
-  <p><strong>MISI:</strong> Mewujudkan Amanat Agung Yesus Kristus dalam kehidupan Bermahasiswa.</p>
+    <div class="content-wrapper">
+        <main>
+            <h1 class="page-title">Ministry & Service</h1>
+            <div class="status-badge">FAITH_IN_ACTION</div>
+            
+            <p>Bagi saya, talenta dalam bidang teknologi dan manajemen adalah titipan yang harus digunakan untuk melayani sesama. Berikut adalah keterlibatan saya dalam pelayanan pemuda Kristen:</p>
 
-  <h2 style="font-size:1.5rem; margin-top:40px;">Kegiatan Rutin</h2>
-  <div class="activities">
-    <div>Ibadah</div>
-    <div>Persekutuan</div>
-    <div>Mentoring</div>
-    <div>Seminar</div>
-  </div>
+            <div class="ministry-card" style="margin-top: 30px;">
+                <h3>Pelayanan Pemuda & Kampus</h3>
+                <p>Aktif dalam organisasi Kristen di lingkungan universitas (UPK-Kr. FT UNSRAT), berperan dalam pembinaan karakter serta manajemen kegiatan rohani mahasiswa.</p>
+            </div>
 
-  <h2 style="font-size:1.5rem; margin-top:40px;">Media Komunitas</h2>
-  <div class="external-links">
-    <a href="https://www.instagram.com/upkkrftunsrat?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
-    <a href="https://www.facebook.com/upkkrftunsrat" target="_blank">Facebook</a>
-    <a href="https://www.youtube.com/@upk-kr.fatekunsrat644" target="_blank">YouTube</a>
-    <a href="#" target="_blank">Website</a>
-  </div>
+            <div class="ministry-card">
+                <h3>Logistik & Perencanaan</h3>
+                <p>Terlibat dalam tim teknis dan perencanaan untuk berbagai kegiatan gerejawi, termasuk retreat pemuda dan koordinasi acara berskala besar.</p>
+            </div>
 
-  <blockquote>
-    "Bertumbuh dan melayani bersama komunitas adalah cara terbaik untuk mengembangkan iman, karakter, dan kreativitas."
-  </blockquote>
+            <div class="ministry-card">
+                <h3>Visi Pelayanan</h3>
+                <p>Mengintegrasikan nilai-nilai Kristiani dalam etika kerja profesional di bidang IT, serta memberikan kontribusi nyata bagi komunitas melalui keahlian yang saya miliki.</p>
+            </div>
+        </main>
+    </div>
 
-</section>
-
-<footer>&copy; 2025 mchelien's world!</footer>
+    <footer>
+        &copy; 2026 mchelien's world!
+    </footer>
 
 </body>
 </html>
