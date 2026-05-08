@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,25 +31,10 @@
             border-bottom: 4px solid var(--accent);
         }
 
-        .nav-logo {
-            font-family: 'Press Start 2P', cursive;
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.8rem;
-        }
+        .nav-logo { font-family: 'Press Start 2P', cursive; color: var(--white); text-decoration: none; font-size: 0.8rem; }
+        .back-link { color: var(--accent); text-decoration: none; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; }
 
-        .back-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.6rem;
-        }
-
-        .content-wrapper {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+        .content-wrapper { max-width: 800px; margin: 40px auto; padding: 0 20px; }
 
         main {
             background: var(--white);
@@ -58,50 +43,30 @@
             box-shadow: 10px 10px 0px var(--dark);
         }
 
-        .page-title {
-            font-family: 'Press Start 2P', cursive;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-
-        .status-badge {
-            display: inline-block;
-            background: #ffd700;
-            color: #000;
-            padding: 5px 10px;
+        .page-title { font-family: 'Press Start 2P', cursive; font-size: 1.5rem; margin-bottom: 20px; color: var(--dark); }
+        
+        .status-box {
+            background: #0b1f3b;
+            color: #7ba4d0;
+            padding: 15px;
             font-family: 'Press Start 2P', cursive;
             font-size: 0.6rem;
             margin-bottom: 30px;
+            line-height: 1.6;
         }
 
-        .project-box {
-            border: 2px dashed var(--dark);
-            padding: 20px;
-            margin-top: 20px;
-            background: #f9f9f9;
-        }
-
-        h3 { font-family: 'Press Start 2P', cursive; font-size: 0.9rem; margin-top: 25px; color: var(--dark); }
-        p { line-height: 1.8; color: #444; }
+        h3 { font-family: 'Press Start 2P', cursive; font-size: 0.8rem; margin-top: 35px; color: var(--dark); text-transform: uppercase; }
+        .tech-stack { font-weight: bold; color: var(--accent); margin-bottom: 15px; display: block; }
         
-        .tech-stack span {
-            display: inline-block;
-            background: var(--dark);
-            color: white;
-            padding: 4px 10px;
-            font-size: 0.8rem;
-            margin-right: 5px;
-            border-radius: 4px;
+        .download-box {
+            margin-top: 40px;
+            padding: 20px;
+            border: 4px dashed var(--dark);
+            text-align: center;
+            background: #f0f4f8;
         }
 
-        footer {
-            text-align: center;
-            padding: 50px;
-            font-family: 'Press Start 2P', cursive;
-            font-size: 0.6rem;
-            color: #666;
-        }
+        footer { text-align: center; padding: 50px; font-family: 'Press Start 2P', cursive; font-size: 0.6rem; color: #666; }
     </style>
 </head>
 <body>
@@ -114,25 +79,25 @@
     <div class="content-wrapper">
         <main>
             <h1 class="page-title">Game Development</h1>
-            <div class="status-badge">CURRENT_LEVEL: UNDERGRADUATE_THESIS</div>
             
-            <p>Selamat datang di ruang kerja digital saya. Di sini saya mendokumentasikan perjalanan saya dalam membangun pengalaman interaktif, terutama untuk proyek skripsi saya di Teknik Informatika UNSRAT.</p>
-
-            <div class="project-box">
-                <h3>Project: "Apostle"</h3>
-                <p>Apostle adalah game edukasi 2D yang dirancang untuk memberikan pengalaman belajar yang imersif melalui narasi yang kuat dan mekanik puzzle-platformer.</p>
-                <div class="tech-stack" style="margin-top: 15px;">
-                    <span>Unity Engine</span>
-                    <span>C#</span>
-                    <span>2D Sprite Art</span>
-                </div>
+            <div class="status-box">
+                CURRENT_LEVEL: UNDERGRADUATE_THESIS_PROJECT<br>
+                STATUS: IN_DEVELOPMENT
             </div>
 
-            <h3>Focus & Mechanics</h3>
-            <p>Dalam pengembangan ini, saya berfokus pada humanisasi deskripsi teknis dan alur logika yang memudahkan pemain untuk memahami pesan edukasi di dalam game tanpa merasa sedang "belajar" secara kaku.</p>
+            <p>Welcome to my digital workspace. This is where I document my journey in building interactive experiences, specifically for my IT project at UNSRAT.</p>
 
-            <h3>Development Tools</h3>
-            <p>Selain menggunakan Unity, saya juga memanfaatkan berbagai alat bantu untuk architectural visualization dan prompt engineering guna merancang aset visual yang mendukung atmosfer game.</p>
+            <h3>Project: "Apostle"</h3>
+            <span class="tech-stack">Unity Engine | C# | 2D Sprite Art</span>
+            <p>Apostle is a 2D educational game designed to provide an immersive learning experience through strong narrative and puzzle-platformer mechanics.</p>
+
+            <h3>Core Mechanics</h3>
+            <p>I am focusing on creating smooth gameplay logic and intuitive mechanics, ensuring that the educational message is delivered naturally through the game's flow.</p>
+
+            <div class="download-box">
+                <p style="font-family: 'Press Start 2P', cursive; font-size: 0.7rem;">BUILD_STATUS: COMING_SOON</p>
+                <p><b>I will provide the download link for the app as soon as it is ready!</b></p>
+            </div>
         </main>
     </div>
 
